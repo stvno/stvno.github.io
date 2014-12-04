@@ -1,0 +1,21 @@
+{
+  "name": "stvno.github.io",
+  "version": "0.0.0",
+  "homepage": "https://stvno.github.io",
+  "authors": [
+    "Steven M. Ottens <github@minst.net>"
+  ],
+  "description": "personal website",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}

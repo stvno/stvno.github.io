@@ -1,0 +1,9 @@
+body {
+    background: #030301;
+    color: #eeeeec;
+}
+#header {
+    background: url('../img/header.jpg') no-repeat;
+    background-size: cover;
+    height: 10em;    
+}
