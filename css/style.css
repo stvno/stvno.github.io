@@ -35,6 +35,14 @@ height:3em;
 .space {
 	padding: 1em;
 }
+#dhs {
+	background:#40661b;
+	box-shadow: 0px 2px 5px black;
+}
+
+#dhs a{
+	color: #bbbbb9;
+}
 
 #bagviewer {
 	background:#5c3566;
