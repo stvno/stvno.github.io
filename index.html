@@ -16,38 +16,41 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-  <div class="container-fluid">
-    <div id="header" class="row bg" data-ibg-bg="img/header.jpg"></div>
+<body>
+<div class="container-fluid">
+  <div id="header" class="row bg" data-ibg-bg="img/header.jpg"></div>
 
-    <div class="row">
-      <div class="col-md-2">
-
-        <ul class="list-group">
-  <li class="list-group-item">
-   
-    <a href="./#bagviewer">city growth</a>
-  </li>
-  <li class="list-group-item">
-  <a href="./#iahn">height classification</a>
-  </li>
-</ul>
-
-
-</ul>
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="list-group" id="nav">
+        <li class="list-group-item">
+          <a href="./#bagviewer">city growth</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9 uitleg">
+ "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    </div>
+    <div class="col-md-1"></div>
+  </div> 
+  <div class="row spacer">
+  </div>
+  <div class="row content" id="bagviewer">
+    <div class="col-md-2 space">
+        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a>
+    </div>
+    <div class=" col-md-9 ">
+      <h1>interactive city growth</h1>
+      <p>An updated version of the <a href="http://bag.edugis.nl">interactive BAG viewer</a> I created in 2012. It uses specially encoded PNG tiles, where each colour represents the year of construction of the building. Apart from some visual restyling the main difference is that this one now uses webworkers to render the buildings.</p>
       
-    
-     
-      </div>
-      <div class="col-md-9 uitleg">
- "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
-      <div class="col-md-1"></div>
-    </div> 
-    <div class="row mapviewer" id="bagviewer">
-      <iframe src="page/bagviewer/index2.html"></iframe>
-    </div>    
-      <div class="row spacer">
-      </div>
+
+    </div>
+  </div>
+  <div class="row mapviewer" >
+    <iframe src="page/bagviewer/index.html"></iframe>
+  </div>    
+  <div class="row spacer">
+  </div>
  
     <div class="row mapviewer" id="iahn">
       <iframe src="page/bagviewer"></iframe>

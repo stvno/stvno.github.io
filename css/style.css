@@ -31,3 +31,16 @@ background: #eeeeec;
 .spacer {
 height:3em;
 }
+
+.space {
+	padding: 1em;
+}
+
+#bagviewer {
+	background:#5c3566;
+	box-shadow: 0px 2px 5px black;
+}
+
+#bagviewer a{
+	color: rgb(136, 138, 133);
+}

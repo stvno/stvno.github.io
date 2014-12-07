@@ -14,7 +14,7 @@ if (!('crossOrigin' in new Image()) ||
         //Background map
         var layer = new L.StamenTileLayer("toner");
         layer.setOpacity(0.4);
-        map.setView(new L.LatLng(52.36, 4.88), 13).addLayer(layer);
+        map.setView(new L.LatLng(52.38, 4.61), 13).addLayer(layer);
         bagatttr = 'BAG data &copy; bag.vrom.nl';   
 
         //Create a canvas layer on which to draw the BAG data
