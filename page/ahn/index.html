@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Interactive building age</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../leaflet/leaflet.css" />
+    <script src="../../leaflet/leaflet.js"></script>  
+    <script src="../../leaflet/leaflet-hash.js"></script>       
+    <script src="../../proj4/proj4.js"></script>  
+    <script src="../../leaflet/proj4leaflet.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css" rel="stylesheet" />
+ <link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="map" style=" box-shadow: 0px 2px 5px #888888 inset; height: 100%; display:block;left: 0px; top: 0px; right: 260px; bottom: 0px; position: absolute;"></div>
+    <div id='sidepanel'>
+        <div id="content">
+            <p class="info">
+	            <input readonly type="text" id="minveld" size="3" value="0"/>
+                  <input readonly type="text" id="maxveld" size="3"  value="20"/>
+
+	        </p>
+	        <input type="range" min="-12" max="350" value="0" id="min" step="0.01" title="Slide this to set the minimum height">
+
+            <input type="range" min="-12" max="350" value="20" id="max" step="0.01" title="Slide this to set the maximum height">
+            <h2>LEGEND</h2>
+  
+            <table>
+                <tr><td><span class="kleur k00">&nbsp;</span> < 1600</td><td><span class="kleur k1850">&nbsp;</span> 1850 - 1900<br/></td></tr><tr><td><span class="kleur k1600">&nbsp;</span>1600 - 1700 </td><td><span class="kleur k1900">&nbsp;</span> 1900 - 1950<br/></td></tr><tr><td><span class="kleur k1700">&nbsp;</span>1700 - 1800</td><td><span class="kleur k1950">&nbsp;</span> 1950 - 2000 <br/></td></tr><tr><td><span class="kleur k1800">&nbsp;</span>1800 - 1850</td><td><span class="kleur k2000">&nbsp;</span> > 2000<br/></td></tr>
+            </table>
+            <p>
+                <h2>INFORMATION</h2>
+                <p>Based on the open dataset <a href="http://www.kadaster.nl/bag">BAG</a>, this viewer shows the growth of cities based on the year of construction. 
+            </p>
+            <h2>BACKGROUND</h2>
+             <input type="range" min='0' max='1' step='0.01' value="1" id="opacity" title="Slide this to change the background opacity"><input readonly id="opacityveld" value="100%"/>
+    	</div>
+	</div>
+
+<script src="color.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
