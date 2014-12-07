@@ -1,0 +1,166 @@
+html {
+font-family: 'Ubuntu', sans-serif;
+
+}
+a {
+    font-weight: 700;
+    color: #ce5c00;
+}
+hr {
+   background-color: #ce5c00;
+   border: none;
+   height:1px;
+   margin-top: 20px;
+}
+.line {
+    margin: 10px;
+    text-align: center;
+    color: #ce5c00;
+  font-family: 'Vollkorn', serif;
+      font-size: 18px;
+}
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+h1 {
+    text-align: center;
+   font-family: 'Vollkorn', serif;
+
+    margin-top: 0;
+}
+p  {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10pt;
+}
+#sidepanel {
+    
+	display: block;
+	position: absolute;
+	float: right;
+	width: 260px;
+	height: 100%;
+	top: 0px;
+	right:0px;
+	bottom: 0px;
+	background: white;
+	font-size: 16px;
+	color:#030301; 
+	z-index:10000;
+	  box-shadow: -2px 0px 5px #888888;
+}
+#slider{
+ width: 220px;
+}
+#slider2 {
+width: 120px;
+display: inline-block;
+}
+#year {
+	font-size: 20px;
+	background: #030301;
+	border:0; 
+    text-align: center;
+  width: 3em;
+  height: 2.2em;
+    
+}
+strong {
+  color: #2e3436;
+}
+.lower {
+vertical-align: bottom;
+}
+.y1600 {
+	color: #888a85;
+}
+.y1700 {
+	color: #5c3566;
+}
+.y1800 {
+	color: #75507b;
+}
+.y1850 {
+	color: #a40000;
+}
+.y1900 {
+	color: #cc0000;
+}
+.y1950 {
+	color: #f57900;
+}
+.y2000 {
+	color: #edd400;
+}
+.k00 {
+background: black;
+}
+.k1600 {
+	background: #888a85;
+}
+.k1700 {
+	background: #5c3566;
+}
+.k1800 {
+	background: #75507b;
+}
+.k1850 {
+	background: #a40000;
+}
+.k1900 {
+	background: #cc0000;
+}
+.k1950 {
+	background: #f57900;
+}
+.k2000 {
+	background: #edd400;
+}
+.kleur {    
+    border: solid 1px black;
+    display: inline-block;
+    width: 20px;
+    height: 13px;
+    
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-right: 3px;
+}
+td {
+    line-height: 14px;
+}
+h2 {
+	font-size: 20px;
+	font-weight: 500;
+	color: #75507b;
+	margin-bottom: 0;
+	
+}
+table {
+  font-size: 10pt;
+}
+.leaflet-container {
+	background: #eeeeec !important;
+}
+.footnote {
+    cursor:pointer;
+    color: #ce5c00;
+}
+#opacity{
+font-size: 20px;
+margin-left: 0.5em;
+border: 0;
+text-align: center;
+width: 3em;
+height: 2.2em;
+}
+
+#content {
+	padding: 0 15px 0 10px;
+}
+#footnotediv {
+    font-style: italic;
+}
+
+

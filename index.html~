@@ -22,17 +22,9 @@
 
     <div class="row">
       <div class="col-md-2">
-
-        <ul class="list-group">
-  <li class="list-group-item">
-   
-    <a href="./#bagviewer">city growth</a>
-  </li>
-  <li class="list-group-item">
-  <a href="./#iahn">height classification</a>
-  </li>
-</ul>
-
+      <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="./#bagviewer">Interactive city growth</a></li>
+  <li role="presentation"> <a href="./#iahn">Interactive height classification</a></li>
 
 </ul>
       
@@ -44,7 +36,7 @@
       <div class="col-md-1"></div>
     </div> 
     <div class="row mapviewer" id="bagviewer">
-      <iframe src="page/bagviewer/index2.html"></iframe>
+      <iframe src="page/bagviewer"></iframe>
     </div>    
       <div class="row spacer">
       </div>
