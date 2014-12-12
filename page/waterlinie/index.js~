@@ -1,4 +1,4 @@
-var kringen =true, schootsveld = true, huisjes =true;
+var kringen =true,  water =true;
 (function () {
 
 
@@ -8,14 +8,41 @@ var kringen =true, schootsveld = true, huisjes =true;
         layer.setOpacity(0.4);
         map.setView(new L.LatLng(52.08, 4.91), 10).addLayer(layer);
         bagatttr = 'BAG data &copy; bag.vrom.nl';   
-L.geoJson(inundatie/*, {style: {
+var w = L.geoJson(inundatie, {style: {
 
 fillColor:'#729fcf',
 opacity : 1,
 fillOpacity : 0.5,
 color : 'none',
 zindex :0
-}}*/).addTo(map);
+}}).addTo(map);
+
+var  k = L.geoJson(kringels, {style: function(f) {
+var c = f.properties.color;
+var style = {};
+switch(c) {
+
+
+case 1: //kring
+  style.fillColor = '#a40000';
+  style.opacity = 1;
+  style.fillOpacity = 0.5;
+  style.color = '#a40000';
+  style.weight = 1;
+  style.zindex = 1000;
+  break;
+case 4: //schootsveld
+  style.fillColor = '#555753';
+  style.opacity = 1;
+  style.fillOpacity = 0.5;
+  style.color = '#555753';
+  style.weight = 1;
+  break;
+  }
+return style;
+}
+}).addTo(map);
+
 
 L.geoJson(linie, {style: function(f) {
 var c = f.properties.color;
@@ -28,14 +55,7 @@ case 0: //verdedigingswerk
   style.color = '#000';
   style.weight = 1;
   break;
-case 1: //kring
-  style.fillColor = '#a40000';
-  style.opacity = kringen?1:0;
-  style.fillOpacity = kringen?0.5:0;
-  style.color = '#a40000';
-  style.weight = 1;
-  style.zindex = 1000;
-  break;
+
 case 2: //tankversperring
  style.fillColor = '#000';
   style.opacity = 1;
@@ -50,17 +70,11 @@ case 3: //sluis
   style.color = '#204a87';
   style.weight = 1;
   break;
-case 4: //schootsveld
-  style.fillColor = '#555753';
-  style.opacity = schootsveld?1:0;
-  style.fillOpacity = schootsveld?0.5:0;
-  style.color = '#555753';
-  style.weight = 1;
-  break;
+
 case 5: //huisjes
   style.fillColor = '#a40000';
-  style.opacity = huisjes?1:0;
-  style.fillOpacity =huisjes?1:0;
+  style.opacity = 1;
+  style.fillOpacity =1;
   style.color = 'none';
   style.weight = 1;
   break;
@@ -93,5 +107,31 @@ return style;
 
 
  var hash = L.hash(map);
+$('#kringen').click(function(){
+kringen =kringen?false:true;
+k.setStyle(function(f) {
+var c = f.properties.color;
+var style = {};
+switch(c) {
 
+
+case 1: //kring
+  style.fillColor = '#a40000';
+  style.opacity = kringen?1:0;
+  style.fillOpacity = kringen?0.5:1;
+  style.color = '#a40000';
+  style.weight = 1;
+  style.zindex = 1000;
+  break;
+case 4: //schootsveld
+  style.fillColor = '#555753';
+  style.opacity = kringen?1:0;
+  style.fillOpacity = kringen?0.5:0;
+  style.color = '#555753';
+  style.weight = 1;
+  break;
+  }
+return style;
+})
+});
 })();
