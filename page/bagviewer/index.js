@@ -10,7 +10,7 @@ if (!('crossOrigin' in new Image()) ||
     return;
 }
 
- var map = new L.Map('map',{maxZoom:16});   
+ var map = new L.Map('map',{ minZoom: 9, maxZoom:16});   
         //Background map
         var layer = new L.StamenTileLayer("toner");
         layer.setOpacity(0.4);
