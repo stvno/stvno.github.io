@@ -1,3 +1,4 @@
+var kringen =true, schootsveld = true, huisjes =true;
 (function () {
 
 
@@ -7,102 +8,90 @@
         layer.setOpacity(0.4);
         map.setView(new L.LatLng(52.08, 4.91), 10).addLayer(layer);
         bagatttr = 'BAG data &copy; bag.vrom.nl';   
+L.geoJson(inundatie, {style: {
+
+fillColor:'#729fcf',
+opacity : 1,
+fillOpacity : 0.5,
+color : 'none',
+zindex :0
+}}).addTo(map);
+
+L.geoJson(linie, {style: function(f) {
+var c = f.properties.color;
+var style = {};
+switch(c) {
+case 0: //verdedigingswerk
+  style.fillColor = '#a40000';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#000';
+  style.weight = 1;
+  break;
+case 1: //kring
+  style.fillColor = '#a40000';
+  style.opacity = kringen?1:0;
+  style.fillOpacity = kringen?0.5:0;
+  style.color = '#a40000';
+  style.weight = 1;
+  style.zindex = 1000;
+  break;
+case 2: //tankversperring
+ style.fillColor = '#000';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#000';
+  style.weight = 2;
+  break;
+case 3: //sluis
+  style.fillColor = '#204a87';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#204a87';
+  style.weight = 1;
+  break;
+case 4: //schootsveld
+  style.fillColor = '#555753';
+  style.opacity = schootsveld?1:0;
+  style.fillOpacity = schootsveld?0.5:0;
+  style.color = '#555753';
+  style.weight = 1;
+  break;
+case 5: //huisjes
+  style.fillColor = '#a40000';
+  style.opacity = huisjes?1:0;
+  style.fillOpacity =huisjes?1:0;
+  style.color = 'none';
+  style.weight = 1;
+  break;
+case 6: //waterwerken
+style.fillColor = '#4e9a06';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#4e9a06';
+  style.weight = 1;
+  break;
+
+case 8: //loopgraaf
+style.fillColor = '#000';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#000';
+  style.weight = 1;
+  break
+case 9: //overig
+style.fillColor = '#5c3566';
+  style.opacity = 1;
+  style.fillOpacity = 1;
+  style.color = '#5c3566';
+  style.weight = 1;
+  break;
+
+}
+return style;
+}}).addTo(map);
 
 
-L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
-  
-  onAdd: function (map) {
-    // Triggered when the layer is added to a map.
-    //   Register a click listener, then do all the upstream WMS things
-    L.TileLayer.WMS.prototype.onAdd.call(this, map);
-    map.on('click', this.getFeatureInfo, this);
-  },
-  
-  onRemove: function (map) {
-    // Triggered when the layer is removed from a map.
-    //   Unregister a click listener, then do all the upstream WMS things
-    L.TileLayer.WMS.prototype.onRemove.call(this, map);
-    map.off('click', this.getFeatureInfo, this);
-  },
-  
-  getFeatureInfo: function (evt) {
-    // Make an AJAX request to the server and hope for the best
-    var url = this.getFeatureInfoUrl(evt.latlng),
-        showResults = L.Util.bind(this.showGetFeatureInfo, this);
-    $.ajax({
-      url: url,
-      success: function (data, status, xhr) {
-        var err = typeof data === 'object' ? null : data;
-        showResults(err, evt.latlng, data);
-      },
-      error: function (xhr, status, error) {
-        showResults(error);  
-      }
-    });
-  },
-  
-  getFeatureInfoUrl: function (latlng) {
-    // Construct a GetFeatureInfo request URL given a point
-    var point = this._map.latLngToContainerPoint(latlng, this._map.getZoom()),
-        size = this._map.getSize(),
-        
-        params = {
-          request: 'GetFeatureInfo',
-          service: 'WMS',
-          srs: 'EPSG:4326',
-          styles: this.wmsParams.styles,
-          transparent: this.wmsParams.transparent,
-          version: this.wmsParams.version,      
-          format: this.wmsParams.format,
-          bbox: this._map.getBounds().toBBoxString(),
-          height: size.y,
-          width: size.x,
-          layers: 'verdedingswerken-nieuwehollandsewaterlinie',
-          query_layers: 'verdedingswerken-nieuwehollandsewaterlinie',
-          info_format: 'application/json'
-        };
-    
-    params[params.version === '1.3.0' ? 'i' : 'x'] = point.x;
-    params[params.version === '1.3.0' ? 'j' : 'y'] = point.y;
-    
-    return 'http://research.geodan.nl/service/geoserver/research/wms?' + L.Util.getParamString(params, 'http://research.geodan.nl/service/geoserver/research/wms?', true);
-  },
-  
-  showGetFeatureInfo: function (err, latlng, content) {
-    if (err) { console.log(err); return; } // do nothing if there's an error
-    var result ='';
-    for (var i = 0; i < content.features.length; i++){
-        var p = content.features[i].properties;
-        result+='<p>';
-        result += (p.naam=='')?'':'Naam: '+p.naam+'<br/>';
-        result += (p.subtype=='')?'':'<span class="subtype">'+p.subtype+'</span>';
-        result += (p.beginjaar_=='')?'':'<br/>Begin: '+p.beginjaar_+'<br/>';
-        result += (p.eindjaar_p=='')?'':'Eind: '+p.eindjaar_p+'<br/>';
-        result += (p.foto_1=='')?'':'<img src="'+p.foto_1+'" width="300px"/>'+'<br/>';
-        result += (p.linie_info=='')?'':'<a href="'+p.linie_info+'">linie info</a>'+'<br/>';
-        result += (p.regio_info=='')?'':'<a href="'+p.regio_info+'">regio info</a>'+'<br/>';
-        result +='</p>';
-    }
-    
-    // Otherwise show the content in a popup, or something.
-    L.popup({ maxWidth: 800})
-      .setLatLng(latlng)
-      .setContent(result)
-      .openOn(this._map);
-  }
-});
- 
-L.tileLayer.betterWms = function (url, options) {
-  return new L.TileLayer.BetterWMS(url, options);  
-};
-
- var waterlinie = L.tileLayer.betterWms("http://research.geodan.nl/service/geoserver/gwc/service/wms?", {
-    layers: 'research%3Averdedingswerken-nieuwehollandsewaterlinie',
-    format: 'image/png',
-    transparent: true,
-    attribution: "Waterlinie © PDOK"
-});
-map.addLayer(waterlinie);
  var hash = L.hash(map);
 
 })();
