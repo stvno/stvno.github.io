@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../../leaflet/leaflet.css" />
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="../../leaflet/leaflet.js"></script>  
-    <script src="../../leaflet/leaflet-hash.js"></script>  
+    <script src="../../leaflet/leaflet-hash.js"></script> 
+        <script src="../../proj4/proj4.js"></script>  
+    <script src="../../leaflet/proj4leaflet.js"></script> 
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>      
     <link href="https://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css" rel="stylesheet" />
  <link href="style.css" rel="stylesheet">
@@ -18,9 +20,12 @@
     <div id='sidepanel'>
         <div id="content">
            <img src="logo.png"/>
+
            <h2>ELEMENTS</h2>
+
            <span id="kringen">Forbidden zones</span><br/>
            <span id="inundatie">Flooded zones</span>
+           <span id="tmk">TMK1910</span>
   
     	</div>
 	</div>

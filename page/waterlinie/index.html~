@@ -18,7 +18,12 @@
     <div id='sidepanel'>
         <div id="content">
            <img src="logo.png"/>
+
            <h2>ELEMENTS</h2>
+
+           <span id="kringen">Forbidden zones</span><br/>
+           <span id="inundatie">Flooded zones</span>
+           <span id="tmk">TMK1910</span>
   
     	</div>
 	</div>
