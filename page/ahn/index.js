@@ -126,10 +126,13 @@ function get(id) {
 function updateValues() {
     min = parseFloat(get('min').value);
     max = parseFloat(get('max').value);
-
-    range = [min,max];
+    document.getElementById('min').setAttribute('max',max);
+    document.getElementById('min').setAttribute('value',min);
+    document.getElementById('max').setAttribute('min',min);  
+    document.getElementById('max').setAttribute('value',max);  
     document.getElementById('minveld').setAttribute('value',min);
     document.getElementById('maxveld').setAttribute('value',max);
+
     
 }
 
