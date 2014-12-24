@@ -126,10 +126,11 @@ function get(id) {
 function updateValues() {
     min = parseFloat(get('min').value);
     max = parseFloat(get('max').value);
+    range = [min,max];
     document.getElementById('min').setAttribute('max',max);
-    document.getElementById('min').setAttribute('value',min);
+    document.getElementById('min').setAttribute('min',-12);
     document.getElementById('max').setAttribute('min',min);  
-    document.getElementById('max').setAttribute('value',max);  
+    
     document.getElementById('minveld').setAttribute('value',min);
     document.getElementById('maxveld').setAttribute('value',max);
 
@@ -159,7 +160,7 @@ function redraw() {
 
 redraw();
 
-[].forEach.call(document.querySelectorAll('#content input'), function (input) {
+[].forEach.call(document.querySelectorAll('#sliderpanel input'), function (input) {
     input['oninput' in input ? 'oninput' : 'onchange'] = function (e) {
         updateValues();
         needsRedraw = true;

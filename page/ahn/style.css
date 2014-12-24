@@ -35,6 +35,23 @@ p  {
     margin-bottom: 5px;
     font-size: 10pt;
 }
+#sliderpanel {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top:0px;
+  left:0px;
+  right:0px;
+  height: 50px;
+  background: white;
+  z-index:10001;
+    box-shadow: -2px 0px 5px #888888;
+}
+#marge {
+  position:inline-block;
+  right: 10px;
+  left: 10px;
+}
 #sidepanel {
     
 	display: block;
@@ -42,7 +59,7 @@ p  {
 	float: right;
 	width: 260px;
 	height: 100%;
-	top: 0px;
+	top: 50px;
 	right:0px;
 	bottom: 0px;
 	background: white;
@@ -74,61 +91,7 @@ strong {
 .lower {
 vertical-align: bottom;
 }
-.y1600 {
-	color: #888a85;
-}
-.y1700 {
-	color: #5c3566;
-}
-.y1800 {
-	color: #75507b;
-}
-.y1850 {
-	color: #a40000;
-}
-.y1900 {
-	color: #cc0000;
-}
-.y1950 {
-	color: #f57900;
-}
-.y2000 {
-	color: #edd400;
-}
-.k00 {
-background: black;
-}
-.k1600 {
-	background: #888a85;
-}
-.k1700 {
-	background: #5c3566;
-}
-.k1800 {
-	background: #75507b;
-}
-.k1850 {
-	background: #a40000;
-}
-.k1900 {
-	background: #cc0000;
-}
-.k1950 {
-	background: #f57900;
-}
-.k2000 {
-	background: #edd400;
-}
-.kleur {    
-    border: solid 1px black;
-    display: inline-block;
-    width: 20px;
-    height: 13px;
-    
-    margin-top: 3px;
-    margin-left: 10px;
-    margin-right: 3px;
-}
+
 td {
     line-height: 14px;
 }
@@ -175,7 +138,7 @@ input[type=range]::-webkit-slider-thumb {
   /* border:0; */
   }
 input[type=range] {
-width: 100%;
+  width: 100%;
   display:inline-block!important;
   vertical-align:middle;
   height:12px;
