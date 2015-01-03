@@ -14,7 +14,7 @@ onmessage = function (e) {
     }
 
     var classed = color(self.heights[e.data.id],
-        e.data.min, e.data.max);
+        e.data.min, e.data.max, e.data.below, e.data.above);
 
     postMessage({
         id: e.data.id,

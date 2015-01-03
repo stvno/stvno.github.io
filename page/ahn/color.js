@@ -68,9 +68,8 @@ var COLORS = [
 [203,111,51 ,255],
 [0,0,0,0]
 ];
-var MIN = false;
-var MAX = false;
-function color(height, min, max) {
+
+function color(height, min, max, below, above) {
 
     var px = new Uint8ClampedArray(256 * 256 * 4),
         x, y, i, range;
@@ -83,8 +82,8 @@ function color(height, min, max) {
             var nap  = height[i]; // nap
             var j;
             if(nap === undefined) j = 48;            
-            else if(nap < min) j = MIN?0:48;
-            else if(nap > max) j =MAX?46:48;
+            else if(nap < min) j = below?0:48;
+            else if(nap > max) j =above?46:48;
             else j = Math.floor((nap - min)/range);
             i = (y * 256 + x) * 4;
             var c = COLORS[j];

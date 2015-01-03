@@ -13,6 +13,14 @@ hr {
    height:1px;
    margin-top: 20px;
 }
+.container {
+  display: flex;
+
+}
+.labelcbx {
+
+  width: 150px;
+}
 .line {
     margin: 10px;
     text-align: center;
@@ -42,15 +50,15 @@ p  {
   top:0px;
   left:0px;
   right:0px;
-  height: 50px;
+  height: 80px;
   background: white;
   z-index:10001;
     box-shadow: -2px 0px 5px #888888;
 }
 #marge {
-  position:inline-block;
-  right: 10px;
-  left: 10px;
+  
+  margin: 10px;
+  
 }
 #sidepanel {
     
@@ -59,7 +67,7 @@ p  {
 	float: right;
 	width: 260px;
 	height: 100%;
-	top: 50px;
+	top: 80px;
 	right:0px;
 	bottom: 0px;
 	background: white;
@@ -69,6 +77,7 @@ p  {
 	  box-shadow: -2px 0px 5px #888888;
 }
 
+
 #opacity {
 width: 120px;
 display: inline-block;
@@ -76,14 +85,39 @@ display: inline-block;
 #year {
 width: 220px;
 }
-#yearveld {
-	font-size: 20px;
-	background: #030301;
-	border:0; 
-    text-align: center;
-  width: 3em;
-  height: 2.2em;
+#minveld, #maxveld {
+font-size: 18px;
+color: #030301;
+border: 0;
+text-align: left;
+width: 4em;
+height: 2.2em;
+vertical-align: middle;
+margin-top: -10px;
+margin-right: 5px;
     
+}
+#minveld {
+color: rgb(12, 49, 124)
+}
+#maxveld {
+color: rgb(203,111,51)
+}
+.legend {
+width: 1em;
+display: inline-block;
+}
+.maxheight {
+  background: rgb(203,111,51);
+}
+.medianheight {
+  background:rgb(94,229,8);
+}
+.minheight {
+  background:rgb(12, 49, 124);
+}
+.noborder {
+  border:none;
 }
 strong {
   color: #2e3436;

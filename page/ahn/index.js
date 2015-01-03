@@ -28,7 +28,7 @@ map.setView([51.840,5.841],7);//zuid limburg
  var hash = L.hash(map);
 
 var hills = L.tileLayer.canvas();
-var min, max, range;
+var min, max, range, above, below;
 
 hills.redrawQueue = [];
 
@@ -87,6 +87,8 @@ hills.drawTile = function(canvas, tilePoint, zoom) {
 
         data.min = min;
         data.max = max;
+        data.below = below;
+        data.above = above;
 
         var workerIndex = (tilePoint.x + tilePoint.y) % workers.length;
 
@@ -127,6 +129,8 @@ function updateValues() {
     min = parseFloat(get('min').value);
     max = parseFloat(get('max').value);
     range = [min,max];
+    below = document.getElementById('below').checked;
+    above = document.getElementById('above').checked;
     document.getElementById('min').setAttribute('max',max);
     document.getElementById('min').setAttribute('min',-12);
     document.getElementById('max').setAttribute('min',min);  
@@ -134,7 +138,9 @@ function updateValues() {
     document.getElementById('minveld').setAttribute('value',min);
     document.getElementById('maxveld').setAttribute('value',max);
 
-    
+    document.getElementById('minheightlabel').setAttribute('value',min);
+    document.getElementById('maxheightlabel').setAttribute('value',max); 
+    document.getElementById('medianheightlabel').setAttribute('value',Math.round(((max-min)/2)*100)/100);    
 }
 
 updateValues();
@@ -160,8 +166,15 @@ function redraw() {
 
 redraw();
 
-[].forEach.call(document.querySelectorAll('#sliderpanel input'), function (input) {
+[].forEach.call(document.querySelectorAll('#sliderpanel input.sld'), function (input) {
     input['oninput' in input ? 'oninput' : 'onchange'] = function (e) {
+        updateValues();
+        needsRedraw = true;
+    };
+});
+
+[].forEach.call(document.querySelectorAll('#sliderpanel input'), function (input) {
+    input['onchange'] = function (e) {
         updateValues();
         needsRedraw = true;
     };
