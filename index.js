@@ -1,4 +1,5 @@
 $('.content_map').click(function(e){
+    if($(e.target).attr('href')==undefined) {
     var frame = $(this).next();    
     var url = frame.attr('link');    
     if(frame.css('display')=='none'){    
@@ -9,6 +10,7 @@ $('.content_map').click(function(e){
     else {
         frame.hide('blind');
         frame.children().remove();
+    }
     }
 });
  

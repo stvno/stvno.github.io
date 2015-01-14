@@ -34,7 +34,9 @@ height:30em;
 .spacer {
 height:3em;
 }
-
+.content {
+    cursor: pointer;
+}
 .space {
 	padding: 1em;
 }
