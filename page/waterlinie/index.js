@@ -20,17 +20,17 @@ var crs = new L.Proj.CRS.TMS(
      resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420, 0.21]
   })
   
-  var lmap = L.map('map',{crs:crs, minZoom: 1, maxZoom: 13, fadeAnimation: false});
-  var layer = new L.Proj.TileLayer.TMS('http://geodata.nationaalgeoregister.nl/tms/1.0.0/brtachtergrondkaart@EPSG:28992@png/{z}/{x}/{y}.png',crs,{
-    maxZoom: 14
+  var lmap = L.map('map',{crs:crs, minZoom: 1, maxZoom: 17, fadeAnimation: false});
+  var layer = new L.Proj.TileLayer.TMS('http://services.geodan.nl/tms/1.0.0/topokaart_EPSG28992/{z}/{x}/{y}.png',crs,{
+    maxZoom: 17
     ,minZoom: 5
     });  
   lmap.addLayer(layer);
-  var tmk = new L.tileLayer('http://r{s}.edugis.nl/tiles/1.0.0/tmk_1910/{z}/{x}/{y}.png',{subdomains: '1',tms:true,opacity: 0.9});
-lmap.addLayer(tmk);
+  var tmk = new L.Proj.TileLayer.TMS('http://r{s}.edugis.nl/tiles/1.0.0/tmk_1910/{z}/{x}/{y}.png',crs,{subdomains: '1',opacity: 0.9});
 
 
-lmap.setView([51.840,5.841],7);//zuid limburg
+
+lmap.setView([51.8658,5.1247],14);//geofort
 var w = new L.geoJson(inundatie, {style: {
 
 fillColor:'#729fcf',
@@ -43,7 +43,7 @@ filter: function(f) {
   return parseInt(f.properties.beginjaar_)<year;
 }
 })
-w.addTo(lmap);
+
 
 var  k = L.geoJson(kringels, {style: function(f) {
 var c = f.properties.color;
@@ -75,7 +75,7 @@ filter: function(f) {
 }
 
 })
-lmap.addLayer(k);
+
 
 
 var l = new L.geoJson(linie, {style: function(f) {
@@ -144,7 +144,7 @@ filter: function(f) {
 
 
 })
-l.addTo(lmap);
+
 
 
  var hash = L.hash(lmap);
@@ -178,18 +178,11 @@ $('#kringen').click(function(){
 function get(id) {
     return document.getElementById(id);
 }
-function redraw() {
-lmap.removeLayer(l)
-lmap.removeLayer(w)
-lmap.removeLayer(k)
-lmap.addLayer(k)
-lmap.addLayer(l)
-lmap.addLayer(w)
-}
-[].forEach.call(document.querySelectorAll('#year'), function (input) {
-    input['oninput' in input ? 'oninput' : 'onchange'] = function (e) {
-        year = parseInt(get('year').value);
-  redraw();
-    };
-});
+$('#forten').click(function(){lmap.addLayer(l)})
+$('#inundatie').click(function(){lmap.addLayer(w)})
+$('#kringen').click(function(){lmap.addLayer(k)})
+$('#tmk').click(function(){
+lmap.addLayer(tmk);
+$('.leaflet-overlay-pane').css('opacity',0.5);
+})
 })();

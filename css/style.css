@@ -28,6 +28,9 @@ height: 30em;
 background: #eeeeec;
 }
 
+.video {
+height:30em;
+}
 .spacer {
 height:3em;
 }
@@ -51,4 +54,9 @@ height:3em;
 
 #bagviewer a{
 	color: rgb(136, 138, 133);
+}
+
+#phoenix {
+background: #d96a00;
+box-shadow: 0px 2px 5px black;
 }
