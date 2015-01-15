@@ -11,7 +11,7 @@ var stamen =  new ol.layer.Tile({
     })
 var zoomMap = new ol.Map({
     layers: [
-       stamen
+       zoomLayer
     ],
     view: zoomView,
     target: 'zoommap',
@@ -36,7 +36,7 @@ var map = new ol.Map({
     ],
     view: view,
     target: 'map',
-    controls: [],    
+    controls: []
 });
 map.on('click',function(d){
     moveZoom(d);
@@ -56,7 +56,7 @@ zoomMap.on('pointermove',function(evt){
 $('#sidepanel').on('mousemove',function(e){
 $(this).css('cursor','default');
 });
-var stamenaan = true;
+var stamenaan = false;
 $('#changeLayer').click(function(e){
     
     if(stamenaan) {
