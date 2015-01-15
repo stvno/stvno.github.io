@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	 <link rel="stylesheet" href="http://openlayers.org/en/v3.1.1/css/ol.css" type="text/css">
+	 <script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
+	<style>
+	body {
+		overflow: hidden;
+		cursor: none;
+	}
+	#map {
+		position:absolute;
+		top: 0px;
+		bottom: 0px;
+		right: 260px;
+		left: 0px;
+		opacity: 0.5;
+	}
+	#zoommap {
+		width: 400px;
+		height: 400px;
+		float: left;
+		position: absolute;
+		z-index: 1000;
+	}
+    #sidepanel {
+    display: block;
+    position: absolute;
+    float: right;
+    width: 260px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: white;
+    font-size: 16px;
+    color: #030301;
+    z-index: 10000;
+    box-shadow: -2px 0px 5px #888888;
+}
+	</style>
+</head>
+<body>
+<div id="zoommap"></div>
+<div id="map"></div>
+<div id="sidepanel">
+<span id="changeLayer">Change layer</span>
+</div>
+<script src="../../dist/jquery.min.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+</body>
+</html>	
