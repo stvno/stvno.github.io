@@ -96,14 +96,10 @@ height:3em;
 .space {
 	padding: 1em;
 }
-#dhs {
+#dhs , #multiuser{
 	background:#40661b;
 }
-/*
-#dhs a{
-	color: #bbbbb9;
-}
-*/
+
 #iahn {
     background: #204a87;
 }
@@ -118,5 +114,17 @@ background: #d96a00;
 }
 #waalweelde {
 background: #fce94f;
-color:black;
+color: black;
+}
+#wiekwiek {
+background: #379a1b;
+}
+#firefly {
+background: #e01c4a;
+}
+#drone, #void {
+background: black;
+}
+#wiion {
+background: #923c35;
 }
