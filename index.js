@@ -29,8 +29,7 @@ $('.content_map').click(function(e){
  
 $('.content_other').click(function(e){
     if($(this).next().css('display')=='none') {
-        window.location.hash = $(this).attr('id');
-        $('html,body').animate({scrollTop: $(this).offset().top}, 500);
+        $('html,body').animate({scrollTop: $(this).offset().top}, 1000);
     }
     $(this).next().toggle('blind');
     
@@ -57,6 +56,13 @@ $('#dymaxion-switcher').click(function(e){
 dymaxionchosen=dymaxionchosen?0:1;
 $(this).find('img').attr('src','page/dymaxion/'+dymaxionimages[dymaxionchosen]);
 });
+
+$('.popout').click(function(){
+ var popout = $(this).parent().parent().next().attr('link');
+ window.location = popout;
+ 
+});
+
 
 
 

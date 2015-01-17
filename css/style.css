@@ -96,7 +96,15 @@ height:3em;
     opacity: 1;
    
 }
+.popout {
+    opacity: 0.5;
+    margin-left: 5px;
+}
 
+.popout:hover {
+    text-shadow: whitesmoke 0px 0px 10px;
+    opacity: 1;
+}
 .content.dark a {
     color: darkslategray;
     opacity: 0.5;
