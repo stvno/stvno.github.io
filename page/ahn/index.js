@@ -23,7 +23,9 @@ if (!('crossOrigin' in new Image()) ||
     ,minZoom: 5
     });  
   map.addLayer(layer);
-
+  map.on('click',function(e) {
+    console.log(e);
+  })
 map.setView([51.840,5.841],7);//zuid limburg
  var hash = L.hash(map);
 
@@ -51,7 +53,7 @@ function updateTile(e) {
     ctx.putImageData(imgData, 0, 0);
 }
 
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < 8; i++) {
     workers[i] = new Worker('worker.js');
     workers[i].onmessage = updateTile;
 }

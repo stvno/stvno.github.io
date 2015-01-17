@@ -1,3 +1,5 @@
+console.log('Hi there! ッ\n\nSince you are looking: most of the applications are loaded in iFrames. They are all quite heavy and loading them all in the background tends to kill any browser. When you click on one a title it will create a new iFrame and load the url into it, thoug that shouldn\'t be to hard to figure out for you.\n If you need help you can drop me an email at helpme@minst.net. \n\nCheers, stvno');
+(function () {
 var hash = window.location.hash;
 
 
@@ -49,4 +51,19 @@ $('#menulabel').fadeIn();
 $('#menulabel').fadeOut();
 });
 
+var dymaxionimages = ['detail.png','map.png'];
+var dymaxionchosen = 1;
+$('#dymaxion-switcher').click(function(e){
+dymaxionchosen=dymaxionchosen?0:1;
+$(this).find('img').attr('src','page/dymaxion/'+dymaxionimages[dymaxionchosen]);
+});
+
+
+
 if(hash!=undefined&&hash!='#nav') $(hash).click();
+
+
+
+})();
+
+
