@@ -29,7 +29,7 @@ $('.content_map').click(function(e){
  
 $('.content_other').click(function(e){
     if($(this).next().css('display')=='none') {
-        $('html,body').animate({scrollTop: $(this).offset().top}, 500);
+        $('html,body').animate({scrollTop: $(this).offset().top}, 1000);
     }
     $(this).next().toggle('blind');
     
