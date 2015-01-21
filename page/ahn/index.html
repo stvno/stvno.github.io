@@ -16,15 +16,16 @@
 <body>
 	<div id="map" style=" box-shadow: 0px 2px 5px #888888 inset; height: 100%; display:block;left: 0px; top: 80px; right: 260px; bottom: 0px; position: absolute;"></div>
     <div id='sliderpanel'>
-        <div id="marge"><div class="container">
-            <label class="labelcbx"><input type='checkbox' class="cxb" id="below">Show below </label><input readonly type="text" id="minveld" size="3" value="0"/>
-           <input type="range" class="sld"  min="-12" max="350" value="0" id="min" step="0.01" title="Slide this to set the minimum height">
-       </div>
+        <div id="marge">
        <div class="container">
             <label class="labelcbx"><input type='checkbox' class="cxb" id="above">Show above</label> <input readonly type="text" id="maxveld" size="3"  value="20"/>
 
             <input type="range" class="sld"  min="-12" max="350" value="20" id="max" step="0.01" title="Slide this to set the maximum height">
         </div>
+        <div class="container">
+            <label class="labelcbx"><input type='checkbox' class="cxb" id="below">Show below </label><input readonly type="text" id="minveld" size="3" value="0"/>
+           <input type="range" class="sld"  min="-12" max="350" value="0" id="min" step="0.01" title="Slide this to set the minimum height">
+       </div>
          </div>
     </div>
     <div id='sidepanel'>

@@ -4,6 +4,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 10pt;
   line-height: 150%;
+  background-image:url('../img/background.png');
 }
 #header {
   background: url('../img/header.jpg') no-repeat;
@@ -31,6 +32,11 @@ position: absolute;
 top:3em;
 opacity: 0.8;
 }
+#nav:hover {
+  background:rgba(0,0,0,0.2);
+  box-shadow: black 1px 1px 10px;
+padding: 4px;
+}
 .menuheader {
     cursor: pointer;    
     opacity: 0.8;
@@ -49,6 +55,14 @@ li.menu a{
   color: #2e3436;
   margin-top: -2px;
    box-shadow: 0px 2px 5px black;
+   font-size: 130%;
+}
+@media (min-width: 992px) {
+.twocolumn {
+-webkit-column-count : 2;
+-moz-column-count: 2;
+column-count: 2;
+}
 }
 .img {
 height: 8em;
@@ -82,7 +96,15 @@ height:3em;
     opacity: 1;
    
 }
+.popout {
+    opacity: 0.5;
+    margin-left: 5px;
+}
 
+.popout:hover {
+    text-shadow: whitesmoke 0px 0px 10px;
+    opacity: 1;
+}
 .content.dark a {
     color: darkslategray;
     opacity: 0.5;
@@ -130,4 +152,10 @@ background: #923c35;
 }
 #edugis {
 background: #006699;
+}
+#dymaxion{ 
+background: #204a87;
+}
+#dymaxion-switcher {
+cursor: pointer;
 }
