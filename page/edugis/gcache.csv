@@ -1,46 +1,46 @@
 layer,mapfile,wmslaag
 gemeenten_niet_westerse_allochtonen,bevolking_herkomst.map,gemeenten_niet_westerse_allochtonen
-wijken_niet_westerse_allochtonen,bevolking_herkomst.map,wijken_niet_Westerse_allochtonen
+wijken_niet_westerse_allochtonen,bevolking_herkomst.map,wijken_niet_westerse_allochtonen
 buurten_niet_westerse_allochtonen,bevolking_herkomst.map,buurten_niet_westerse_allochtonen
 gemeenten_westerse_allochtonen,bevolking_herkomst.map,gemeenten_westerse_allochtonen
-wijken_westerse_allochtonen,bevolking_herkomst.map,wijken_Westerse_allochtonen
+wijken_westerse_allochtonen,bevolking_herkomst.map,wijken_westerse_allochtonen
 buurten_westerse_allochtonen,bevolking_herkomst.map,buurten_westerse_allochtonen
 gemeenten_marokkanen,bevolking_herkomst.map,gemeenten_marokkanen
 wijken_marokkanen,bevolking_herkomst.map,wijken_marokkanen
 buurten_marokkanen,bevolking_herkomst.map,buurten_marokkanen
-gemeenten_Antillianen_en_Arubanen,bevolking_herkomst.map,gemeenten_Antillianen_en_Arubanen
-wijken_Antillianen_en_Arubanen,bevolking_herkomst.map,wijken_Antillianen_en_Arubanen
-buurten_Antillianen_en_Arubanen,bevolking_herkomst.map,buurten_Antillianen_en_Arubanen
-gemeenten_Surinamers,bevolking_herkomst.map,gemeenten_Surinamers
-wijken_Surinamers,bevolking_herkomst.map,wijken_Surinamers
-buurten_Surinamers,bevolking_herkomst.map,buurten_Surinamers
-gemeenten_Turken,bevolking_herkomst.map,gemeenten_Turken
-wijken_Turken,bevolking_herkomst.map,wijken_Turken
-buurten_Turken,bevolking_herkomst.map,buurten_Turken
+gemeenten_antillianen_en_arubanen,bevolking_herkomst.map,gemeenten_antillianen_en_arubanen
+wijken_antillianen_en_arubanen,bevolking_herkomst.map,wijken_antillianen_en_arubanen
+buurten_antillianen_en_arubanen,bevolking_herkomst.map,buurten_antillianen_en_arubanen
+gemeenten_surinamers,bevolking_herkomst.map,gemeenten_surinamers
+wijken_surinamers,bevolking_herkomst.map,wijken_surinamers
+buurten_surinamers,bevolking_herkomst.map,buurten_surinamers
+gemeenten_turken,bevolking_herkomst.map,gemeenten_turken
+wijken_turken,bevolking_herkomst.map,wijken_turken
+buurten_turken,bevolking_herkomst.map,buurten_turken
 gemeenten_overig_niet_westers,bevolking_herkomst.map,gemeenten_overig_niet_westers
 wijken_overig_niet_westers,bevolking_herkomst.map,wijken_overig_niet_westers
 buurten_overig_niet_westers,bevolking_herkomst.map,buurten_overig_niet_westers
 gemeenten_niet_westerse_allochtonen_geo,bevolking_herkomst.map,gemeenten_niet_westerse_allochtonen_geo
-wijken_niet_westerse_allochtonen_geo,bevolking_herkomst.map,wijken_niet_Westerse_allochtonen_geo
+wijken_niet_westerse_allochtonen_geo,bevolking_herkomst.map,wijken_niet_westerse_allochtonen_geo
 buurten_niet_westerse_allochtonen_geo,bevolking_herkomst.map,buurten_niet_westerse_allochtonen_geo
 gemeenten_niet_westerse_allochtonen_2010,bevolking_herkomst_2010.map,gemeenten_niet_westerse_allochtonen_2010
-wijken_niet_westerse_allochtonen_2010,bevolking_herkomst_2010.map,wijken_niet_Westerse_allochtonen_2010
+wijken_niet_westerse_allochtonen_2010,bevolking_herkomst_2010.map,wijken_niet_westerse_allochtonen_2010
 buurten_niet_westerse_allochtonen_2010,bevolking_herkomst_2010.map,buurten_niet_westerse_allochtonen_2010
 gemeenten_westerse_allochtonen_2010,bevolking_herkomst_2010.map,gemeenten_westerse_allochtonen_2010
-wijken_westerse_allochtonen_2010,bevolking_herkomst_2010.map,wijken_Westerse_allochtonen_2010
+wijken_westerse_allochtonen_2010,bevolking_herkomst_2010.map,wijken_westerse_allochtonen_2010
 buurten_westerse_allochtonen_2010,bevolking_herkomst_2010.map,buurten_westerse_allochtonen_2010
 gemeenten_marokkanen_2010,bevolking_herkomst_2010.map,gemeenten_marokkanen_2010
 wijken_marokkanen_2010,bevolking_herkomst_2010.map,wijken_marokkanen_2010
 buurten_marokkanen_2010,bevolking_herkomst_2010.map,buurten_marokkanen_2010
-gemeenten_Antillianen_en_Arubanen_2010,bevolking_herkomst_2010.map,gemeenten_Antillianen_en_Arubanen_2010
-wijken_Antillianen_en_Arubanen_2010,bevolking_herkomst_2010.map,wijken_Antillianen_en_Arubanen_2010
-buurten_Antillianen_en_Arubanen_2010,bevolking_herkomst_2010.map,buurten_Antillianen_en_Arubanen_2010
-gemeenten_Surinamers_2010,bevolking_herkomst_2010.map,gemeenten_Surinamers_2010
-wijken_Surinamers_2010,bevolking_herkomst_2010.map,wijken_Surinamers_2010
-buurten_Surinamers_2010,bevolking_herkomst_2010.map,buurten_Surinamers_2010
-gemeenten_Turken_2010,bevolking_herkomst_2010.map,gemeenten_Turken_2010
-wijken_Turken_2010,bevolking_herkomst_2010.map,wijken_Turken_2010
-buurten_Turken_2010,bevolking_herkomst_2010.map,buurten_Turken_2010
+gemeenten_antillianen_en_arubanen_2010,bevolking_herkomst_2010.map,gemeenten_antillianen_en_arubanen_2010
+wijken_antillianen_en_arubanen_2010,bevolking_herkomst_2010.map,wijken_antillianen_en_arubanen_2010
+buurten_antillianen_en_arubanen_2010,bevolking_herkomst_2010.map,buurten_antillianen_en_arubanen_2010
+gemeenten_surinamers_2010,bevolking_herkomst_2010.map,gemeenten_surinamers_2010
+wijken_surinamers_2010,bevolking_herkomst_2010.map,wijken_surinamers_2010
+buurten_surinamers_2010,bevolking_herkomst_2010.map,buurten_surinamers_2010
+gemeenten_turken_2010,bevolking_herkomst_2010.map,gemeenten_turken_2010
+wijken_turken_2010,bevolking_herkomst_2010.map,wijken_turken_2010
+buurten_turken_2010,bevolking_herkomst_2010.map,buurten_turken_2010
 gemeenten_overig_niet_westers_2010,bevolking_herkomst_2010.map,gemeenten_overig_niet_westers_2010
 wijken_overig_niet_westers_2010,bevolking_herkomst_2010.map,wijken_overig_niet_westers_2010
 buurten_overig_niet_westers_2010,bevolking_herkomst_2010.map,buurten_overig_niet_westers_2010
@@ -138,7 +138,7 @@ wijken_arbeid_landbouw,bevolking_arbeid.map,wijken_arbeid_landbouw
 buurten_arbeid_landbouw,bevolking_arbeid.map,buurten_arbeid_landbouw
 gemeenten_arbeid_industrie,bevolking_arbeid.map,gemeenten_arbeid_industrie
 wijken_arbeid_industrie,bevolking_arbeid.map,wijken_arbeid_industrie
-buurten_arbeid_industrie,bevolking_arbeid.map,buurten_arbeid_industrie 
+buurten_arbeid_industrie,bevolking_arbeid.map,buurten_arbeid_industrie
 gemeenten_arbeid_commerciele_dienstverlening,bevolking_arbeid.map,gemeenten_arbeid_commerciele_dienstverlening
 wijken_arbeid_commerciele_dienstverlening,bevolking_arbeid.map,wijken_arbeid_commerciele_dienstverlening
 buurten_arbeid_commerciele_dienstverlening,bevolking_arbeid.map,buurten_arbeid_commerciele_dienstverlening
@@ -214,29 +214,29 @@ adm_wijk_namen_2010,adm_grenzen_2010.map,adm_wijk_namen_2010
 adm_buurten_2010,adm_grenzen_2010.map,adm_buurten_2010
 adm_buurt_namen_2010,adm_grenzen_2010.map,adm_buurt_namen_2010
 grondsoorten,bodem.map,grondsoorten
-Nederland 17e eeuw (Blaeu),blaeu.map,Nederland 17e eeuw (Blaeu)
-Noord-Holland 17e eeuw (Blaeu),blaeu.map,Noord-Holland 17e eeuw (Blaeu)
-Amsterdam 17e eeuw (Blaeu),blaeu.map,Amsterdam 17e eeuw (Blaeu)
-Friesland 17e eeuw (Blaeu),blaeu.map,Friesland 17e eeuw (Blaeu)
-Groningen 17e eeuw (Blaeu),blaeu.map,Groningen 17e eeuw (Blaeu)
-Drenthe 17e eeuw (Blaeu),blaeu.map,Drenthe 17e eeuw (Blaeu)
-Overijssel 17e eeuw (Blaeu),blaeu.map,Overijssel 17e eeuw (Blaeu)
-Gelderland 17e eeuw (Blaeu),blaeu.map,Gelderland 17e eeuw (Blaeu)
-Utrecht 17e eeuw (Blaeu),blaeu.map,Utrecht 17e eeuw (Blaeu)
-Noord-Holland Zuid 17e eeuw (Blaeu),blaeu.map,Noord-Holland Zuid 17e eeuw (Blaeu)
-Zeeland 17e eeuw (Blaeu),blaeu.map,Zeeland 17e eeuw (Blaeu)
-Zuid-Holland 17e eeuw (Blaeu),blaeu.map,Zuid-Holland 17e eeuw (Blaeu)
-Delfland 17e eeuw (Blaeu),blaeu.map,Delfland 17e eeuw (Blaeu)
-Brabant 17e eeuw (Blaeu),blaeu.map,Brabant 17e eeuw (Blaeu)
-Limburg 17e eeuw (Blaeu),blaeu.map,Limburg 17e eeuw (Blaeu)
-Nederland Tirion,blaeu.map,Nederland Tirion
-Beckeringh Groningen 1781,blaeu.map,Beckeringh Groningen 1781
-Amsterdam Eskes 1842,blaeu.map,Amsterdam Eskes 1842
+nederland 17e eeuw (blaeu),blaeu.map,nederland 17e eeuw (blaeu)
+noord-holland 17e eeuw (blaeu),blaeu.map,noord-holland 17e eeuw (blaeu)
+amsterdam 17e eeuw (blaeu),blaeu.map,amsterdam 17e eeuw (blaeu)
+friesland 17e eeuw (blaeu),blaeu.map,friesland 17e eeuw (blaeu)
+groningen 17e eeuw (blaeu),blaeu.map,groningen 17e eeuw (blaeu)
+drenthe 17e eeuw (blaeu),blaeu.map,drenthe 17e eeuw (blaeu)
+overijssel 17e eeuw (blaeu),blaeu.map,overijssel 17e eeuw (blaeu)
+gelderland 17e eeuw (blaeu),blaeu.map,gelderland 17e eeuw (blaeu)
+utrecht 17e eeuw (blaeu),blaeu.map,utrecht 17e eeuw (blaeu)
+noord-holland zuid 17e eeuw (blaeu),blaeu.map,noord-holland zuid 17e eeuw (blaeu)
+zeeland 17e eeuw (blaeu),blaeu.map,zeeland 17e eeuw (blaeu)
+zuid-holland 17e eeuw (blaeu),blaeu.map,zuid-holland 17e eeuw (blaeu)
+delfland 17e eeuw (blaeu),blaeu.map,delfland 17e eeuw (blaeu)
+brabant 17e eeuw (blaeu),blaeu.map,brabant 17e eeuw (blaeu)
+limburg 17e eeuw (blaeu),blaeu.map,limburg 17e eeuw (blaeu)
+nederland tirion,blaeu.map,nederland tirion
+beckeringh groningen 1781,blaeu.map,beckeringh groningen 1781
+amsterdam eskes 1842,blaeu.map,amsterdam eskes 1842
 tmk_utrecht_1888,blaeu.map,tmk_utrecht_1888
-Vleuten_1868,blaeu.map,Vleuten_1868
-Limes,blaeu.map,Limes
+vleuten_1868,blaeu.map,vleuten_1868
+limes,blaeu.map,limes
 deelgebied_vechtplassen,blaeu.map,deelgebied_vechtplassen
-Vechtstreek_rond_1700,blaeu.map,Vechtstreek_rond_1700
+vechtstreek_rond_1700,blaeu.map,vechtstreek_rond_1700
 bilthoven_1938,blaeu.map,bilthoven_1938
 soesterberg_1910,blaeu.map,soesterberg_1910
 soest_1868,blaeu.map,soest_1868
@@ -299,9 +299,9 @@ zuid_limburg_landschap_maastricht,zuid_limburg.map,zuid_limburg_landschap_maastr
 zuid_limburg_landschap_stein,zuid_limburg.map,zuid_limburg_landschap_stein
 zuid_limburg_landschap_vaals,zuid_limburg.map,zuid_limburg_landschap_vaals
 hoogtes,hoogte.map,hoogtes
-referentielijnen,hoogte.map,Referentielijnen
-Hoogtelijnen,hoogte.map,Hoogtelijnen
-Hoogtelabels,hoogte.map,Hoogtelabels
+referentielijnen,hoogte.map,referentielijnen
+hoogtelijnen,hoogte.map,hoogtelijnen
+hoogtelabels,hoogte.map,hoogtelabels
 percelen,kadaster.map,percelen
 perceel,kadaster.map,perceel
 panden,kadaster.map,panden
@@ -315,58 +315,58 @@ verblijsobjecten_energielabel,kadaster.map,verblijsobjecten_energielabel
 rijksmonumenten,monumenten.map,rijksmonumenten
 stadsendorpsgezichten,monumenten.map,stadsendorpsgezichten
 werelderfgoed,monumenten.map,werelderfgoed
-Veestapel,landbouw.map,veestapel
-Koeien,landbouw.map,Koeien
-Varkens,landbouw.map,Varkens
-Kippen,landbouw.map,Kippen
+veestapel,landbouw.map,veestapel
+koeien,landbouw.map,koeien
+varkens,landbouw.map,varkens
+kippen,landbouw.map,kippen
 overig_vee,landbouw.map,overig_vee
-Veestapel_per_km2,landbouw.map,veestapel_per_km2
-Koeien_per_km2,landbouw.map,Koeien_per_km2
-Varkens_per_km2,landbouw.map,Varkens_per_km2
-Kippen_per_km2,landbouw.map,Kippen_per_km2
-Overig_per_km2,landbouw.map,Overig_per_km2
-Veestapel_2010,landbouw_2010.map,veestapel_2010
-Koeien_2010,landbouw_2010.map,Koeien_2010
-Varkens_2010,landbouw_2010.map,Varkens_2010
-Kippen_2010,landbouw_2010.map,Kippen_2010
+veestapel_per_km2,landbouw.map,veestapel_per_km2
+koeien_per_km2,landbouw.map,koeien_per_km2
+varkens_per_km2,landbouw.map,varkens_per_km2
+kippen_per_km2,landbouw.map,kippen_per_km2
+overig_per_km2,landbouw.map,overig_per_km2
+veestapel_2010,landbouw_2010.map,veestapel_2010
+koeien_2010,landbouw_2010.map,koeien_2010
+varkens_2010,landbouw_2010.map,varkens_2010
+kippen_2010,landbouw_2010.map,kippen_2010
 overig_vee_2010,landbouw_2010.map,overig_vee_2010
-Veestapel_per_km2_2010,landbouw_2010.map,veestapel_per_km2_2010
-Koeien_per_km2_2010,landbouw_2010.map,Koeien_per_km2_2010
-Varkens_per_km2_2010,landbouw_2010.map,Varkens_per_km2_2010
-Kippen_per_km2_2010,landbouw_2010.map,Kippen_per_km2_2010
-Overig_per_km2_2010,landbouw_2010.map,Overig_per_km2_2010
-Fijnstof,milieu.map,Fijnstof
-Ozon,milieu.map,Ozon
-NHx,milieu.map,NHx
-Stikstof,milieu.map,Stikstof
-Stikstofdioxide,milieu.map,Stikstofdioxide
-Zwaveldioxide,milieu.map,Zwaveldioxide
-Potentieelzuur_01,milieu.map,Potentieelzuur_01
-Potentieelzuur_02,milieu.map,Potentieelzuur_02
+veestapel_per_km2_2010,landbouw_2010.map,veestapel_per_km2_2010
+koeien_per_km2_2010,landbouw_2010.map,koeien_per_km2_2010
+varkens_per_km2_2010,landbouw_2010.map,varkens_per_km2_2010
+kippen_per_km2_2010,landbouw_2010.map,kippen_per_km2_2010
+overig_per_km2_2010,landbouw_2010.map,overig_per_km2_2010
+fijnstof,milieu.map,fijnstof
+ozon,milieu.map,ozon
+nhx,milieu.map,nhx
+stikstof,milieu.map,stikstof
+stikstofdioxide,milieu.map,stikstofdioxide
+zwaveldioxide,milieu.map,zwaveldioxide
+potentieelzuur_01,milieu.map,potentieelzuur_01
+potentieelzuur_02,milieu.map,potentieelzuur_02
 verkeer_2006_buffer,milieu.map,verkeer_2006_buffer
-CO2_2005,milieu.map,CO2_2005
-NED_2000,lus.map,NED_2000
-NED_2010,lus.map,NED_2010
-NED_2040_W,lus.map,NED_2040_W
-NED_2040_G,lus.map,NED_2040_G
+co2_2005,milieu.map,co2_2005
+ned_2000,lus.map,ned_2000
+ned_2010,lus.map,ned_2010
+ned_2040_w,lus.map,ned_2040_w
+ned_2040_g,lus.map,ned_2040_g
 fictieve_dijkdoorbraken,water_overstromingsmodel.map,fictieve_dijkdoorbraken
 voorspelling_overstroomd_oppervlak,water_overstromingsmodel.map,voorspelling_overstroomd_oppervlak
 voorspelling_waterdiepte,water_overstromingsmodel.map,voorspelling_waterdiepte
 voorspelling_slachtoffers,water_overstromingsmodel.map,voorspelling_slachtoffers
 voorspelling_schade,water_overstromingsmodel.map,voorspelling_schade
 beschermingsnorm,water_overstromingsmodel.map,beschermingsnorm
-Overstromingsdiepte_Ocm,waterdieptes.map,Overstromingsdiepte_Ocm
-Overstromingsdiepte_25cm_bau,waterdieptes.map,Overstromingsdiepte_25cm_bau
-Overstromingsdiepte_60cm_bau,waterdieptes.map,Overstromingsdiepte_60cm_bau
-Overstromingsdiepte_80cm_bau,waterdieptes.map,Overstromingsdiepte_80cm_bau
-Overstromingsdiepte_150cm_bau,waterdieptes.map,Overstromingsdiepte_150cm_bau
-Overstromingsdiepte_300cm_bau,waterdieptes.map,Overstromingsdiepte_300cm_bau
-Overstromingsdiepte_25cm_dn,waterdieptes.map,Overstromingsdiepte_25cm_dn
-Overstromingsdiepte_60cm_dn,waterdieptes.map,Overstromingsdiepte_60cm_dn
-Overstromingsdiepte_80cm_dn,waterdieptes.map,Overstromingsdiepte_80cm_dn
-Overstromingsdiepte_150cm_dn,waterdieptes.map,Overstromingsdiepte_150cm_dn
-Overstromingsdiepte_300cm_dn,waterdieptes.map,Overstromingsdiepte_300cm_dn
-TIN_Lelystad,waterdieptes.map,TIN_Lelystad
+overstromingsdiepte_ocm,waterdieptes.map,overstromingsdiepte_ocm
+overstromingsdiepte_25cm_bau,waterdieptes.map,overstromingsdiepte_25cm_bau
+overstromingsdiepte_60cm_bau,waterdieptes.map,overstromingsdiepte_60cm_bau
+overstromingsdiepte_80cm_bau,waterdieptes.map,overstromingsdiepte_80cm_bau
+overstromingsdiepte_150cm_bau,waterdieptes.map,overstromingsdiepte_150cm_bau
+overstromingsdiepte_300cm_bau,waterdieptes.map,overstromingsdiepte_300cm_bau
+overstromingsdiepte_25cm_dn,waterdieptes.map,overstromingsdiepte_25cm_dn
+overstromingsdiepte_60cm_dn,waterdieptes.map,overstromingsdiepte_60cm_dn
+overstromingsdiepte_80cm_dn,waterdieptes.map,overstromingsdiepte_80cm_dn
+overstromingsdiepte_150cm_dn,waterdieptes.map,overstromingsdiepte_150cm_dn
+overstromingsdiepte_300cm_dn,waterdieptes.map,overstromingsdiepte_300cm_dn
+tin_lelystad,waterdieptes.map,tin_lelystad
 zuiderzeeland_bodemdaling_2015,zuiderzeeland.map,zuiderzeeland_bodemdaling_2015
 zuiderzeeland_bodemdaling_2050,zuiderzeeland.map,zuiderzeeland_bodemdaling_2050
 zuiderzeeland_kwel,zuiderzeeland.map,zuiderzeeland_kwel
@@ -375,18 +375,18 @@ delta_kustverdediging_1950,zeeuwse_delta.map,delta_kustverdediging_1950
 delta_kustverdediging_2010,zeeuwse_delta.map,delta_kustverdediging_2010
 delta_landgebruik_1950,zeeuwse_delta.map,delta_landgebruik_1950
 delta_landgebruik_2010,zeeuwse_delta.map,delta_landgebruik_2010
-Schade_grid_2000,overstromingsschade.map,Schade_grid_2000
-Schade_grid_2010,overstromingsschade.map,Schade_grid_2010
-Schade_grid_w_bau_2040,overstromingsschade.map,Schade_grid_w_bau_2040
-Schade_grid_g_bau_2040,overstromingsschade.map,Schade_grid_g_bau_2040
-Schade_grid_w_dn_2040,overstromingsschade.map,Schade_grid_w_dn_2040
-Schade_grid_g_dn_2040,overstromingsschade.map,Schade_grid_g_dn_2040
-Schade_dijkring_2000,overstromingsschade.map,Schade_dijkring_2000
-Schade_dijkring_2010,overstromingsschade.map,Schade_dijkring_2010
-Schade_dijkring_w_bau_2040,overstromingsschade.map,Schade_dijkring_w_bau_2040
-Schade_dijkring_g_bau_2040,overstromingsschade.map,Schade_dijkring_g_bau_2040
-Schade_dijkring_w_dn_2040,overstromingsschade.map,Schade_dijkring_w_dn_2040
-Schade_dijkring_g_dn_2040,overstromingsschade.map,Schade_dijkring_g_dn_2040
+schade_grid_2000,overstromingsschade.map,schade_grid_2000
+schade_grid_2010,overstromingsschade.map,schade_grid_2010
+schade_grid_w_bau_2040,overstromingsschade.map,schade_grid_w_bau_2040
+schade_grid_g_bau_2040,overstromingsschade.map,schade_grid_g_bau_2040
+schade_grid_w_dn_2040,overstromingsschade.map,schade_grid_w_dn_2040
+schade_grid_g_dn_2040,overstromingsschade.map,schade_grid_g_dn_2040
+schade_dijkring_2000,overstromingsschade.map,schade_dijkring_2000
+schade_dijkring_2010,overstromingsschade.map,schade_dijkring_2010
+schade_dijkring_w_bau_2040,overstromingsschade.map,schade_dijkring_w_bau_2040
+schade_dijkring_g_bau_2040,overstromingsschade.map,schade_dijkring_g_bau_2040
+schade_dijkring_w_dn_2040,overstromingsschade.map,schade_dijkring_w_dn_2040
+schade_dijkring_g_dn_2040,overstromingsschade.map,schade_dijkring_g_dn_2040
 bebouwing_gemeente,notaruimte.map,bebouwing_gemeente
 bos_natuur_gemeente,notaruimte.map,bos_natuur_gemeente
 recreatie_gemeente,notaruimte.map,recreatie_gemeente
@@ -409,22 +409,22 @@ rvr_uiterwaard_afgraving,water.map,rvr_uiterwaard_afgraving
 dijkhoogtes,water.map,dijkhoogtes
 dijkringen,water.map,dijkringen
 andes,andes.map,andes
-Azie 17e eeuw (Blaeu),HistorischWereldwijd.map,Azie 17e eeuw (Blaeu)
-China 17e eeuw (Blaeu),HistorischWereldwijd.map,China 17e eeuw (Blaeu)
-China 17e eeuw (Blaeu),HistorischWereldwijd.map,China 17e eeuw (Blaeu)
-Zuid Amerika 1814,HistorischWereldwijd.map,Zuid Amerika 1814
-Africa 1670,HistorischWereldwijd.map,Africa 1670
-Caribisch gebied 1762,HistorischWereldwijd.map,Caribisch gebied 1762
-suriname_loth_1898,HistorischWereldwijd.map,suriname_loth_1898
-suriname_schets_1860,HistorischWereldwijd.map,suriname_schets_1860
-suriname_ottens_1718,HistorischWereldwijd.map,suriname_ottens_1718
-Curacao,HistorischWereldwijd.map,Curacao
-Bevolkingsdichtheid_1990,population.map,Bevolkingsdichtheid_1990
-Bevolkingsdichtheid_1995,population.map,Bevolkingsdichtheid_1995
-Bevolkingsdichtheid_2000,population.map,Bevolkingsdichtheid_2000
-Bevolkingsdichtheid_2005,population.map,Bevolkingsdichtheid_2005
-Bevolkingsdichtheid_2010,population.map,Bevolkingsdichtheid_2010
-Bevolkingsdichtheid_2015,population.map,Bevolkingsdichtheid_2015
+azie 17e eeuw (blaeu),historischwereldwijd.map,azie 17e eeuw (blaeu)
+china 17e eeuw (blaeu),historischwereldwijd.map,china 17e eeuw (blaeu)
+china 17e eeuw (blaeu),historischwereldwijd.map,china 17e eeuw (blaeu)
+zuid amerika 1814,historischwereldwijd.map,zuid amerika 1814
+africa 1670,historischwereldwijd.map,africa 1670
+caribisch gebied 1762,historischwereldwijd.map,caribisch gebied 1762
+suriname_loth_1898,historischwereldwijd.map,suriname_loth_1898
+suriname_schets_1860,historischwereldwijd.map,suriname_schets_1860
+suriname_ottens_1718,historischwereldwijd.map,suriname_ottens_1718
+curacao,historischwereldwijd.map,curacao
+bevolkingsdichtheid_1990,population.map,bevolkingsdichtheid_1990
+bevolkingsdichtheid_1995,population.map,bevolkingsdichtheid_1995
+bevolkingsdichtheid_2000,population.map,bevolkingsdichtheid_2000
+bevolkingsdichtheid_2005,population.map,bevolkingsdichtheid_2005
+bevolkingsdichtheid_2010,population.map,bevolkingsdichtheid_2010
+bevolkingsdichtheid_2015,population.map,bevolkingsdichtheid_2015
 countries,population.map,countries
 kindersterfte,poverty.map,kindersterfte
 kinderondervoeding,poverty.map,kinderondervoeding
@@ -455,15 +455,15 @@ bevolkingsdichtheid_1995_nuts_level_3,eu_nuts_bevolkingsdichtheid_level_3.map,be
 bevolkingsdichtheid_2000_nuts_level_3,eu_nuts_bevolkingsdichtheid_level_3.map,bevolkingsdichtheid_2000_nuts_level_3
 bevolkingsdichtheid_2005_nuts_level_3,eu_nuts_bevolkingsdichtheid_level_3.map,bevolkingsdichtheid_2005_nuts_level_3
 bevolkingsdichtheid_2010_nuts_level_3,eu_nuts_bevolkingsdichtheid_level_3.map,bevolkingsdichtheid_2010_nuts_level_3
-NewYork_kaart_01,AmerikaWeek.map,NewYork_kaart_01
-NewYork_kaart_02,AmerikaWeek.map,NewYork_kaart_02
-NewYork_kaart_05,AmerikaWeek.map,NewYork_kaart_05
-NewYork_kaart_06,AmerikaWeek.map,NewYork_kaart_06
-NewYork_kaart_08,AmerikaWeek.map,NewYork_kaart_08
-NewYork_kaart_10,AmerikaWeek.map,NewYork_kaart_10
-NewYork_kaart_16_02,AmerikaWeek.map,NewYork_kaart_16_02
-NewYork_kaart_16_03,AmerikaWeek.map,NewYork_kaart_16_03
-NewYork_kaart_16_04,AmerikaWeek.map,NewYork_kaart_16_04
+newyork_kaart_01,amerikaweek.map,newyork_kaart_01
+newyork_kaart_02,amerikaweek.map,newyork_kaart_02
+newyork_kaart_05,amerikaweek.map,newyork_kaart_05
+newyork_kaart_06,amerikaweek.map,newyork_kaart_06
+newyork_kaart_08,amerikaweek.map,newyork_kaart_08
+newyork_kaart_10,amerikaweek.map,newyork_kaart_10
+newyork_kaart_16_02,amerikaweek.map,newyork_kaart_16_02
+newyork_kaart_16_03,amerikaweek.map,newyork_kaart_16_03
+newyork_kaart_16_04,amerikaweek.map,newyork_kaart_16_04
 verkiezingen_2006_2kamer_opkomst,verkiezingen.map,verkiezingen_2006_2kamer_opkomst
 verkiezingen_2006_2kamer_grootste_partij,verkiezingen.map,verkiezingen_2006_2kamer_grootste_partij
 verkiezingen_2006_2kamer_cda,verkiezingen.map,verkiezingen_2006_2kamer_cda
@@ -515,11 +515,11 @@ suriname_geschiktheid_bebouwing,suriname.map,suriname_geschiktheid_bebouwing
 suriname_bereikbaarheid_2011,suriname.map,suriname_bereikbaarheid_2011
 suriname_bereikbaarheid_2025,suriname.map,suriname_bereikbaarheid_2025
 suriname_biodiversiteit,suriname.map,suriname_biodiversiteit
-Athene_01,athene.map,Athene_01
-Athene_02,athene.map,Athene_02
-Athene_03,athene.map,Athene_03
-Athene_04,athene.map,Athene_04
-Piraeus_01,athene.map,Piraeus_01
+athene_01,athene.map,athene_01
+athene_02,athene.map,athene_02
+athene_03,athene.map,athene_03
+athene_04,athene.map,athene_04
+piraeus_01,athene.map,piraeus_01
 landschappen,landschappen.map,landschappen
 deellandschappen,landschappen.map,deellandschappen
 beschermde_natuurmonumenten,gebieden_speciale_status.map,beschermde_natuurmonumenten
@@ -711,4 +711,3 @@ voorzieningen_bso_buitenschoolse_opvang,voorzieningen_bso.map,voorzieningen_bso_
 voorzieningen_zorg_gezondheid,voorzieningen_zorg.map,voorzieningen_zorg_gezondheid
 voorzieningen_zorg_bejaardenoorden,voorzieningen_zorg.map,voorzieningen_zorg_bejaardenoorden
 voorzieningen_zorg_niet_zelfredzamen,voorzieningen_zorg.map,voorzieningen_zorg_niet_zelfredzamen
-
