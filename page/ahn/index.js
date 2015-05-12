@@ -48,12 +48,13 @@ function updateTile(e) {
         imgData = ctx.createImageData(256, 256);
 
     var height = new Uint8ClampedArray(e.data.height);
+    //var height = e.data.height;
 
     imgData.data.set(height);
     ctx.putImageData(imgData, 0, 0);
 }
-
-for (var i = 0; i < 8; i++) {
+var cores = navigator.hardwareConcurrency;
+for (var i = 0; i < cores-1; i++) {
     workers[i] = new Worker('worker.js');
     workers[i].onmessage = updateTile;
 }
