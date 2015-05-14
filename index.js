@@ -4,20 +4,20 @@ var hash = window.location.hash;
 
 
 $('.content_map').click(function(e){
-    if($(e.target).attr('href')==undefined) {
-    var frame = $(this).next();    
-    var url = frame.attr('link');    
-    if(frame.css('display')=='none'){    
-    window.location.hash = $(this).attr('id');
-        var iframe = '<iframe src="'+url+'"></iframe>';
-        frame.append($(iframe));
-        frame.show('blind');
-         $('html,body').animate({scrollTop: $(this).offset().top}, 500);
-    }
-    else {
-        frame.hide('blind');
-        frame.children().remove();
-    }
+    if($(e.target).attr('href')===undefined) {
+        var frame = $(this).next();    
+        var url = frame.attr('link');    
+        if(frame.css('display')=='none'){    
+            window.location.hash = $(this).attr('id');
+            var iframe = '<iframe src="'+url+'"></iframe>';
+            frame.append($(iframe));
+            frame.show('blind');
+            $('html,body').animate({scrollTop: $(this).offset().top}, 500);
+        }
+        else {
+            frame.hide('blind');
+            frame.children().remove();
+        }
     }
     else if($(e.target).hasClass('glyphicon')){
         var frame = $(this).next();   
@@ -28,6 +28,7 @@ $('.content_map').click(function(e){
 });
  
 $('.content_other').click(function(e){
+     window.location.hash = $(this).attr('id');
     if($(this).next().css('display')=='none') {
         $('html,body').animate({scrollTop: $(this).offset().top}, 1000);
     }

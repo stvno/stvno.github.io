@@ -12,123 +12,78 @@
 </body>
 <script>
 
-var noodjes = {};
-var linkjes = [];
-var mapfiles = {};
+var mapfile = {
+group: {
+  id: name,
+  layers: [ids]
+},
+layer: {
+  id: name,
+  source: {
+
+    
+  
+  }
+}
+
+}
+var tilecaches = {};
+var wmsservers = {};
 var tiles = crossfilter();
 var loadMap = function(map) {
     if(map==undefined)return false;
-    if(!mapfiles[map]) {
+    if(!wmsservers[map]) {
         var m = "maps/"+map;
         d3.text(m,function(e){
             var data = e.split('\n');
+            var wmsserver = {};
             data.forEach(function(file){
-                var name = map+'-'+file.toLowerCase();
-                var node =  {name:name.toLowerCase(), mapfile:map,sourceLinks : [],targetLinks:[]};
-                noodjes[name]= node;
+                var name = map.toLowerCase()+'-'+file.toLowerCase();
+                var node =  {id:name, mapfile:map,layer:file};
+                wmsserver[file] = node;
             });
-            mapfiles[map] = data;
+            wmsservers[map] = mapfile;
         });
     }
-    return mapfiles[map];
+    return wmsservers[map];
 }
+tilecaches.gcache = [];
 d3.csv("gcache.csv")
     .row(function(d) {
         var mapfile = loadMap(d.mapfile);    
-        var layer = d.layer.replace(/\s/g,'');
-        var mapf = d.mapfile.replace(/\s/g,'')        
+        var layer = d.layer.toLowerCase().replace(/\s/g,'');
+        var map = d.mapfile.toLowerCase().replace(/\s/g,'');
+        var wms = d.wmslaag.toLowerCase();        
         var name = "gcache-"+layer;
-        var node = {name:name.toLowerCase(),mapfile:mapf.toLowerCase(),wmslaag:d.wmslaag.toLowerCase(),tilecache:'gcache',sourceLinks : [],targetLinks:[] };
-        var source = mapf.toLowerCase()+'-'+d.wmslaag.toLowerCase();
-        var target = "gcache-"+layer.toLowerCase();
-        noodjes[name] =node;
-        var link = {source: source,target:target};
         
-        linkjes.push(link);
+        var node = {
+          id : name,
+          layer: layer,
+          mapfile: map,
+          wms: wms          
+        };
+        tilecaches.gcache.push(node);
     })
-    .get()
+    .get();
+tilecaches.rcache = [];    
+var rache = d3.csv("rcache.csv")
+    .row(function(d) {
+        var mapfile = loadMap(d.mapfile);    
+        var layer = d.layer.toLowerCase().replace(/\s/g,'');
+        var map = d.mapfile.toLowerCase().replace(/\s/g,'');
+        var wms = d.wmslaag.toLowerCase();        
+        var name = "gcache-"+layer;
+        
+        var node = {
+          id : name,
+          layer: layer,
+          mapfile: map,
+          wms: wms          
+        };
+        tilecaches.rcache.push(node);
+  })
+  .get();
 
-;
-var rache = d3.csv("rcache.csv",function(d) {
-//voor elke ingeladen regel moet gecheckt worden of de mapfile is ingeladen, if not mapfile inladen
-});
-var map1 = d3.text("maps/andes.map",function(d){
-  var data = d3.csv.parseRows(d).filter(function(e){return e[0].split('_').length==1});
-});
-
-var render = function () {
-linkjes.forEach(function(link) {
-  link.source = noodjes[link.source] || (noodjes[link.source] = {name: link.source});
-  link.target = noodjes[link.target] || (noodjes[link.target] = {name: link.target});
-});
-var width = 960,
-    height = 500;
-
-var force = d3.layout.force()
-    .nodes(d3.values(noodjes))
-    .links(linkjes)
-    .size([width, height])
-    .linkDistance(60)
-    .charge(-300)
-    .on("tick", tick)
-    .start();
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-// Per-type markers, as they don't inherit styles.
-svg.append("defs").selectAll("marker")
-    .data(["suit", "licensing", "resolved"])
-  .enter().append("marker")
-    .attr("id", function(d) { return d; })
-    .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 15)
-    .attr("refY", -1.5)
-    .attr("markerWidth", 6)
-    .attr("markerHeight", 6)
-    .attr("orient", "auto")
-  .append("path")
-    .attr("d", "M0,-5L10,0L0,5");
-
-var path = svg.append("g").selectAll("path")
-    .data(force.links())
-  .enter().append("path")
-    .attr("class", function(d) { return "link " + d.type; })
-    .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
-
-var circle = svg.append("g").selectAll("circle")
-    .data(force.nodes())
-  .enter().append("circle")
-    .attr("r", 6)
-    .call(force.drag);
-
-var text = svg.append("g").selectAll("text")
-    .data(force.nodes())
-  .enter().append("text")
-    .attr("x", 8)
-    .attr("y", ".31em")
-    .text(function(d) { return d.name; });
-
-// Use elliptical arc path segments to doubly-encode directionality.
-function tick() {
-  path.attr("d", linkArc);
-  circle.attr("transform", transform);
-  text.attr("transform", transform);
-}
-
-function linkArc(d) {
-  var dx = d.target.x - d.source.x,
-      dy = d.target.y - d.source.y,
-      dr = Math.sqrt(dx * dx + dy * dy);
-  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-}
-
-function transform(d) {
-  return "translate(" + d.x + "," + d.y + ")";
-}
-
-}
 </script>
 </html>
 

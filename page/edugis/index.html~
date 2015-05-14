@@ -3,18 +3,75 @@
 <head>
 <meta charset=utf-8>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="crossfilter.min.js" charset="utf-8"></script>
+<script src="sankey.js" charset="utf-8"></script>
 </head>
 <body>
+<div id="chart"></div>
 </body>
 <script>
-var gache = d3.csv("gcache.csv",function(d) {
 
-});
-var rache = d3.csv("rcache.csv",function(d) {
-
-});
+var tilecaches = {};
+var wmsservers = {};
+var tiles = crossfilter();
+var loadMap = function(map) {
+    if(map==undefined)return false;
+    if(!wmsservers[map]) {
+        var m = "maps/"+map;
+        d3.text(m,function(e){
+            var data = e.split('\n');
+            var wmsserver = {};
+            data.forEach(function(file){
+                var name = map.toLowerCase()+'-'+file.toLowerCase();
+                var node =  {id:name, mapfile:map,layer:file};
+                wmsserver[file] = node;
+            });
+            wmsservers[map] = mapfile;
+        });
+    }
+    return wmsservers[map];
+}
+tilecaches.gcache = [];
+d3.csv("gcache.csv")
+    .row(function(d) {
+        var mapfile = loadMap(d.mapfile);    
+        var layer = d.layer.toLowerCase().replace(/\s/g,'');
+        var map = d.mapfile.toLowerCase().replace(/\s/g,'');
+        var wms = d.wmslaag.toLowerCase();        
+        var name = "gcache-"+layer;
+        
+        var node = {
+          id : name,
+          layer: layer,
+          mapfile: map,
+          wms: wms          
+        };
+        tilecaches.gcache.push(node);
+    })
+    .get();
+tilecaches.rcache = [];    
+var rache = d3.csv("rcache.csv")
+    .row(function(d) {
+        var mapfile = loadMap(d.mapfile);    
+        var layer = d.layer.toLowerCase().replace(/\s/g,'');
+        var map = d.mapfile.toLowerCase().replace(/\s/g,'');
+        var wms = d.wmslaag.toLowerCase();        
+        var name = "gcache-"+layer;
+        
+        var node = {
+          id : name,
+          layer: layer,
+          mapfile: map,
+          wms: wms          
+        };
+        tilecaches.rcache.push(node);
+  })
+    .get();
 var map1 = d3.text("maps/andes.map",function(d){
   var data = d3.csv.parseRows(d).filter(function(e){return e[0].split('_').length==1});
 });
+
 </script>
 </html>
+
