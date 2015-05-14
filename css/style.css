@@ -5,6 +5,7 @@ body {
   font-size: 10pt;
   line-height: 150%;
   background-image:url('../img/background.png');
+  background-attachment: fixed;
 }
 #header {
   background: url('../img/header.jpg') no-repeat;

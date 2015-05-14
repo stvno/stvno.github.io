@@ -1,4 +1,4 @@
-console.log("Hi there! ッ\n\nSince you are looking: most of the applications are loaded in iFrames. They are all quite heavy and loading them all in the background tends to kill any browser. When you click on one a title it will create a new iFrame and load the url into it, though that shouldn\'t be to hard to figure out for you.\n If you need help you can drop me an email at helpme@minst.net. \n\nCheers, stvno \n\n\nps. I'm aware this site should be build with polymer, that's the next step");
+console.log("Hi there! ッ\n\nSince you are looking: most of the applications are loaded in iFrames. They are all quite heavy and loading them all in the background tends to kill any browser. When you click on one a title it will create a new iFrame and load the url into it, though that shouldn\'t be to hard to figure out for you.\n If you need help you can drop me an email at helpme@minst.net. \n\nCheers, stvno \n\n\nps. I'm aware this site should be build with polymer, that's the next step\n\npps. the background image is so insanely large because it is non-repeating penrose tiling I once rendered with inkscape and printed it on fabric for a shirt");
 (function () {
 var hash = window.location.hash;
 
@@ -24,8 +24,7 @@ $('.content_map').click(function(e){
         frame.hide('blind');
         frame.children().remove();
     }
-    
-});
+ });
  
 $('.content_other').click(function(e){
      window.location.hash = $(this).attr('id');
