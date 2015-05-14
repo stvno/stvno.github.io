@@ -27,7 +27,8 @@
                 <li class="menu" target="#bagviewer"><a href="./#bagviewer">interactive city growth</a></li>
                 <li class="menu" target="#localzoom"><a href="./#localzoom">localzoom with ol3</a></li>
                 <li class="menu" target="#waalweelde"><a href="./#waalweelde">reclassification application</a></li>
-                 <li class="menu" target="#edugis"><a href="./#edugis">EduGIS: highschool webgis</a></li>
+                <li class="menu" target="#rochelroute"><a href="./#rochelroute">rochelroutes</a></li>
+                <li class="menu" target="#edugis"><a href="./#edugis">EduGIS: highschool webgis</a></li>
                 </ul>
             </div>
            <div class="menuheader">videos</div>
@@ -43,11 +44,11 @@
                 <li class="menu" target="#wiion"><a href="./#wiion">wiion the game</a></li>
                 </ul>
             </div>
-            <div class="menuheader">offline</div>
+            <div class="menuheader">other</div>
            <div style="display:none;">
                 <ul>
                 <li class="menu" target="#dymaxion"><a href="./#dymaxion">dymaxion wall map</a></li>
-               
+                <li class="menu" target="#research"><a href="./#research">geodan research demosite</a></li>
                 </ul>
             </div>
         </div>
@@ -74,6 +75,41 @@
     </div>
     <div class="col-md-1"></div>
   </div> 
+<!-------------2015---------------->
+<div class="row spacer"></div>
+
+  <div class="row content content_map" id="vtile">
+    <div class="col-md-2 space">
+        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
+    </div>
+    <div class=" col-md-7 ">
+      <h1>cbs vector tiles</h1>
+      <p>For the <a href="http://www.geodan.nl/research/pico/">PICO</a> project I'm building a viewer where the user can filter on specific attributes to help him to find the area best suited for their needs or capabilities. At the moment this is done using CQL filters in Geoserver. However with the release of the <A href="https://github.com/mapbox/vector-tile-spec">mapbox vector tiling spec</a> a range of software tools have arrived that make it at least interesting to try to do this entirely clientside. This application is an exploration on filter-interfaces; using the filter interface paradigm of webshops "show only the products that fit the search criteria, by dragging some sliders" and translate it to a map. Hopefully this will provide the user with powerful, yet easy to understand filter interfaces and finally allow the burial of the Query builder. For instance if you filter for 'avg distance to hospital' between 0 and 5 km it will blank out the areas more than 5km from the hospital and show the neighbourhoods that fit the criteria.</p>      
+    </div>
+    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/vtile.png');">&nbsp;</div>
+  </div>
+
+  <div class="row mapviewer extrahigh" style="display:none" link="http://research.geodan.nl/sites/buurten/#10/52.3530/5.1505"></div>  
+ 
+
+<!-------------2015---------------->
+<div class="row spacer"></div>
+
+  <div class="row content content_map dark" id="research">
+    <div class="col-md-2 space">
+        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
+    </div>
+    <div class=" col-md-7 ">
+      <h1>geodan research demosite</h1>
+      <p>Part of the job description of working by Geodan Research is providing the rest of the company with cool demos. We have collected quite a few over the years but they were not easy to find, only if you knew the URL you could access them. To make things easier for everyone I created a simple <a href="https://www.polymer-project.org/0.5/">polymer</a> based website where everyone could add demo's by modifying the configuration. The whole thing is searchable using tags included in the configuration. </p>      
+    </div>
+    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/research.png');">&nbsp;</div>
+  </div>
+
+  <div class="row mapviewer extrahigh" style="display:none" link="http://research.geodan.nl/demos"></div>  
+ 
+
+
 <!-------------2014---------------->
 <div class="row spacer"></div>
 
@@ -123,7 +159,6 @@
 
   <div class="row mapviewer"  style="display:none" link="page/localzoom/index.html"> </div>    
   
-    
 <!------------2013---------------->
 <div class="row spacer"></div>
 
@@ -139,6 +174,23 @@
   </div>
   
   <div class="row mapviewer extrahigh"  style="display:none" link="http://research.geodan.nl/sites/waalweelde/service/#zoom=8&lat=430760.96&lon=199403.2"></div>    
+
+<!------------2013---------------->
+<div class="row spacer"></div>
+
+  <div class="row content content_map" id="rochelroute">
+    <div class="col-md-2 space">
+        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2013</p>
+    </div>
+    <div class=" col-md-7 ">
+      <h1>rochelroutes</h1>
+      <p>For the dutch environmental organisation milieudefensie asked for a multimedia website where people could see the impact of various motorised vehicles during a cycletour through different cities. They equiped bicycles with a GPS tracker, a video camera and a device to measure ultra fine particulates in the air. By combining the map with the route, the graph of the particulates concentration and the video the visitor can see where the spikes in the concentration are and what the probable cause is.</p>
+    </div>
+    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/rochelroute.png');">&nbsp;</div>
+  </div>
+  
+  <div class="row mapviewer extrahigh"  style="display:none" link="http://research.geodan.nl/sites/milieudefensie/#"></div>    
+
 
 <!------------2013---------------->
 <div class="row spacer"></div>    
@@ -163,7 +215,7 @@
 <!--------------2012-------------->
 <div class="row spacer"></div> 
 
-  <div class="row content content_map" id="iahn">
+  <div class="row content dark content_map" id="iahn">
     <div class="col-md-2 space">
         <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2012</p>
     </div>
