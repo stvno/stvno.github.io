@@ -53,7 +53,7 @@ function updateTile(e) {
     imgData.data.set(height);
     ctx.putImageData(imgData, 0, 0);
 }
-var cores = navigator.hardwareConcurrency;
+var cores = navigator.hardwareConcurrency?navigator.hardwareConcurrency:4;
 for (var i = 0; i < cores-1; i++) {
     workers[i] = new Worker('worker.js');
     workers[i].onmessage = updateTile;
