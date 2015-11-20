@@ -166,4 +166,14 @@ var opacityslider = document.getElementById('opacityslider');
 opacityslider.onchange = function(e) {
     mvtSource.setOpacity(this.value)
 }
+var mettext = document.getElementById('mettext');
+mettext.onclick = function(e) {
+     [].forEach.call(document.querySelectorAll('#sidebar .text'), function (d) {
+        d.classList.contains('hidden')?d.classList.remove('hidden'):d.classList.add('hidden');
+    });
+}
+var labelbox = document.getElementById('labels');
+labelbox.onclick = function(e) {
+    this.checked?topLayer.setOpacity(1):topLayer.setOpacity(0);
+}
 //})();
