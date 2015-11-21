@@ -23,7 +23,8 @@ var c = {
     type: 'q', //quantile 'q', linear 'l', sd-divergent 's'
     attr: 'p_00_14_jr',
     soort: 'p', //percentage 'p'
-    steps: [20,40,60,80]
+    steps: [20,40,60,80],
+    range: 's' //sequential 's', divergent 'd'
 };
 var scale;
 
@@ -45,20 +46,45 @@ var setScale = function() {
         break;
         case 'l':
             //linear
+            var min = d3.min(values);
+            var max = d3.max(values);
+            var step = (max-min)/(c.cnt-1);
+            c.steps = [];
+            for(var i = 1;i<c.cnt;i++) {
+                c.steps.push(min+i*step);
+            }
             scale = d3.scale.threshold()
                 .domain(c.steps)
-                .range(cb)
+                .range(cb);
+            
         break;
         case 's':
             //sd-divergent
             var dev = d3.deviation(values);
             var mean = d3.mean(values);
-            var one = (mean-2*dev)<0?0:mean-2*dev;
-            var two = (mean-dev)<0?0:mean-dev;
-            var three = mean;
-            var four = mean + dev;
-            var five = mean + 2*dev;
-            c.steps = [one,two,three,four,five]
+            switch(c.cnt) {
+                case '3':
+                    c.steps = [mean-dev,mean+dev]
+                break;
+                case '4':
+                    c.steps = [mean-dev,mean,mean+dev]
+                break;
+                case '5':
+                    c.steps = [mean-2*dev,mean-dev,mean+dev,mean+2*dev]
+                break;
+                case '6':
+                    c.steps = [mean-2*dev,mean-dev,mean,mean+dev,mean+2*dev]
+                break;
+                case '7':
+                    c.steps = [mean-2*dev,mean-dev,mean-dev/2,mean+dev/2,mean+dev,mean+2*dev]
+                break;
+                case '8':
+                    c.steps = [mean-2*dev,mean-dev,mean-dev/2,mean,mean+dev/2,mean+dev,mean+2*dev]
+                break;
+                case '9':
+                    c.steps = [mean-2*dev,mean-1.5*dev,mean-dev,mean-dev/2,mean+dev/2,mean+dev,mean+1.5*dev,mean+2*dev]
+                break;
+            }
             //TODO: land area adam-noord/broek delen door 0?
             scale = d3.scale.threshold()
                 .domain(c.steps)
