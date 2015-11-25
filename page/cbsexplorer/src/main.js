@@ -27,7 +27,7 @@ var buurtById = d3.map();
 var tsvIsLoaded = false;
 //classification settings
 var c = {
-    color: 'PuBu',
+    color: 'OrRd',
     cnt: 5,
     type: 'q', //quantile 'q', linear 'l', sd-divergent 's'
     attr: 'p_00_14_jr',
