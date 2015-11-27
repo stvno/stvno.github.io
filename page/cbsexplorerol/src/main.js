@@ -3,8 +3,6 @@
 /*general map related code*/
 
 
-
-
 var createPopup = function(id) {
     var attr= attributes.filter(function(d){return d.attr == c.attr})[0];
     var feat = buurtById.get(id);
@@ -19,7 +17,7 @@ var createPopup = function(id) {
 }
 /* classification related code*/
 var linewidth = 16/18;
-//map.on('zoomend',function(){linewidth=map.getZoom()/18})
+
 var buurtById = d3.map();
 var tsvIsLoaded = false;
 //classification settings
@@ -98,15 +96,21 @@ var setScale = function() {
         break;
     }
 }
-
-var colorMe = function(id) {
+ 
+    
+var colorMe = function() {
     var fill = new ol.style.Fill({color: ''});
     var stroke = new ol.style.Stroke({color: 'rgba(0,0,0,0.5)', width: 1});
-    var polygon = new ol.style.Style({fill: fill, stroke: stroke});    
+    var polygon = new ol.style.Style({fill: fill, stroke: stroke});   
+    if(!tsvIsLoaded) {
+        fill.setColor('rgba(197,27,138,0.2)')
+        stroke.setColor('rgb(122,1,119)')
+        return polygon;
+    }
     var styles = [];
     return function(feature,resolution) {
         var id = feature.get('id');
-        
+        var length = 0;
     
         if (scale === undefined){
            
@@ -185,50 +189,7 @@ var tsvLoaded = function() {
     tsvIsLoaded = true;
     refreshStyle();
 };
-
-/* MVT related code*/
-var style = function(f) {
-    var style = {};
-    if(tsvIsLoaded) {
-        style.color = colorMe(f.properties.id);
-        style.outline = {
-            color:  'rgba(0,0,0,0.5)',
-            size: linewidth
-        };
-    }
-    else {
-        style.color = 'rgba(197,27,138,0.2)';
-        style.outline = {
-                color: 'rgb(122,1,119)',
-                size: linewidth
-        };
-    }
-    return style;
-}
-var refreshStyle = function(newC) {
-    if(newC!==undefined) {
-
-    }
-    setScale();
-//    mvtSource.setStyle(style);
-    createLegend();
-}
-
-
-/*// ADD THE REFERENCE OVERLAY (THE TOP OF THE SANDWICH) HERE:
-var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
-var topLayer = new L.tileLayer('http://{s}.tile.stamen.com/toner-labels/{z}/{x}/{y}.png', {
-  maxZoom: 17
-}).addTo(map);
-topPane.appendChild(topLayer.getContainer());
-topLayer.setZIndex(3);*/
-//})();
-var map = new ol.Map({
-  layers: [
-    new ol.layer.Tile({
-        source: new ol.source.Stamen({layer:'toner'})
-    }),
-    new ol.layer.VectorTile({
+var mvtSource =new ol.layer.VectorTile({
       source: new ol.source.VectorTile({
         attributions: [new ol.Attribution({
           html: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> ' +
@@ -242,10 +203,29 @@ var map = new ol.Map({
       }),
       style: colorMe()
     })
+
+var refreshStyle = function() {
+    setScale();
+    mvtSource.setStyle(colorMe());
+    createLegend();
+}
+
+
+var topLayer =  new ol.layer.Tile({
+    source: new ol.source.Stamen({layer:'toner-labels'})
+});
+var map = new ol.Map({
+  layers: [
+    new ol.layer.Tile({
+        source: new ol.source.Stamen({layer:'toner'})
+    }),
+    mvtSource,
+    topLayer
   ],
   target: 'map',
   view: new ol.View({
-    center: ol.proj.fromLonLat([5, 52]),
-    zoom: 13
+    center: ol.proj.fromLonLat([4.9100, 52.3420]),
+    zoom: 12
   })
 });
+map.on('zoomend',function(){linewidth=map.getZoom()/18})
