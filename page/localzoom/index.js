@@ -80,27 +80,29 @@ var moveZoom = function(d) {
 	mousePosition = zoomMap.getEventPixel(d.originalEvent);  
       
 	zoomView.setCenter(map.getCoordinateFromPixel(e));
-	 $('#zoommap').offset({top:e[1]-200,left:e[0]-200});	
+	 $('#zoommap').offset({top:e[1]-102,left:e[0]-102});	
 	 zoomMap.render();
 }
 
 function clipLayer(event) {
   var ctx = event.context;
-  var pixelRatio = event.frameState.pixelRatio;
+  var pixelRatio = 1;//event.frameState.pixelRatio;
+ 
   ctx.save();
   ctx.beginPath();
   if (mousePosition) {
     // only show a circle around the mouse
-    ctx.arc(mousePosition[0] , mousePosition[1] ,
-        radius * pixelRatio, 0, 2 * Math.PI);
-    ctx.lineWidth = 5 * pixelRatio;
+    ctx.arc(mousePosition[0]+50 , mousePosition[1] +50,
+        radius, 0, 2 * Math.PI);
+    ctx.lineWidth = 4;
     ctx.strokeStyle = 'rgba(0,0,0,0.5)';
     ctx.stroke();
   }
   ctx.clip();
+  
 }
 function postClip(event) {
- var ctx = event.context;
+ var ctx = event.context
   ctx.restore();
 }
 zoomLayer.on('precompose', clipLayer);
