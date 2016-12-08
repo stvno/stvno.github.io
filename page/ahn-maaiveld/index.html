@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Interactive building age</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../leaflet/leaflet.css" />
+    <script src="../../leaflet/leaflet.js"></script>  
+    <script src="../../leaflet/leaflet-hash.js"></script>       
+    <script src="../../proj4/proj4.js"></script>  
+    <script src="../../leaflet/proj4leaflet.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css" rel="stylesheet" />
+ <link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="map" style=" box-shadow: 0px 2px 5px #888888 inset; height: 100%; display:block;left: 0px; top: 80px; right: 260px; bottom: 0px; position: absolute;"></div>
+    <div id='sliderpanel'>
+        <div id="marge">
+       <div class="container">
+            <label class="labelcbx"><input type='checkbox' class="cxb" id="above">Show above</label> <input readonly type="text" id="maxveld" size="3"  value="20"/>
+
+            <input type="range" class="sld"  min="-12" max="350" value="20" id="max" step="0.01" title="Slide this to set the maximum height">
+        </div>
+        <div class="container">
+            <label class="labelcbx"><input type='checkbox' class="cxb" id="below">Show below </label><input readonly type="text" id="minveld" size="3" value="0"/>
+           <input type="range" class="sld"  min="-12" max="350" value="0" id="min" step="0.01" title="Slide this to set the minimum height">
+       </div>
+         </div>
+    </div>
+    <div id='sidepanel'>
+        <div id="content">
+            <h2>LEGEND</h2>   
+            <p>
+            <span class="maxheight legend">&nbsp;</span> <input readonly class="noborder" type="text"  id="maxheightlabel"><br/>
+            <span class="medianheight legend"  >&nbsp;</span> <input readonly class="noborder" type="text"  id="medianheightlabel"><br/>
+            <span class="minheight legend">&nbsp;</span> <input readonly class="noborder" type="text"  id="minheightlabel"><br/>
+            Meters above sealevel
+            </p>
+
+	        <h2>INFORMATION</h2>   
+                  
+	            <p>Based on the open dataset <a href="http://www.ahn.nl/pagina/open-data.html">AHN</a>, a detailed digital elevation model of the entire Netherlands. This viewer allows you to narrow the range of the classification and as such show minute height differences in the Netherlands.
+            </p>
+            <h2>FOREGROUND</h2>
+             <input type="range" min='0' max='1' step='0.01' value="1" id="opacity" title="Slide this to change the foreground opacity"><input readonly id="opacityveld" value="100%"/>
+    	</div>
+	</div>
+
+<script src="color.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
