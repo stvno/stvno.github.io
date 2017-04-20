@@ -150,7 +150,7 @@ var simulation = d3.forceSimulation()
       function getData() {
         gapi.client.sheets.spreadsheets.values.batchGet({
           spreadsheetId: '1egducbYEw4kLe0frT4O9TRN4qSehzWu5RFHVTAsO8I8',
-          ranges: ['Data!A3:M', 'Sleutel personen!A2:J']
+          ranges: ['Data!B3:M', 'Sleutel personen!A2:J']
         }).then(function(response) {
           var brieven = parseData(response.result.valueRanges[0].values);
           var people = parsePpl(response.result.valueRanges[1].values);
