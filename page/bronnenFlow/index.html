@@ -46,7 +46,7 @@ function dragended(d) {
 d.fx = null;
   d.fy = null;
   }
-  
+
 
 }
 var width = 800,
@@ -140,87 +140,107 @@ var simulation = d3.forceSimulation()
       function getData() {
         gapi.client.sheets.spreadsheets.values.batchGet({
           spreadsheetId: '1egducbYEw4kLe0frT4O9TRN4qSehzWu5RFHVTAsO8I8',
-          ranges: ['Data!A2:J', 'Sleutel personen!A2:J']
+          ranges: ['Data!A3:M', 'Sleutel personen!A2:J']
         }).then(function(response) {
-          var brieven = response.result.valueRanges[0];
-          var personen = response.result.valueRanges[1];
-          var brieflinks = [];
-          if (brieven.values.length > 0) {
-            for (i = 0; i < brieven.values.length; i++) {
-              var row = brieven.values[i];
-              // Print columns A and E, which correspond to indices 0 and 4.
-              brieflinks.push({sourceID:row[1],destID:row[5]})
-            }
-          }
-          if (personen.values.length > 0) {
-            for (i = 0; i < personen.values.length; i++) {
-              var row = personen.values[i];
-              // Print columns A and E, which correspond to indices 0 and 4.
-              if(row[1]!==undefined) ppl.push({linkCount:0,ID:row[0],name:row[1]})
-            }
-          console.log(ppl)
-          }
+          var brieven = parseData(response.result.valueRanges[0].values);
+          var people = parsePpl(response.result.valueRanges[1].values);
+          createGraph(people,brieven)
 
-          var links = parseDebt([brieflinks],ppl)
-
-          var link = svg.append("g")
-            .attr("class", "links")
-            .selectAll("line")
-            .data(links)
-            .enter().append("line")
-            .attr("stroke-width", 1)
-            .style("stroke", function(d){return d.color});
-
-
-          var node = svg.append("g")
-            .attr("class", "nodes")
-            .selectAll("circle")
-            .data(ppl)
-            .enter().append("circle")
-            .attr("r", function(d) {return 3+ d.linkCount*0.3})
-            .attr("fill",'red')
-            .call(d3.drag()
-              .on("start", dragstarted)
-              .on("drag", dragged)
-              .on("end", dragended));
-                
-
-          node.append("title")
-              .text(function(d) { return d.name; });
-
-          simulation
-              .nodes(d3.values(ppl).filter(function(d){ return d.linkCount;}))
-              .on("tick", ticked);
-
-          simulation.force("link")
-            .links(links);
-
-
-          function ticked() {
-              link
-                  .attr("x1", function(d) { return d.source.x; })
-                  .attr("y1", function(d) { return d.source.y; })
-                  .attr("x2", function(d) { return d.target.x; })
-                  .attr("y2", function(d) { return d.target.y; });
-
-              node
-                  .attr("cx", function(d) { return d.x; })
-                  .attr("cy", function(d) { return d.y; });
-            }
+          
 
         });
-      
+ 
+function createGraph(n,l){
+    var links = parseDebt([l],n)
 
+    var link = svg.append("g")
+      .attr("class", "links")
+      .selectAll("line")
+      .data(links)
+      .enter().append("line")
+      .attr("stroke-width", 1)
+      .style("stroke", function(d){return d.color});
+
+
+    var node = svg.append("g")
+      .attr("class", "nodes")
+      .selectAll("circle")
+      .data(n)
+      .enter().append("circle")
+      .attr("r", function(d) {return 3+ d.linkCount*0.3})
+      .attr("fill",'red')
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+          
+
+    node.append("title")
+        .text(function(d) { return d.name; });
+
+    simulation
+        .nodes(d3.values(n).filter(function(d){ return d.linkCount;}))
+        .on("tick", ticked);
+
+    simulation.force("link")
+      .links(l);
+
+
+    function ticked() {
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+      }
+ }
+function parseData(values) {
+  var parsed = [];
+  values.forEach(function (d) {
+    var r = {}
+    r.briefId=d[0];
+    r.afzNaam = d[1];
+    r.afzID = d[2];
+    r.afzLoc = d[3];
+    r.afzLon = +d[4];
+    r.afzLat = +d[5];
+    r.ontNaam = d[6];
+    r.ontID = d[7];
+    r.ontLoc = d[8];
+    r.ontLon = d[9];
+    r.ontLat = d[10];
+    r.datum = d[11];
+    r.inhoud = d[12];
+    parsed.push(r);
+  })
+
+  return parsed;
+}
+function parsePpl(values) {
+  var parsed = [];
+  values.forEach(function (d) {
+    var r = {};
+    r.linkCount = 0;
+    r.ID = d[0];
+    r.name = d[1];
+    if(r.name!==undefined) parsed.push(r);
+  })
+  return parsed;
+}
 
 function parseDebt(files,ppl) {
   var lnks = [];
   files.forEach(function(file,idx){
     file.forEach(function(d){
       var sourceNode = ppl.filter(function(n) {
-          return n.ID === d.sourceID;
+          return n.ID === d.afzID;
       })[0],
       targetNode = ppl.filter(function(n) {
-          return n.ID === d.destID;
+          return n.ID === d.ontID;
       })[0];
       sourceNode.linkCount++;
       targetNode.linkCount++;
