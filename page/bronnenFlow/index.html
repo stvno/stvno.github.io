@@ -5,12 +5,14 @@
     <meta charset='utf-8' />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
-    .node {
-      stroke-width: 3px;
+    .links line {
+      stroke: #999;
+      stroke-opacity: 0.6;
     }
-    .link {
-      stroke-width: 3;
-      stroke-opacity: .3;
+
+    .nodes circle {
+      stroke: #fff;
+      stroke-width: 1.5px;
     }
     </style>
   </head>
@@ -24,6 +26,22 @@
 
     <script type="text/javascript">
 
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
 var width = 800,
     height = 600;
 
@@ -131,61 +149,60 @@ var simulation = d3.forceSimulation()
             for (i = 0; i < personen.values.length; i++) {
               var row = personen.values[i];
               // Print columns A and E, which correspond to indices 0 and 4.
-              if(row[1]!==undefined) ppl.push({ID:row[0],name:row[1]})
+              if(row[1]!==undefined) ppl.push({linkCount:0,ID:row[0],name:row[1]})
             }
+          console.log(ppl)
           }
 
-var links = parseDebt([brieflinks],ppl)
+          var links = parseDebt([brieflinks],ppl)
 
-  var link = svg.append("g")
-      .attr("class", "links")
-    .selectAll("line")
-    .data(links)
-    .enter().append("line")
-      .attr("stroke-width", 1)
-
-      .style("stroke", function(d){return d.color});
-
-
-var node = svg.append("g")
-      .attr("class", "nodes")
-    .selectAll("circle")
-    .data(ppl)
-    .enter().append("circle")
-      .attr("r", 5)
-      .attr("fill",'red')
-      
-
-  node.append("title")
-      .text(function(d) { return d.name; });
+          var link = svg.append("g")
+            .attr("class", "links")
+            .selectAll("line")
+            .data(links)
+            .enter().append("line")
+            .attr("stroke-width", 1)
+            .style("stroke", function(d){return d.color});
 
 
+          var node = svg.append("g")
+            .attr("class", "nodes")
+            .selectAll("circle")
+            .data(ppl)
+            .enter().append("circle")
+            .attr("r", function(d) {return 3+ d.linkCount*0.3})
+            .attr("fill",'red')
+            .call(d3.drag()
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended));
+                
 
-  simulation
-      .nodes(ppl)
-      .on("tick", ticked);
+          node.append("title")
+              .text(function(d) { return d.name; });
+
+          simulation
+              .nodes(d3.values(ppl).filter(function(d){ return d.linkCount;}))
+              .on("tick", ticked);
+
+          simulation.force("link")
+            .links(links);
 
 
-  simulation.force("link")
-      .links(links);
+          function ticked() {
+              link
+                  .attr("x1", function(d) { return d.source.x; })
+                  .attr("y1", function(d) { return d.source.y; })
+                  .attr("x2", function(d) { return d.target.x; })
+                  .attr("y2", function(d) { return d.target.y; });
 
+              node
+                  .attr("cx", function(d) { return d.x; })
+                  .attr("cy", function(d) { return d.y; });
+            }
 
-function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-
-    node
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-  }
-
-        }, function(response) {
-         
         });
-      }
+      
 
 
 function parseDebt(files,ppl) {
@@ -211,7 +228,7 @@ function parseDebt(files,ppl) {
   return lnks;
 }
 
- 
+ }
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
