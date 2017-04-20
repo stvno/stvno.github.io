@@ -3,12 +3,12 @@
   <head>
     <title>BronnenFlow</title>
     <meta charset='utf-8' />
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+    <script src="//d3js.org/d3.v4.min.js"></script>
+     <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"
    integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
    crossorigin=""></script>
-    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+    <script type="text/javascript" src="//stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css"
    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
    crossorigin=""/>
     <style>
@@ -276,7 +276,7 @@ function parseDebt(files,ppl) {
  }
 
 
-var layer = new L.StamenTileLayer("toner");
+var layer = new L.StamenTileLayer("toner-lite");
 var map = new L.Map("map", {
     center: new L.LatLng(54, 5),
     zoom: 2,
