@@ -35,7 +35,7 @@
       top: 0;
       left: 0;
     }
-    #map { 
+    .map { 
     height: 90vh;}
     header {
       background: #252525;
@@ -81,8 +81,11 @@
           <svg  class="svg-content"></svg>
         </div>
       </div>
-      <div class="col-lg-6 col-md-12">
-        <div id="map"></div>
+      <div class="col-lg-3 col-md-6">
+        <div id="mapafz" class="map"></div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div id="mapont" class="map"></div>
       </div>
     </div>
     <hr/>
@@ -251,12 +254,12 @@ function parseData(values) {
     r.datum = d[11];
     r.inhoud = d[12];
     if(r.ontLon&&r.ontLat) {
-      var mont =  L.marker([r.ontLat,r.ontLon]).addTo(map);
-      mont.bindPopup('Ontvanger: '+r.ontNaam+'<br/>'+r.inhoud)
+      var mont =  L.marker([r.ontLat,r.ontLon]).addTo(mapont);
+      mont.bindPopup('Ontvanger: <b>'+r.ontNaam+'</b><br/><em>Afzender: '+r.afzNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
     }
     if(r.afzLon&&r.afzLat) {
-      var mont =  L.marker([r.afzLat,r.afzLon]).addTo(map);
-      mont.bindPopup('Afzender: '+r.afzNaam+'<br/>'+r.inhoud)
+      var mont =  L.marker([r.afzLat,r.afzLon]).addTo(mapafz);
+      mont.bindPopup('Afzender: <b>'+r.afzNaam+'</b><br/><em>Ontvanger: '+r.ontNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
     }
     if(r.ontID!==undefined&&r.afzID!==undefined) parsed.push(r);
   })
@@ -321,7 +324,8 @@ function resetGraph() {
     .attr("width", width)
     .attr("height", height);
   simulation.force("center", d3.forceCenter(width / 2, height / 2));
-  map.invalidateSize(true);
+  mapafz.invalidateSize(true);
+  mapont.invalidateSize(true);
 }
 
 window.onresize = function(e){
@@ -329,13 +333,19 @@ window.onresize = function(e){
 }
 
 var layer = new L.StamenTileLayer("toner-lite");
-var map = new L.Map("map", {
-  center: new L.LatLng(54, 5),
-  zoom: 2,
+var layer2 = new L.StamenTileLayer("toner-lite");
+var mapont = new L.Map("mapont", {
+  center: new L.LatLng(52, 4.5),
+  zoom: 8,
   scrollWheelZoom: false
 });
-map.addLayer(layer);
-
+mapont.addLayer(layer);
+var mapafz = new L.Map("mapafz", {
+  center: new L.LatLng(5, -55),
+  zoom: 8,
+  scrollWheelZoom: false
+});
+mapafz.addLayer(layer2);
 </script>
 
 <script async defer src="https://apis.google.com/js/api.js"
