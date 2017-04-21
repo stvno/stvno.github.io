@@ -100,7 +100,7 @@ var ppl = [],
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody().strength(-50))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 
@@ -112,6 +112,8 @@ var authorizeButton = document.getElementById('authorize-button'),
   helpText = document.getElementById('help-text'),
   loadingText = document.getElementById('loading-text'),
   graphMap = document.getElementById('graph-map');
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
@@ -166,7 +168,7 @@ function getData() {
 }   
 
 function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  if (!d3.event.active) simulation.alphaTarget(0.1).restart();
   d.fx = d.x;
   d.fy = d.y;
 }
@@ -201,15 +203,15 @@ function createGraph(n,l){
     .selectAll("circle")
     .data(n)
     .enter().append("circle")
-    .attr("r", function(d) {return 3+ d.linkCount*0.3})
-    .attr("fill",'red')
+    .attr("r", function(d) {return 2+ d.linkCount*0.7})
+    .attr("fill",function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
         
   node.append("title")
-    .text(function(d) { return d.name; });
+    .text(function(d) { return d.name + ' - ' + d.afkomst; });
 
   simulation
     .nodes(d3.values(n).filter(function(d){ return d.linkCount;}))
@@ -268,11 +270,24 @@ function parsePpl(values) {
     r.linkCount = 0;
     r.ID = d[0];
     r.name = d[1];
+    r.afkomst = d[3]?d[3].toLowerCase():'';
+    r.group = selectGroup(r.afkomst);
+    r.altname = d[4];
     if(r.name!==undefined) parsed.push(r);
   })
   return parsed;
 }
-
+function selectGroup (afkomst) {
+  var group = 0;
+  switch (afkomst) {
+    case 'nl': group = 1; break;
+    case 'en': group = 2; break;
+    case 'jo': group = 3; break;
+    case 'fr': group = 4; break;
+    case 'po': group = 4; break;
+  }
+  return group;
+}
 function parseDebt(files,ppl) {
   var lnks = [];
   files.forEach(function(file,idx){
@@ -284,15 +299,15 @@ function parseDebt(files,ppl) {
         return n.ID === d.ontID;
       })[0];
       if(sourceNode!==undefined && targetNode !== undefined) {
-      sourceNode.linkCount++;
-      targetNode.linkCount++;
-      
-      lnks.push({
-        source: sourceNode,
-        target: targetNode,
-        color: '#000000'
-      });
-    }
+        sourceNode.linkCount++;
+        targetNode.linkCount++;
+        
+        lnks.push({
+          source: sourceNode,
+          target: targetNode,
+          color: '#000000'
+        });
+      }
     })
   })
   return lnks;
