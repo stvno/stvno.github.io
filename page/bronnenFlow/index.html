@@ -2,22 +2,21 @@
 <html>
   <head>
     <title>BronnenFlow</title>
-    <meta charset='utf-8' />
+    <meta charset='utf-8' />    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+    crossorigin=""/>
     <script src="//d3js.org/d3.v4.min.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-     <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"
-   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
-   crossorigin=""></script>
+    <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+    integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+    crossorigin=""></script>
     <script type="text/javascript" src="//stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
-     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css"
-   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
-   crossorigin=""/>
     <style>
     .links line {
       stroke: #999;
       stroke-opacity: 0.6;
     }
-
     .nodes circle {
       stroke: #fff;
       stroke-width: 1.5px;
@@ -31,11 +30,11 @@
       height:90vh;
     }
     .svg-content { 
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     #map { 
     height: 90vh;}
     header {
@@ -89,42 +88,15 @@
     <hr/>
   </div>
 <script type="text/javascript">
-var box = d3.select('#graph').node().getBoundingClientRect();
-var width = box.width,
-    height = box.height; 
-
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  var los = d3.event.sourceEvent.shiftKey;
-  if(los){
-    d.fx = null;
-    d.fy = null;
-  }
-}
-
-var box = d3.select('#graph').node().getBoundingClientRect();
-var width = box.width,
-    height = box.height;
-
-var svg = d3.select("svg")
+var box = d3.select('#graph').node().getBoundingClientRect(),
+  width = box.width,
+  height = box.height,
+  svg = d3.select("svg")
     .attr("width", width)
     .attr("height", height);
 
-var ppl = [];
-var links = [];
-
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var ppl = [],
+  links = [];
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
@@ -132,42 +104,26 @@ var simulation = d3.forceSimulation()
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 
-// Client ID and API key from the Developer Console
-var CLIENT_ID = '1072441761062-7hnjkvs9ttaduam2jo04un6v14a3h995.apps.googleusercontent.com';
+var CLIENT_ID = '1072441761062-7hnjkvs9ttaduam2jo04un6v14a3h995.apps.googleusercontent.com',
+  DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+  SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
 
-// Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+var authorizeButton = document.getElementById('authorize-button'),
+  helpText = document.getElementById('help-text'),
+  loadingText = document.getElementById('loading-text'),
+  graphMap = document.getElementById('graph-map');
 
-// Authorization scopes required by the API; multiple scopes can be
-// included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-
-var authorizeButton = document.getElementById('authorize-button');
-var helpText = document.getElementById('help-text');
-var loadingText = document.getElementById('loading-text');
-var graphMap = document.getElementById('graph-map');
-
-/**
- *  On load, called to load the auth2 library and API client library.
- */
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
 
-/**
- *  Initializes the API client library and sets up sign-in state
- *  listeners.
- */
 function initClient() {
   gapi.client.init({
     discoveryDocs: DISCOVERY_DOCS,
     clientId: CLIENT_ID,
     scope: SCOPES
   }).then(function () {
-    // Listen for sign-in state changes.
     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-    // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     authorizeButton.onclick = handleAuthClick;
   });
@@ -193,9 +149,6 @@ function updateSigninStatus(isSignedIn) {
   }
 }
 
-/**
- *  Sign in the user upon button click.
- */
 function handleAuthClick(event) {
   gapi.auth2.getAuthInstance().signIn();
 }
@@ -212,55 +165,72 @@ function getData() {
   })
 }   
 
-  
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  var los = d3.event.sourceEvent.shiftKey;
+  if(los){
+    d.fx = null;
+    d.fy = null;
+  }
+}
+
 function createGraph(n,l){
-    var links = parseDebt([l],n)
+  var links = parseDebt([l],n)
 
-    var link = svg.append("g")
-      .attr("class", "links")
-      .selectAll("line")
-      .data(links)
-      .enter().append("line")
-      .attr("stroke-width", 1)
-      .style("stroke", function(d){return d.color});
+  var link = svg.append("g")
+    .attr("class", "links")
+    .selectAll("line")
+    .data(links)
+    .enter().append("line")
+    .attr("stroke-width", 1)
+    .style("stroke", function(d){return d.color});
 
+  var node = svg.append("g")
+    .attr("class", "nodes")
+    .selectAll("circle")
+    .data(n)
+    .enter().append("circle")
+    .attr("r", function(d) {return 3+ d.linkCount*0.3})
+    .attr("fill",'red')
+    .call(d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended));
+        
+  node.append("title")
+    .text(function(d) { return d.name; });
 
-    var node = svg.append("g")
-      .attr("class", "nodes")
-      .selectAll("circle")
-      .data(n)
-      .enter().append("circle")
-      .attr("r", function(d) {return 3+ d.linkCount*0.3})
-      .attr("fill",'red')
-      .call(d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended));
-          
+  simulation
+    .nodes(d3.values(n).filter(function(d){ return d.linkCount;}))
+    .on("tick", ticked);
 
-    node.append("title")
-        .text(function(d) { return d.name; });
+  simulation.force("link")
+    .links(l);
 
-    simulation
-        .nodes(d3.values(n).filter(function(d){ return d.linkCount;}))
-        .on("tick", ticked);
+  function ticked() {
+    link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
 
-    simulation.force("link")
-      .links(l);
-
-
-    function ticked() {
-        link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
-
-        node
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; });
-      }
- }
+    node
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+  }
+}
+  
 function parseData(values) {
   var parsed = [];
   values.forEach(function (d) {
@@ -288,9 +258,9 @@ function parseData(values) {
     }
     if(r.ontID!==undefined&&r.afzID!==undefined) parsed.push(r);
   })
-
   return parsed;
 }
+
 function parsePpl(values) {
   var parsed = [];
   values.forEach(function (d) {
@@ -308,19 +278,21 @@ function parseDebt(files,ppl) {
   files.forEach(function(file,idx){
     file.forEach(function(d){
       var sourceNode = ppl.filter(function(n) {
-          return n.ID === d.afzID;
+        return n.ID === d.afzID;
       })[0],
       targetNode = ppl.filter(function(n) {
-          return n.ID === d.ontID;
+        return n.ID === d.ontID;
       })[0];
+      if(sourceNode!==undefined && targetNode !== undefined) {
       sourceNode.linkCount++;
       targetNode.linkCount++;
       
       lnks.push({
-          source: sourceNode,
-          target: targetNode,
-          color: '#000000'
+        source: sourceNode,
+        target: targetNode,
+        color: '#000000'
       });
+    }
     })
   })
   return lnks;
@@ -333,9 +305,8 @@ function resetGraph() {
   d3.select("svg")
     .attr("width", width)
     .attr("height", height);
-
-    simulation.force("center", d3.forceCenter(width / 2, height / 2));
-    map.invalidateSize(true);
+  simulation.force("center", d3.forceCenter(width / 2, height / 2));
+  map.invalidateSize(true);
 }
 
 window.onresize = function(e){
@@ -344,17 +315,17 @@ window.onresize = function(e){
 
 var layer = new L.StamenTileLayer("toner-lite");
 var map = new L.Map("map", {
-    center: new L.LatLng(54, 5),
-    zoom: 2,
-    scrollWheelZoom: false
+  center: new L.LatLng(54, 5),
+  zoom: 2,
+  scrollWheelZoom: false
 });
 map.addLayer(layer);
 
-    </script>
+</script>
 
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+<script async defer src="https://apis.google.com/js/api.js"
+  onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
   </body>
 </html>
