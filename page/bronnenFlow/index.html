@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css"
     integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
     crossorigin=""/>
+    <link rel="stylesheet" href="//unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css"
+    
+    crossorigin=""/>
+    <link rel="stylesheet" href="//unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css"    
+    crossorigin=""/>
     <script src="//d3js.org/d3.v4.min.js"></script>
     <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"
     integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
     crossorigin=""></script>
+    <script src="//unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster-src.js" crossorigin=""></script>
+  
     <script type="text/javascript" src="//stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
     <style>
     .links line {
@@ -254,12 +261,14 @@ function parseData(values) {
     r.datum = d[11];
     r.inhoud = d[12];
     if(r.ontLon&&r.ontLat) {
-      var mont =  L.marker([r.ontLat,r.ontLon]).addTo(mapont);
+      var mont =  L.marker([r.ontLat,r.ontLon]);
       mont.bindPopup('Ontvanger: <b>'+r.ontNaam+'</b><br/><em>Afzender: '+r.afzNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
+      ontMarkers.addLayer(mont);
     }
     if(r.afzLon&&r.afzLat) {
-      var mont =  L.marker([r.afzLat,r.afzLon]).addTo(mapafz);
+      var mont =  L.marker([r.afzLat,r.afzLon]);
       mont.bindPopup('Afzender: <b>'+r.afzNaam+'</b><br/><em>Ontvanger: '+r.ontNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
+      afzMarkers.addLayer(mont);
     }
     if(r.ontID!==undefined&&r.afzID!==undefined) parsed.push(r);
   })
@@ -331,21 +340,22 @@ function resetGraph() {
 window.onresize = function(e){
   resetGraph();
 }
-
+var ontMarkers = L.markerClusterGroup();
+var afzMarkers = L.markerClusterGroup();
 var layer = new L.StamenTileLayer("toner-lite");
 var layer2 = new L.StamenTileLayer("toner-lite");
 var mapont = new L.Map("mapont", {
   center: new L.LatLng(52, 4.5),
-  zoom: 8,
-  scrollWheelZoom: false
+  zoom: 8
 });
 mapont.addLayer(layer);
+mapont.addLayer(ontMarkers);
 var mapafz = new L.Map("mapafz", {
   center: new L.LatLng(5, -55),
-  zoom: 8,
-  scrollWheelZoom: false
+  zoom: 8
 });
 mapafz.addLayer(layer2);
+mapafz.addLayer(afzMarkers);
 </script>
 
 <script async defer src="https://apis.google.com/js/api.js"
