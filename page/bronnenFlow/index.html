@@ -264,11 +264,17 @@ function parseData(values) {
       var mont =  L.marker([r.ontLat,r.ontLon]);
       mont.bindPopup('Ontvanger: <b>'+r.ontNaam+'</b><br/><em>Afzender: '+r.afzNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
       ontMarkers.addLayer(mont);
+      var mafz =  L.marker([r.ontLat,r.ontLon]);
+      mafz.bindPopup('Ontvanger: <b>'+r.ontNaam+'</b><br/><em>Afzender: '+r.afzNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
+      afzMarkers.addLayer(mafz);
     }
     if(r.afzLon&&r.afzLat) {
       var mont =  L.marker([r.afzLat,r.afzLon]);
       mont.bindPopup('Afzender: <b>'+r.afzNaam+'</b><br/><em>Ontvanger: '+r.ontNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
-      afzMarkers.addLayer(mont);
+      ontMarkers.addLayer(mont);
+      var mafz =  L.marker([r.afzLat,r.afzLon]);
+      mafz.bindPopup('Afzender: <b>'+r.afzNaam+'</b><br/><em>Ontvanger: '+r.ontNaam+'</em><br/>'+(r.inhoud?r.inhoud:''))
+      afzMarkers.addLayer(mafz);
     }
     if(r.ontID!==undefined&&r.afzID!==undefined) parsed.push(r);
   })
