@@ -4,6 +4,7 @@
     <title>BronnenFlow</title>
     <meta charset='utf-8' />
     <script src="//d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"
    integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
    crossorigin=""></script>
@@ -21,21 +22,64 @@
       stroke: #fff;
       stroke-width: 1.5px;
     }
+    #graph {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      vertical-align: middle; 
+      overflow: hidden; 
+      height:90vh;
+    }
+    .svg-content { 
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
     #map { 
-    height: 90vh;
-    width: 90vw; }
+    height: 90vh;}
+    header {
+      background: #252525;
+      color: #ffffe5;
+    }
     </style>
   </head>
   <body>
-    
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
-    <div id="graph"></div>
-    <div id="map"></div>
-
+    <div class="container-fluid"">
+    <header class="row">
+    <div class="col-md-11">
+      <h2>Bronnencollege - briefnetwerk visualisatie</h2>
+    </div>
+      <div class="col-md-1">
+    <button class="btn btn-success" id="authorize-button" style="display: none;">Authorize</button>
+    </div>
+    </header>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div id="graph">
+        <svg  class="svg-content"></svg>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div id="map"></div>
+      </div>
+    </div>
+    <hr/>
+    <footer class="row">
+     <div class="col-md-11">
+     
+    </div>
+      <div class="col-md-1">
+      <div class="pull-right">
+        <button class="btn btn-danger" id="signout-button" style="display: none;">Sign Out</button>
+      </div>
+    </div>
+    </footer>
+    </div>
     <script type="text/javascript">
-
+var box = d3.select('#graph').node().getBoundingClientRect();
+var width = box.width,
+    height = box.height;    
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
@@ -59,10 +103,11 @@ d.fx = null;
 
 
 }
-var width = 1200,
-    height = 1024;
+var box = d3.select('#graph').node().getBoundingClientRect();
+var width = box.width,
+    height = box.height;
 
-var svg = d3.select("#graph").append("svg")
+var svg = d3.select("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -275,6 +320,17 @@ function parseDebt(files,ppl) {
 
  }
 
+
+window.onresize = function(e){
+  box = d3.select('#graph').node().getBoundingClientRect();
+  width = box.width;
+  height = box.height;  
+  d3.select("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+    simulation.force("center", d3.forceCenter(width / 2, height / 2));
+}
 
 var layer = new L.StamenTileLayer("toner-lite");
 var map = new L.Map("map", {
