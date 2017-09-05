@@ -18,7 +18,7 @@ if (!('crossOrigin' in new Image()) ||
   })
   
   var map = L.map('map',{crs:crs, minZoom: 1, maxZoom: 13, fadeAnimation: false});
-  var layer = new L.Proj.TileLayer.TMS('http://geodata.nationaalgeoregister.nl/tiles/service/tms/1.0.0/brtachtergrondkaart/EPSG:28992/{z}/{x}/{y}.png',crs,{
+  var layer = new L.Proj.TileLayer.TMS('//geodata.nationaalgeoregister.nl/tiles/service/tms/1.0.0/brtachtergrondkaart/EPSG:28992/{z}/{x}/{y}.png',crs,{
     maxZoom: 14
     ,minZoom: 5
     });  
