@@ -74,7 +74,7 @@ $('#changeLayer').click(function(e){
     stamenaan = stamenaan?false:true;
 })
 
-var radius = 150;
+var radius = 198;
 var mousePosition = null;		
 var moveZoom = function(d) {
 	var e = map.getEventPixel(d.originalEvent);
@@ -93,8 +93,8 @@ function clipLayer(event) {
   ctx.beginPath();
   if (mousePosition) {
     // only show a circle around the mouse
-    ctx.arc(mousePosition[0]+50 , mousePosition[1] +50,
-        radius, 0, 2 * Math.PI);
+    ctx.arc(mousePosition[0] -1, mousePosition[1] -1,
+        radius/2, 0, 2 * Math.PI);
     ctx.lineWidth = 4;
     ctx.strokeStyle = 'rgba(0,0,0,0.5)';
     ctx.stroke();
