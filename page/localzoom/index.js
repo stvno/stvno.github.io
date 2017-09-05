@@ -6,7 +6,8 @@ var zoomView = new ol.View({zoom:7, maxZoom: 9, minZoom: 5});
 var zoomLayer = new ol.layer.Tile({source: new ol.source.OSM()})
 var stamen =  new ol.layer.Tile({
       source: new ol.source.Stamen({
-        layer: 'watercolor'
+        layer: 'watercolor',
+        url: "https://stamen-tiles-{a-d}.a.ssl.fastly.net/watercolor{z}/{x}/{y}.png"
       })
     })
 var zoomMap = new ol.Map({
