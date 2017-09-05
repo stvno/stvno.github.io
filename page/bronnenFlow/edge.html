@@ -52,6 +52,47 @@
       margin-top: 20px;
       margin-right: 5px;
     }
+
+    path.arc {
+  cursor: move;
+  fill: #fff;
+}
+
+.node {
+  font-size: 10px;
+}
+
+.node:hover {
+  fill: #1f77b4;
+}
+
+.link {
+  fill: none;
+  stroke: #1f77b4;
+  stroke-opacity: .4;
+  pointer-events: none;
+}
+
+.link.source, .link.target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.node.target {
+  fill: #d62728 !important;
+}
+
+.link.source {
+  stroke: #d62728;
+}
+
+.node.source {
+  fill: #2ca02c;
+}
+
+.link.target {
+  stroke: #2ca02c;
+}
     </style>
   </head>
 <body>
@@ -98,21 +139,44 @@
     <hr/>
   </div>
 <script type="text/javascript">
+
+var m0,
+    rotate = 0;
+
 var box = d3.select('#graph').node().getBoundingClientRect(),
   width = box.width,
   height = box.height,
+  w= width,
+  h =height,
+  rx = width/2,
+  ry = height/2,
   svg = d3.select("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .append("svg:g")
+    .attr("transform", "translate(" + rx + "," + ry + ")");
+  svg.append("svg:path")
+    .attr("class", "arc")
+    .attr("d", d3.arc().outerRadius(ry - 120).innerRadius(0).startAngle(0).endAngle(2 * Math.PI))
+  
 
-var ppl = [],
-  links = [];
+var splines = [];
 
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody().strength(-10))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide",d3.forceCollide( function(d){return d.linkCount*3 + 2 }).iterations(16)) ;
+var cluster = d3.cluster()
+    .size([360, ry - 120])
+    //.sort(function(a, b) { return d3.ascending(a.name, b.name); });
+
+var bundle = d3.bundle();
+
+var line = d3.line.radial()
+    .interpolate("bundle")
+    .tension(.85)
+    .radius(function(d) { return d.y; })
+    .angle(function(d) { return d.x / 180 * Math.PI; });
+
+
+
+
 
 
 var CLIENT_ID = '1072441761062-7hnjkvs9ttaduam2jo04un6v14a3h995.apps.googleusercontent.com',
@@ -124,7 +188,7 @@ var authorizeButton = document.getElementById('authorize-button'),
   loadingText = document.getElementById('loading-text'),
   graphMap = document.getElementById('graph-map');
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+//var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
@@ -178,70 +242,37 @@ function getData() {
   })
 }   
 
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.01).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
 
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  var los = d3.event.sourceEvent.shiftKey;
-  if(los){
-    d.fx = null;
-    d.fy = null;
-  }
-}
 
 function createGraph(n,l){
-  var links = parseDebt([l],n)
+  var hiernodes = d3.stratify().id(function(d){return d.id}).parentId(function(d){return d.parent})(n);
+  var links = parseDebt([l],hiernodes)
+  var nodes = cluster.nodes(hiernodes),
+      splines = bundle(links);
 
-  var link = svg.append("g")
-    .attr("class", "links")
-    .selectAll("line")
+  var path = svg.selectAll("path.link")
     .data(links)
-    .enter().append("line")
-    .attr("stroke-width", 1)
-    .style("stroke", function(d){return d.color});
+    .enter().append("svg:path")
+    .attr("class", function(d) { 
+      return "link source-" + d.source.ID + " target-" + d.target.ID; 
+    })
+    .attr("d", function(d, i) { return line(splines[i]); });
 
-  var node = svg.append("g")
-    .attr("class", "nodes")
-    .selectAll("circle")
-    .data(n)
-    .enter().append("circle")
-    .attr("r", function(d) {return 3+ d.linkCount*0.5})
-    .attr("fill",function(d) { return color(d.group); })
-    .call(d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended));
-        
-  node.append("title")
-    .text(function(d) { return d.name + ' - ' + d.afkomst; });
+  svg.selectAll("g.node")
+      .data(nodes.filter(function(n) { return !n.children; }))
+    .enter().append("svg:g")
+      .attr("class", "node")
+      .attr("id", function(d) { return "node-" + d.ID; })
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+    .append("svg:text")
+      .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+      .attr("dy", ".31em")
+      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+      .text(function(d) { return d.name; })
 
-  simulation
-    .nodes(d3.values(n).filter(function(d){ return d.linkCount;}))
-    .on("tick", ticked);
 
-  simulation.force("link")
-    .links(l);
 
-  function ticked() {
-    link
-      .attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-    node
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
-  }
 }
 
 function parseData(values) {
@@ -283,9 +314,10 @@ function parseData(values) {
 }
 
 function parsePpl(values) {
-  var parsed = [];
+  var parsed = [{ID:0}];
   values.forEach(function (d) {
     var r = {};
+    r.parent = 0;
     r.linkCount = 0;
     r.ID = d[0];
     r.name = d[1];
@@ -339,7 +371,7 @@ function resetGraph() {
   d3.select("svg")
     .attr("width", width)
     .attr("height", height);
-  simulation.force("center", d3.forceCenter(width / 2, height / 2));
+  
   mapafz.invalidateSize(true);
   mapont.invalidateSize(true);
 }
