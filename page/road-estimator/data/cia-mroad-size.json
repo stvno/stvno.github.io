@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v3.0.json",
+  "description": "A specification outline example.",
+  "width": 500,
+  "height": 300,
+  "padding": 5,
+  "autosize": "pad",
+
+  "signals": [
+  ],
+"title": {
+    "text": "CIA estimate kilometers road vs country size in square km"
+  },
+
+  "data": [{
+  	    "format": {"type": "csv", "parse": "auto"},
+    "name": "cia",
+    "url": "./data/road-data.csv",
+  	 "transform": [
+        { "type": "filter", "expr": "datum.population > 300000" },
+		    { "type": "filter", "expr": "(datum.population / datum.size) < 650" },
+		    {
+          "type": "formula",
+          "expr": "datum.roads  / datum.population *1000",
+          "as":   "mWegPpop"
+        },
+       
+        
+        {
+          "type": "formula",
+          "expr": "datum.country + ' ' + datum.continent",
+          "as":   "tooltip"
+        }
+    ]
+  }],
+  
+  "scales": [
+     {
+      "name": "x",
+      "type": "sqrt",
+      "round": true,
+      "nice": true,
+      "zero": true,
+      "domain": {"data": "cia", "field": "size"},
+      "range" : "width"
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "nice": true,
+      "zero": true,
+      "domain": [0,70]
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": "category",
+      "domain": ["Africa","Asia","Europe","North-America","South-America","Oceania"]
+    }
+  ],
+  "projections": [],
+   "axes": [
+    {
+      "scale": "x",
+      "grid": true,
+      "domain": false,
+      "orient": "bottom",
+      "titlePadding": 5,
+      "title": "country size"
+    },
+    {
+      "scale": "y",
+      "grid": true,
+      "domain": false,
+      "orient": "left",
+      "titlePadding": 5,
+      "title": "m road / person"
+    }
+  ],
+
+  "legends": [],
+   "marks": [
+    {
+      "name": "roads_pop",
+      "type": "symbol",
+      "from": {"data": "cia"},
+      "encode": {
+      	"enter":{
+      	  "tooltip": {
+      		"size": {"value": 50},
+      		"field": "tooltip"
+      	  }
+        },
+        "update": {
+          "x": {"scale": "x", "field": "size"},
+          "y": {"scale": "y", "field": "mWegPpop"},
+          "shape": {"value": "circle"},
+          "strokeWidth": {"value": 2},
+          "opacity": {"value": 0.8},          
+          "fill": {"scale": "color", "field": "continent"}
+        }
+      }
+    }
+  ]
+}
