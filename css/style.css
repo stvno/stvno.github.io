@@ -1,183 +1,191 @@
-body {
-  background: #6d6e5c;
-  color: #eeeeec;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 10pt;
-  line-height: 150%;
-  background-image:url('../img/background.png');
-  background-attachment: fixed;
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Segoe UI Light"), local("Ubuntu Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
-#header {
-  background: url('../img/header.jpg') no-repeat;
-  background-size: cover;
-  height: 10em;    
+h1 {
+  font-family: 'system-ui', sans-serif;
+  font-size: 1.5em;
 }
-h1:hover {
-    text-shadow: whitesmoke 0px 0px 20px;   
+h2 {
+  text-align: center;
+  color: #74997A;
 }
-.dark h1:hover {
-   text-shadow: darkslategray 0px 0px 20px;   
+body, html {
+  margin: 0px;
+  padding:0px;
+  background: url('../img/invtopography.png') fixed;
+  color: #081021;
+ font-family: 'Lora', serif;line-height: 1.5;
 }
-iframe {
-border: none;
-padding: 0;
-margin:0;
-overflow:hidden;
-width: 100%;
-height: 100%;
+a {
+   font-family: 'system-ui', sans-serif;
+   color:  #081021;
+   text-decoration: none;
 }
-#menulabel {
-font-size: 36px;
-text-shadow: whitesmoke 0px 0px 10px;
-position: absolute;
-top:3em;
-opacity: 0.8;
+a:hover {
+  text-decoration: underline;
+  color: #333;
 }
-#nav:hover {
-  background:rgba(0,0,0,0.2);
-  box-shadow: black 1px 1px 10px;
-padding: 4px;
+#content {
+  display: flex;
 }
-.menuheader {
-    cursor: pointer;    
-    opacity: 0.8;
-}
- ul {
-    list-style: none;
-    margin-left: -2em;
-}
-li.menu a{
-    color: white;
-    opacity: 0.5;
-}
-.uitleg {
-  padding: 1em;
-  background: #fffeeb;
-  color: #2e3436;
-  margin-top: -2px;
-   box-shadow: 0px 2px 5px black;
-   font-size: 130%;
-}
-@media (min-width: 992px) {
-.twocolumn {
--webkit-column-count : 2;
--moz-column-count: 2;
-column-count: 2;
-}
-}
-.img {
-height: 8em;
+header {
+  height: 120px;  
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #87ad7e;
+  background: url('../img/header2.jpg');
+  box-shadow: 0px 1px 6px #74997A;
+  z-index: 1;
 
-background-repeat: no-repeat;
-}
-.mapviewer {
-height: 30em;
-background: #eeeeec;
-}
-.mapviewer.extrahigh {
-height: 45em;
-}
+    background-size: cover;
+      
 
-.video {
-height:30em;
 }
-.spacer {
-height:3em;
+header h1 {
+   color: #bbb;
+    mix-blend-mode: color-dodge;
+    padding-left: 2vw;
+    width: 94vw;
 }
-.content {
-    cursor: pointer;
-    box-shadow: 0px 2px 5px black;
+header  a {
+    float: right;
+    color: #888 !important;
 }
-.content a {
-    color: white;
-    opacity: 0.5;
+#sidebar {
+  background: #081021;
+  height: 100vh;
+  width: 120px;
+  box-shadow: 2px 0px 4px rgba(24,40,73,0.5);      
+  display: none;
+  z-index:2;
+  border-right: solid 1px black;
+  flex: 0 0 120px;
+  position: sticky;
+  top: 0;
 }
-.content a:hover, .menuheader:hover, li.menu a:hover{
-    text-shadow: whitesmoke 0px 0px 10px;
-    opacity: 1;
-   
+#projects {
+  display: inline-block;
+  background: url('../img/topography.png');    
+  box-shadow: 4px 0px 6px #081021 ;    
+  border-right: solid 1px #728fce;  
 }
-.popout {
-    opacity: 0.5;
-    margin-left: 5px;
+.project {
+  display: flex;
+  padding: 2rem;      
 }
-
-.popout:hover {
-    text-shadow: whitesmoke 0px 0px 10px;
-    opacity: 1;
+.prj {
+  margin: 1rem;
+  width: 1005;
 }
-.content.dark a {
-    color: darkslategray;
-    opacity: 0.5;
+.placeholder, .noframe {
+  width: 100%;
+  background: #eeeeec;
+  border: solid 1px grey;
+  cursor: pointer;
 }
-.content.dark a:hover{
-    text-shadow: darkslategray 0px 0px 10px;
-    opacity: 1;
-   
+.placeholder img, .noframe img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 1s;
 }
-
-.space {
-	padding: 1em;
+.placeholder img:hover, .noframe img:hover {
+  filter: blur(3px);
 }
-#vtile {
-  background: #3F51B5;
+.project {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2rem;      
 }
-#research {
+#projectpage {
+  width: 80vw;
+  height: 80vh;
   background: white;
-  color: black;
+  border: solid 1px black;
+  box-shadow: 0px 0px 6px #081021 ;    
+  z-index: 12;
+  position: fixed;
+  top:10vh;
+  left:10vw;
+  border-radius: 3px;
+  display: none;
+  flex-direction: column; 
+  transition: opacity 1s ease;
+  opacity: 0;
+  padding:2px;
 }
-#dhs , #multiuser{
-	background:#40661b;
+#projectpage iframe {
+  flex-grow: 1;
+  border: none;
+  margin: 1px;
+  width: 100%;
+}
+#iframeheader {
+  display: flex;
+  padding: 0 10px;
+}
+#close {    font-family: 'system-ui', sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    right: 10px;
+    border: solid 1px white;
+    border-radius: 3px;
+    padding: 0px 8px 2px 8px;
+    cursor: pointer;
+      }
+#close:hover {
+  border: solid 1px grey;
+}
+#close:active {
+  background: #eeeeec;
+}
+@media (min-width: 768px) { 
+  .prj {
+    min-width: 250px;
+    width: 50%;
+  }
+  .project {
+    display: flex;      
+    flex-direction: row;      
+  }
 }
 
-#iahn {
-    background: #52d71e;
-    color: black;
-}
-#bagviewer {
-	background:#5c3566;	
-}
-#localzoom {
-background: #029be2;
-}
-#phoenix {
-background: #d96a00;
-}
-#waalweelde {
-background: #fce94f;
-color: black;
-}
-#wiekwiek {
-background: #379a1b;
-}
-#rochelroute {
-background: #4d3565;
-}
-#firefly {
-background: #e01c4a;
-}
-#drone{
-
-  background: #ce1600;
-  } #void {
-background: black;
+@media (min-width: 992px) { 
+  body, html {
+    font-size: 110%;  
+  }
+  #sidebar {
+    display: inline-block;
+  }
+  .img {
+    max-width: 1000px;        
+    padding: 30px;
+  }
+  .txt {
+   max-width: 1000px;        
+  }
+  .prj {
+    min-width: 350px;
+  }
 }
 
-#wiion {
-background: #923c35;
-}
-#edugis {
-background: #006699;
-}
-#dymaxion{ 
-background: #204a87;
-}
-#dymaxion-switcher {
-cursor: pointer;
-}
-#cbsexplorer {
-    background: #E34A32;
-}
-#lichtproject {
-    background: #756BB1;
+@media (min-width: 1200px) { 
+  .img {
+    max-width: 1000px;        
+    padding: 30px;
+  }
+  .txt {
+    max-width: 1000px;        
+  }
+  .prj {
+    min-width: 500px;
+  }
+   body, html {     
+      font-size: 120%;
+    }
 }

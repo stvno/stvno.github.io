@@ -5,208 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>stvno's space in time</title>
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <style>
-@font-face {
-  font-family: system-ui;
-  font-style: normal;
-  font-weight: 300;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Segoe UI Light"), local("Ubuntu Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-}
-h1 {
-  font-family: 'system-ui', sans-serif;
-  font-size: 1.5em;
-}
-body, html {
-  margin: 0px;
-  padding:0px;
-  background: url('img/invtopography.png') fixed;
-  color: #081021;
- font-family: 'Lora', serif;line-height: 1.5;
-}
-a {
-   font-family: 'system-ui', sans-serif;
-   color:  #081021;
-   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  color: #333;
-}
-#content {
-  display: flex;
-}
-header {
-  height: 120px;  
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: #87ad7e;
-  background: url('img/header2.jpg');
-  box-shadow: 0px 1px 6px #74997A;
-  z-index: 1;
-
-    background-size: cover;
-      
-
-}
-header h1 {
-   color: #bbb;
-    mix-blend-mode: color-dodge;
-    padding-left: 2vw;
-    width: 94vw;
-}
-header  a {
-    float: right;
-    color: #888 !important;
-}
-#sidebar {
-  background: #081021;
-  height: 100vh;
-  width: 120px;
-  box-shadow: 2px 0px 4px rgba(24,40,73,0.5);      
-  display: none;
-  z-index:2;
-  border-right: solid 1px black;
-  flex: 0 0 120px;
-  position: sticky;
-  top: 0;
-}
-#projects {
-  display: inline-block;
-  background: url('img/topography.png');    
-  box-shadow: 4px 0px 6px #081021 ;    
-  border-right: solid 1px #728fce;  
-}
-.project {
-  display: flex;
-  padding: 2rem;      
-}
-.prj {
-  margin: 1rem;
-  width: 1005;
-}
-.placeholder {
-  width: 100%;
-  background: #eeeeec;
-  border: solid 1px grey;
-  cursor: pointer;
-}
-.placeholder img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: filter 1s;
-}
-.placeholder img:hover {
-  filter: blur(3px);
-}
-.project {
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 2rem;      
-}
-#projectpage {
-  width: 80vw;
-  height: 80vh;
-  background: white;
-  border: solid 1px black;
-  box-shadow: 0px 0px 6px #081021 ;    
-  z-index: 12;
-  position: fixed;
-  top:10vh;
-  left:10vw;
-  border-radius: 3px;
-  display: none;
-  flex-direction: column; 
-  transition: opacity 1s ease;
-  opacity: 0;
-  padding:2px;
-}
-#projectpage iframe {
-  flex-grow: 1;
-  border: none;
-  margin: 1px;
-  width: 100%;
-}
-#iframeheader {
-  display: flex;
-  padding: 0 10px;
-}
-#close {    font-family: 'system-ui', sans-serif;
-    font-size: 1.5em;
-    position: absolute;
-    right: 10px;
-    border: solid 1px white;
-    border-radius: 3px;
-    padding: 0px 8px 2px 8px;
-    cursor: pointer;
-      }
-#close:hover {
-  border: solid 1px grey;
-}
-#close:active {
-  background: #eeeeec;
-}
-@media (min-width: 768px) { 
-  .prj {
-    min-width: 250px;
-    width: 50%;
-  }
-  .project {
-    display: flex;      
-    flex-direction: row;      
-  }
-}
-
-@media (min-width: 992px) { 
-  body, html {
-    font-size: 110%;  
-  }
-  #sidebar {
-    display: inline-block;
-  }
-  .img {
-    max-width: 1000px;        
-    padding: 30px;
-  }
-  .txt {
-   max-width: 1000px;        
-  }
-  .prj {
-    min-width: 350px;
-  }
-}
-
-@media (min-width: 1200px) { 
-  .img {
-    max-width: 1000px;        
-    padding: 30px;
-  }
-  .txt {
-    max-width: 1000px;        
-  }
-  .prj {
-    min-width: 500px;
-  }
-   body, html {     
-      font-size: 120%;
-    }
-}
-    </style>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />    
   </head>
 <body>
  <div id="projectpage"><div id="iframeheader"><h1><a id="frameh1"></a></h1><div id="close">✘</div></div><iframe id="iframecontent" src=""></iframe></div>
 <header id="header"><h1>Steven Ottens' portfolio<a href="https://twitter.com/stvno/">@stvno</a></h1> </header>
-
+<!-- 
+       <article class="project" id="">
+        <div class="img prj">
+          <div class="placeholder"></div>
+        </div>
+        <div class="txt prj">
+          
+        </div>
+      </article>
+-->
 
   <div id="content">
     <nav id="sidebar">
       <div class="thumb"></div>
     </nav>
     <div id="projects">
+    <article class="project" id="">
+     
+      <div class="txt prj welcome">
+        <p> Welcome to my little corner of the internet. I work at <a href="http://www.geodan.nl/research">Geodan Research</a> as a UxDesigner/tinkerer and at the <a href="https://www.worldbank.org/">World Bank</a> on rural accessibility mapping. During the years I've done all kinds of fun stuff and this site is an attempt to collect the most interesting ones. All the projects listed here are either built or designed by me. You are free to use and extend them, though it would be nice if you let <a href="http://twitter.com/stvno">me</a> know if you do something nice with it. I tend to work on the edge of (browser-) technology, as such it is recommended to use Chrome or Firefox, though the videos should be fine for everyone. Click on the pictures for the goodies.</p>
+      </div>
+    </article>
+    <h2>-= 2017 =-</h2>
+    <article class="project" id="">
+      <div class="img prj">
+        <div class="placeholder"> <img src="img/roadestimator-sm.jpg" srcset="img/roadestimator-sm.jpg 500w, img/roadestimator-xl.jpg 1500w"
+           url="page/road-estimator/index.html" title="road estimator"></div>
+      </div>
+      <div class="txt prj">
+        <h1>road estimator</h1>
+        <p>Ongoing project to come up with a generic way to guestimate the road coverage in OSM for any given country, without the use of reference data. It builds upon the work <a href="https://blog.mapbox.com/how-complete-is-openstreetmap-7c369787af6e">MapBox</a> did on the completeness of OpenStreetMap. Currently it contains a series of <a href="https://vega.github.io/vega/">Vega</a> graphs exploring the differences between CIA world factbook road numbers and OSM road distances. 
+        </p>
+      </div>
+    </article>
+     <article class="project" id="">
+      <div class="img prj">
+        <div class="placeholder"> <img src="img/bronnenflow-sm.jpg" srcset="img/bronnenflow-sm.jpg 500w, img/bronnenflow-xl.jpg 1500w"
+           url="page/bronnenFlow/index.html" title="bronnen flow"></div>
+      </div>
+      <div class="txt prj">
+        <h1>bronnen flow</h1>
+        <p>A google spreadsheets based application for history students at Leiden University to visualise the networks in 17th centuury letters. Students read the letters and try to find out where it is written and to whom it is addressed. They can than enter the writer, the recipient, the various locations and other information in a collective spreadsheet. The application will then automatically create two maps with origins and destinations and a social network graph. The main aim for the application is to teach students to organise their data in a way computers can work with it.
+        </p>
+      </div>
+    </article>
+    <h2>-= 2016 =-</h2>
+    <article class="project" id="">
+        <div class="img prj">
+          <div class="noframe"><a href="https://github.com/WorldBank-Transport/ram"><img src="img/rra-sm.jpg" srcset="img/rra-sm.jpg 500w, img/rra-xl.jpg 1500w"
+           url="" title="rural accessibility map"></a></div>
+        </div>
+        <div class="txt prj">
+          <h1>rural accessibility map </h1>
+          <p>For the <a href="https://www.worldbank.org/">World Bank</a> I have developed a tool to assess the accessibility of rural populations in relation to critical services. Using the Open Source Routing Machine, it calculates travel times from population centers to the nearest POI. World Bank staff can adjust road parameters to quantify the effect of road improvements as percentages of the population that can reach critical services <i>n</i> minutes faster.</p>
+          <p>
+          The application is open source and can be found on <a href="https://github.com/WorldBank-Transport/ram">GitHub</a>. Curently the brilliant folks at <a href="https://developmentseed.org/">Development Seed</a> are improving the frontend and deploymet tools for Rural Accessibility Map.
+          </p>
+        </div>
+      </article>
+     <article class="project" id="bartholomap">
+        <div class="img prj">
+          <div class="placeholder">
+             <img src="img/bartholomap-sm.jpg" srcset="img/bartholomap-sm.jpg 500w, img/bartholomap-xl.jpg 1500w"
+           url="page/bartholomap/index.html" title="bartholomap">
+          </div>
+        </div>
+        <div class="txt prj">
+          <h1>bartholomap</h1>
+          <p>Project page for a 21st century version of John Bartholomew's 1914 map with isochrones from London. Using open data like <a href="http://osm.org">OpenStreetMap</a> and <a href="http://openflights.org/data.html">OpenFlights</a> and open source tools like <a href="https://github.com/Project-OSRM/osrm-backend">OSRM</a> and <a href="http://qgis.org">QGIS</a> I calculated how long it would take a modern day person to travel from London to 7000 places around the globe. Based on that information I created a modern day isochrone map. The page explains the various steps I took to get to this map. </p>
+        </div>
+      </article>
+      <h2>-= 2015 =-</h2>
       <article class="project" id="cbsexplorer">
         <div class="img prj">
           <div class="placeholder">
@@ -258,6 +135,7 @@ header  a {
       <p>Part of the job description of working by Geodan Research is providing the rest of the company with cool demos. We have collected quite a few over the years but they were not easy to find, only if you knew the URL you could access them. To make things easier for everyone I created a simple <a href="https://www.polymer-project.org/0.5/">polymer</a> based website where everyone could add demo's by modifying the configuration. The whole thing is searchable using tags included in the configuration. </p>      
         </div>
       </article>
+      <h2>-= 2014 =-</h2>
       <article class="project" id="dhs">
         <div class="img prj">
           <div class="placeholder"><img src="img/dhs-sm.jpg" srcset="img/dhs-sm.jpg 500w, img/dhs-xl.jpg 1500w"
@@ -289,6 +167,7 @@ header  a {
       <p>We had a discussion at work on the understandability of maps; if you want to compare different cities in Europe you want to view them all in a map, however the Benelux and neighboring Ruhrgebiet are very crowded with cities so you can't distuingish them properly. The classic solution is to zoom in on the map, but you will lose the overview. I proposed a 'localzoom' magnify glass which allows you to zoom in at a particular area without losing oversight.</p>
         </div>
       </article>
+      <h2>-= 2013 =-</h2>
        <article class="project" id="classificatie">
         <div class="img prj">
         <div class="placeholder"><img src="img/classificatie-sm.jpg" srcset="img/classificatie-sm.jpg 500w, img/classificatie-xl.jpg 1500w"
@@ -321,6 +200,7 @@ header  a {
       <p><a href="https://github.com/tomvantilburg">Tom</a> and I developed <a href="https://github.com/geodan/cow">COW</a> as a tool for real time multi-user (geo) data sharing in an environment with intermittent network access (think mobile devices in the field). I created this video to show how COW would work with <a href="http://www.geodan.com/products/phoenix/">Phoenix</a> and more in general what you could do with COW. COW is a pure browser solution using websockets and indexeddb and is at the hart of the crisis management application <a href="http://www.geodan.nl/producten/eagle-water">Eagle Water</a>. </p>
         </div>
       </article>
+      <h2>-= 2012 =-</h2>
        <article class="project" id="ahn">
         <div class="img prj">
           <div class="placeholder"><img src="img/ahn-sm.jpg" srcset="img/ahn-sm.jpg 500w, img/ahn-xl.jpg 1500w"
@@ -352,6 +232,7 @@ header  a {
       <p>I wanted a wall map of the world which would show the world in a new light. I came across the dymaxion projection and <a href="https://twitter.com/stvno/status/139117489425629186">Schuyler's</a> Geo::Dymaxion library. I transformed <a href="http://www.naturalearthdata.com/">Natural Earth Data</a> into geojson with QGIS and ran the geojson through a custom script to dymaxify it and load it back into QGIS, made a rough layout exported it to SVG and used Inkscape to create a full size wall map complete with seamonsters. </p>
         </div>
       </article>
+      <h2>-= 2011 =-</h2>
        <article class="project" id="tangible">
         <div class="img prj">
           <div class="placeholder"><img src="img/tangible-sm.jpg" srcset="img/tangible-sm.jpg 500w, img/tangible-xl.jpg 1500w"
@@ -362,6 +243,7 @@ header  a {
       <p>In 2005 Geodan co-developed a TangiTable; a table mounted projector and sensor array that allowed users to physically interact with a digital map on a table. Though not very portable it was a nice experimentation platform for touch based map-interfaces. In 2006 we received the <a href="https://en.wikipedia.org/wiki/DiamondTouch">MERL DiamondTouch</a> which was way more portable and easier to develop for. Then in 2008 we received the Microsoft Surface (the table, not the tablet). An all-in-one touchtable with object recognition. This was the platform where we started to develop SchetsGIS and later Phoenix. The video shows an interface to quickly compare scenarios of climate models using this object recognition. I both designed the interface and shot the video.  </p>
         </div>
       </article>
+      <h2>-= 2010 =-</h2>
        <article class="project" id="firefly">
         <div class="img prj">
           <div class="placeholder"><img src="img/firefly-sm.jpg" srcset="img/firefly-sm.jpg 500w, img/firefly-xl.jpg 1500w"
@@ -392,6 +274,7 @@ header  a {
       <p>A quick movie to show how low-cost drones can be used for real-time remote sensing and aerial mapping. Being a small and cheap drone which could be operated indoor, this setup was used in exhibitions and conferences to show how the <a href="./#firefly">firefly</a> setup could work.</p>
         </div>
       </article>
+      <h2>-= 2009 =-</h2>
       <article class="project" id="gps">
         <div class="img prj">
           <div class="placeholder"><img src="img/gps-sm.jpg" srcset="img/gps-sm.jpg 500w, img/gps-xl.jpg 1500w"
@@ -402,6 +285,7 @@ header  a {
       <p>An animation created with <a href="https://processing.org/">processing</a> using the GPS tracks of various colleagues. It shows their daily commute to work and through that the streets of Amsterdam and a few railways to various places in the Netherlands. The main purpose of this movie was to introduce the GPS tracker at the christmas meeting where it was handed out to everyone. </p>
         </div>
       </article>
+      <h2>-= 2008 =-</h2>
        <article class="project" id="">
         <div class="img prj">
           <div class="placeholder"><img src="img/wiion-sm.jpg" srcset="img/wiion-sm.jpg 500w, img/wiion-xl.jpg 1500w"
@@ -415,47 +299,6 @@ header  a {
     </div>
   </div>
 </div>
+<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
-<script>
-var main = document.getElementById('content');
-var popup = document.getElementById('projectpage');
-var close = document.getElementById('close');
-var iframe =  document.getElementById('iframecontent');
-var frameh1 =  document.getElementById('frameh1');
-var placeholders = document.getElementsByClassName('placeholder');
-
-
-[].forEach.call(document.getElementsByClassName('placeholder'), function (input) {
-    input['onclick' in input ? 'onclick' : 'ontouchend'] = function (e) {
-      e.stopPropagation();
-      var url = e.target.getAttribute('url');      
-      frameh1.innerText=e.target.getAttribute('title');
-      frameh1.setAttribute('href',url);
-      iframe.setAttribute('src',url);
-
-      popup.style.display = 'flex';
-      popup.style.opacity = 1;
-    };
-});
-
-function closePopup(e) {
-  e.stopPropagation();
-  iframe.setAttribute('src','redirect/blank.html');
-  popup.style.opacity = 0;
-  setTimeout(function() {popup.style.display = 'none';  }, 1000);
-}
-
-main.onclick = closePopup;
-close.onclick = closePopup;
-</script>
-<!-- 
-       <article class="project" id="">
-        <div class="img prj">
-          <div class="placeholder"></div>
-        </div>
-        <div class="txt prj">
-          
-        </div>
-      </article>
--->
