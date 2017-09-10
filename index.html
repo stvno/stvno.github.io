@@ -5,423 +5,457 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>stvno's space in time</title>
-    <link href='//fonts.googleapis.com/css?family=Ubuntu:300|Vollkorn' rel='stylesheet' type='text/css'>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link href="css/style.css" rel="stylesheet">    
-    <link rel="shortcut icon"
- href="favicon.ico" />
-  </head>
-<body >
-<div class="container-fluid">
-  <div id="header" class="row bg" data-ibg-bg="img/header.jpg"><div id="menulabel" style="display:none">navigation</div></div>
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Segoe UI Light"), local("Ubuntu Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+h1 {
+  font-family: 'system-ui', sans-serif;
+  font-size: 1.5em;
+}
+body, html {
+  margin: 0px;
+  padding:0px;
+  background: url('img/invtopography.png') fixed;
+  color: #081021;
+ font-family: 'Lora', serif;line-height: 1.5;
+}
+a {
+   font-family: 'system-ui', sans-serif;
+   color:  #081021;
+   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+#content {
+  display: flex;
+}
+header {
+  height: 120px;  
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #87ad7e;
+  background: url('img/header2.jpg');
+  box-shadow: 0px 1px 6px #74997A;
+  z-index: 1;
 
-  <div class="row">
-    <div class="col-md-2">
-        <div id="nav">
-            <div class="menuheader">web maps</div>
-            <div style="display:none;">
-                <ul>
-                <li class="menu" target="#cbsexplorer"><a href="./#cbsexplorer">cbs explorer</a></li>
-                <li class="menu" target="#lichtproject"><a href="./#lichtproject">lichtproject</a></li>
-                <li class="menu" target="#vtile"><a href="./#vtile">cbs vector tiles</a></li>
-                <li class="menu" target="#dhs"><a href="./#dhs">dynamic holland shading</a></li>
-                <li class="menu" target="#iahn"><a href="./#iahn">interactive height viewer</a></li>
-                <li class="menu" target="#bagviewer"><a href="./#bagviewer">interactive city growth</a></li>
-                <li class="menu" target="#localzoom"><a href="./#localzoom">localzoom with ol3</a></li>
-                <li class="menu" target="#waalweelde"><a href="./#waalweelde">reclassification application</a></li>
-                <li class="menu" target="#rochelroute"><a href="./#rochelroute">rochelroutes</a></li>
-                <li class="menu" target="#edugis"><a href="./#edugis">EduGIS: highschool webgis</a></li>
-                </ul>
-            </div>
-           <div class="menuheader">videos</div>
-           <div style="display:none;">
-                <ul>
-                <li class="menu" target="#multiuser"><a href="./#multiuser">multi user editing</a></li>
-                <li class="menu" target="#phoenix"><a href="./#phoenix">phoenix touchtable application</a></li>
-                <li class="menu" target="#wiekwiek"><a href="./#wiekwiek">tangible scenario interface</a></li>
-                <li class="menu" target="#firefly"><a href="./#firefly">firefly
-                exercise</a></li>
-                <li class="menu" target="#drone"><a href="./#drone">remote sensing by drone</a></li>
-                <li class="menu" target="#void"><a href="./#void">gps tracks animation</a></li>
-                <li class="menu" target="#wiion"><a href="./#wiion">wiion the game</a></li>
-                </ul>
-            </div>
-            <div class="menuheader">other</div>
-           <div style="display:none;">
-                <ul>
-                <li class="menu" target="#dymaxion"><a href="./#dymaxion">dymaxion wall map</a></li>
-                <li class="menu" target="#research"><a href="./#research">geodan research demosite</a></li>
-                </ul>
-            </div>
-        </div>
+    background-size: cover;
       
-    </div>
-    <div class="col-md-9 uitleg ">
-<h1>Hi there! ッ</h1>
-<div   class="twocolumn">
-<p> Welcome to my little corner of the internet. I work at <a href="http://www.geodan.nl/research">Geodan Research</a> as a UxDesigner/tinkerer. During the years I've done all kinds of fun stuff and this site is an attempt to collect the most interesting ones. All the projects listed here are either built or designed by me. You are free to use and extend them, though it would be nice if you let <a href="http://twitter.com/stvno">me</a> know if you do something nice with it. I tend to work on the edge of (browser-) technology, as such it is recommended to use Chrome or Firefox, though the videos should be fine for everyone. Click on the brightly coloured bars for the goodies.</p>
-<p>
-<ul>
-<li><a href="https://github.com/stvno/">GitHub</a></li>
-<li><a href="https://twitter.com/stvno/">Twitter</a></li>
-<li><a href="http://wiki.osgeo.org/wiki/User:Stvn">OSGeo</a></li>
-</ul>
-<span style=" display:inline-block; 
-    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
-    transform: matrix(-1, 0, 0, 1, 0, 0);">&copy;</span> Steven M. Ottens
-</p>
-</div>
 
-    </div>
-    <div class="col-md-1"></div>
-  </div> 
-<!-------------2015---------------->
-<div class="row spacer"></div>
+}
+header h1 {
+   color: #bbb;
+    mix-blend-mode: color-dodge;
+    padding-left: 2vw;
+    width: 94vw;
+}
+header  a {
+    float: right;
+    color: #888 !important;
+}
+#sidebar {
+  background: #081021;
+  height: 100vh;
+  width: 120px;
+  box-shadow: 2px 0px 4px rgba(24,40,73,0.5);      
+  display: none;
+  z-index:2;
+  border-right: solid 1px black;
+  flex: 0 0 120px;
+  position: sticky;
+  top: 0;
+}
+#projects {
+  display: inline-block;
+  background: url('img/topography.png');    
+  box-shadow: 4px 0px 6px #081021 ;    
+  border-right: solid 1px #728fce;  
+}
+.project {
+  display: flex;
+  padding: 2rem;      
+}
+.prj {
+  margin: 1rem;
+  width: 1005;
+}
+.placeholder {
+  width: 100%;
+  background: #eeeeec;
+  border: solid 1px grey;
+  cursor: pointer;
+}
+.placeholder img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 1s;
+}
+.placeholder img:hover {
+  filter: blur(3px);
+}
+.project {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2rem;      
+}
+#projectpage {
+  width: 80vw;
+  height: 80vh;
+  background: white;
+  border: solid 1px black;
+  box-shadow: 0px 0px 6px #081021 ;    
+  z-index: 12;
+  position: fixed;
+  top:10vh;
+  left:10vw;
+  border-radius: 3px;
+  display: none;
+  flex-direction: column; 
+  transition: opacity 1s ease;
+  opacity: 0;
+  padding:2px;
+}
+#projectpage iframe {
+  flex-grow: 1;
+  border: none;
+  margin: 1px;
+  width: 100%;
+}
+#iframeheader {
+  display: flex;
+  padding: 0 10px;
+}
+#close {    font-family: 'system-ui', sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    right: 10px;
+    border: solid 1px white;
+    border-radius: 3px;
+    padding: 0px 8px 2px 8px;
+    cursor: pointer;
+      }
+#close:hover {
+  border: solid 1px grey;
+}
+#close:active {
+  background: #eeeeec;
+}
+@media (min-width: 768px) { 
+  .prj {
+    min-width: 250px;
+    width: 50%;
+  }
+  .project {
+    display: flex;      
+    flex-direction: row;      
+  }
+}
 
-  <div class="row content content_map" id="cbsexplorer">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>cbs explorer</h1>
-      <p>Census data have been available for the Netherlands for a very long time now and they are typically visualised as choropleth maps. However, from an educational point of view just showing the choropleth doesn't teach students much about the options the cartographer has and the effects of the choices on the final map. The CBS-explorer is an exploration in cartography education. Using vector tiles and a large attribute table one is able to choose how to visualize an attribute as a choropleth and have instant results.</p>      
-    </div>
-    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/cbsexplorer.png');">&nbsp;</div>
-  </div>
+@media (min-width: 992px) { 
+  body, html {
+    font-size: 110%;  
+  }
+  #sidebar {
+    display: inline-block;
+  }
+  .img {
+    max-width: 1000px;        
+    padding: 30px;
+  }
+  .txt {
+   max-width: 1000px;        
+  }
+  .prj {
+    min-width: 350px;
+  }
+}
 
-  <div class="row mapviewer extrahigh" style="display:none" link="page/cbsexplorer/index.html"></div>  
- 
-<!-------------2015---------------->
-<div class="row spacer"></div>
+@media (min-width: 1200px) { 
+  .img {
+    max-width: 1000px;        
+    padding: 30px;
+  }
+  .txt {
+    max-width: 1000px;        
+  }
+  .prj {
+    min-width: 500px;
+  }
+   body, html {     
+      font-size: 120%;
+    }
+}
+    </style>
+  </head>
+<body>
+ <div id="projectpage"><div id="iframeheader"><h1><a id="frameh1"></a></h1><div id="close">✘</div></div><iframe id="iframecontent" src=""></iframe></div>
+<header id="header"><h1>Steven Ottens' portfolio<a href="https://twitter.com/stvno/">@stvno</a></h1> </header>
 
-  <div class="row content content_map" id="lichtproject">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>lichtproject</h1>
-      <p>In November high school kids went out on the streets to measure the type of lights used in houses in their neighborhood using a home made spectrometer. They would then uplaod these measurements on the lichtproject website and all these measurements are displayed on the map. By using vector tiles for the geometries and a custom aggregating tsv engine it was possible to show the most recent measurements on all zoom levels. Because it was unknown which lightbulb would be most common we devised a flexible cartography which allows for any type of light to take precedence or be removed from the map.</p>      
-    </div>
-    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/lichtproject.png');">&nbsp;</div>
-  </div>
 
-  <div class="row mapviewer extrahigh" style="display:none" link="https://lichtproject.edugis.nl/"></div>  
- 
-<!-------------2015---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map" id="vtile">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>cbs vector tiles</h1>
-      <p>For the <a href="http://www.geodan.nl/research/pico/">PICO</a> project I'm building a viewer where the user can filter on specific attributes to help him to find the area best suited for their needs or capabilities. At the moment this is done using CQL filters in Geoserver. However with the release of the <A href="https://github.com/mapbox/vector-tile-spec">mapbox vector tiling spec</a> a range of software tools have arrived that make it at least interesting to try to do this entirely clientside. This application is an exploration on filter-interfaces; using the filter interface paradigm of webshops "show only the products that fit the search criteria, by dragging some sliders" and translate it to a map. Hopefully this will provide the user with powerful, yet easy to understand filter interfaces and finally allow the burial of the Query builder. For instance if you filter for 'avg distance to hospital' between 0 and 5 km it will blank out the areas more than 5km from the hospital and show the neighbourhoods that fit the criteria.</p>      
-    </div>
-    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/vtile.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer extrahigh" style="display:none" link="https://research.geodan.nl/sites/buurten/#10/52.3530/5.1505"></div>  
- 
-
-<!-------------2015---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map dark" id="research">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2015</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>geodan research demosite</h1>
+  <div id="content">
+    <nav id="sidebar">
+      <div class="thumb"></div>
+    </nav>
+    <div id="projects">
+      <article class="project" id="cbsexplorer">
+        <div class="img prj">
+          <div class="placeholder">
+          <img src="img/cbsexplorer-sm.jpg" srcset="img/cbsexplorer-sm.jpg 500w, img/cbsexplorer-xl.jpg 1500w"
+           url="https://stvno.github.io/page/cbsexplorer/index.html#12/52.3420/4.9100" title="cbs explorer">
+          </div>
+        </div>
+        <div class="txt prj">
+          <h1>cbs explorer</h1>
+          <p>Census data have been available for the Netherlands for a very long time now and they are typically visualised as choropleth maps. However, from an educational point of view just showing the choropleth doesn't teach students much about the options the cartographer has and the effects of the choices on the final map. The CBS-explorer is an exploration in cartography education. Using vector tiles and a large attribute table one is able to choose how to visualize an attribute as a choropleth and have instant results.</p>
+        </div>
+      </article>
+      <article class="project" id="lichtproject">
+        <div class="img prj">
+          <div class="placeholder">
+            <img src="img/lichtproject-sm.jpg" srcset="img/lichtproject-sm.jpg 500w, img/lichtproject-xl.jpg 1500w"
+           url="redirect/lichtproject.html" title="lichtproject">
+          
+          </div>
+        </div>
+        <div class="txt prj">
+          <h1>lichtproject</h1>
+          <p>In November high school kids went out on the streets to measure the type of lights used in houses in their neighborhood using a home made spectrometer. They would then uplaod these measurements on the lichtproject website and all these measurements are displayed on the map. By using vector tiles for the geometries and a custom aggregating tsv engine it was possible to show the most recent measurements on all zoom levels. Because it was unknown which lightbulb would be most common we devised a flexible cartography which allows for any type of light to take precedence or be removed from the map.</p>      
+        </div>
+      </article>
+      <article class="project" id="cbsfilter">
+        <div class="img prj">
+          <div class="placeholder">
+            <img src="img/cbsfilter-sm.jpg" srcset="img/cbsfilter-sm.jpg 500w, img/cbsfilter-xl.jpg 1500w"
+           url="https://research.geodan.nl/sites/buurten/#10/52.3530/5.1505" title="cbs vector tiles">
+          
+          </div>
+        </div>
+        <div class="txt prj">
+           <h1>cbs vector tiles</h1>
+      <p>For the <a href="http://www.geodan.nl/research/pico/">PICO</a> project I'm building a viewer where the user can filter on specific attributes to help him to find the area best suited for their needs or capabilities. At the moment this is done using CQL filters in Geoserver. However with the release of the <a href="https://github.com/mapbox/vector-tile-spec">mapbox vector tiling spec</a> a range of software tools have arrived that make it at least interesting to try to do this entirely clientside. This application is an exploration on filter-interfaces; using the filter interface paradigm of webshops "show only the products that fit the search criteria, by dragging some sliders" and translate it to a map. Hopefully this will provide the user with powerful, yet easy to understand filter interfaces and finally allow the burial of the Query builder. For instance if you filter for 'avg distance to hospital' between 0 and 5 km it will blank out the areas more than 5km from the hospital and show the neighbourhoods that fit the criteria.</p>  
+        </div>
+      </article>
+      <article class="project" id="research">
+        <div class="img prj">
+          <div class="placeholder">
+              <img src="img/research-sm.jpg" srcset="img/research-sm.jpg 500w, img/research-xl.jpg 1500w"
+           url="https://research.geodan.nl/" title="geodan research demosite">
+          
+          </div>
+        </div>
+        <div class="txt prj">
+           <h1>geodan research demosite</h1>
       <p>Part of the job description of working by Geodan Research is providing the rest of the company with cool demos. We have collected quite a few over the years but they were not easy to find, only if you knew the URL you could access them. To make things easier for everyone I created a simple <a href="https://www.polymer-project.org/0.5/">polymer</a> based website where everyone could add demo's by modifying the configuration. The whole thing is searchable using tags included in the configuration. </p>      
-    </div>
-    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/research.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer extrahigh" style="display:none" link="https://research.geodan.nl/demos"></div>  
- 
-
-
-<!-------------2014---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map" id="dhs">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2014</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>dynamic Holland shading</h1>
-      <p>In 2014 the complete detailed height model (<a href="https://www.pdok.nl/nl/actueel/nieuws/artikel/06mrt14-actueel-hoogtebestand-nederland-voor-iedereen-vrij-toegankelijk">AHN2</a>) of the Netherlands was released as open data. The data was collected for the government body's in charge of keeping our feet dry. To show that you can use the data for different purposes I created this viewer. It is based on the <a href="#iahn">interactive height viewer</a> and  <a href="http://agafonkin.com/en/">Vladimir Agafonkin</a>'s <a href="https://www.mapbox.com/blog/dynamic-hill-shading/">hillshade</a> and <a hre="http://www.suncalc.net/">suncalc</a> viewers.</p>      
-    </div>
-    <div class="col-md-1 col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/dhs.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer " style="display:none" link="https://research.geodan.nl/sites/ahn2/"></div>  
- 
-
-<!-------------2014---------------->
-<div class="row spacer"></div> 
-
-  <div class="row content content_map" id="bagviewer">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2014</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>interactive city growth</h1>
+        </div>
+      </article>
+      <article class="project" id="dhs">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/dhs-sm.jpg" srcset="img/dhs-sm.jpg 500w, img/dhs-xl.jpg 1500w"
+           url="https://research.geodan.nl/sites/ahn2/#13/50.7950/5.9223" title="dynamic Holland shading">
+          </div>
+        </div>
+        <div class="txt prj">
+           <h1>dynamic Holland shading</h1>
+      <p>In 2014 the complete detailed height model (<a href="https://www.pdok.nl/nl/actueel/nieuws/artikel/06mrt14-actueel-hoogtebestand-nederland-voor-iedereen-vrij-toegankelijk">AHN2</a>) of the Netherlands was released as open data. The data was collected for the government body's in charge of keeping our feet dry. To show that you can use the data for different purposes I created this viewer. It is based on the <a href="#iahn">interactive height viewer</a> and  <a href="http://agafonkin.com/en/">Vladimir Agafonkin</a>'s <a href="https://www.mapbox.com/blog/dynamic-hill-shading/">hillshade</a> and <a hre="http://www.suncalc.net/">suncalc</a> viewers.</p>    
+        </div>
+      </article>
+      <article class="project" id="bag">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/bag-sm.jpg" srcset="img/bag-sm.jpg 500w, img/bag-xl.jpg 1500w"
+           url="page/bagviewer/index.html#15/52.3824/4.6271" title="interactive city growth"></div>
+        </div>
+        <div class="txt prj">
+          <h1>interactive city growth</h1>
       <p>An updated version of the <a href="http://bag.edugis.nl">interactive BAG viewer</a> I created in 2012. It uses specially encoded PNG tiles, where each colour represents the year of construction of the building. Apart from some visual restyling the main difference is that this one now uses webworkers to render the buildings.</p>
-    </div>
-    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/bag.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer"  style="display:none" link="page/bagviewer/index.html"> </div>    
-
-<!-------------2014---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map" id="localzoom">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2014</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>localzoom with ol3</h1>
+        </div>
+      </article>
+       <article class="project" id="localzoom">
+        <div class="img prj">
+            <div class="placeholder"><img src="img/localzoom-sm.jpg" srcset="img/localzoom-sm.jpg 500w, img/localzoom-xl.jpg 1500w"
+           url="page/localzoom/index.html" title="localzoom with ol3"></div>
+        </div>
+        <div class="txt prj">
+          <h1>localzoom with ol3</h1>
       <p>We had a discussion at work on the understandability of maps; if you want to compare different cities in Europe you want to view them all in a map, however the Benelux and neighboring Ruhrgebiet are very crowded with cities so you can't distuingish them properly. The classic solution is to zoom in on the map, but you will lose the overview. I proposed a 'localzoom' magnify glass which allows you to zoom in at a particular area without losing oversight.</p>
-    </div>
-    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/lzoom.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer"  style="display:none" link="page/localzoom/index.html"> </div>    
-  
-<!------------2013---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map dark" id="waalweelde">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2013</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>reclassification application</h1>
+        </div>
+      </article>
+       <article class="project" id="classificatie">
+        <div class="img prj">
+        <div class="placeholder"><img src="img/classificatie-sm.jpg" srcset="img/classificatie-sm.jpg 500w, img/classificatie-xl.jpg 1500w"
+           url="https://research.geodan.nl/sites/waalweelde/service/#zoom=8&lat=430760.96&lon=201701.44&layers=BTT" title="reclassification application"></div>
+        </div>
+        <div class="txt prj">
+            <h1>reclassification application</h1>
       <p>This is a proof of concept for a planning and modelling tool for ecology-management. The riverplains have various ecotypes and they have different impacts on the flow and throughput of the river. The <a href="http://wur.nl">university of Wageningen</a> developed a model which would calculate the development of a plot depending on the current vegetation, distance from the river, soil type etc. This way you could predict the vegetation type in 5 years and the effect on the river capacity. A site manager can use this tool to quickly assess the impact of a management-change. <b>unfortunately some services are gone noawadays</b></p>
-    </div>
-    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/waalweelde.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row mapviewer extrahigh"  style="display:none" link="https://research.geodan.nl/sites/waalweelde/service/#zoom=8&lat=430760.96&lon=199403.2"></div>    
-
-<!------------2013---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map" id="rochelroute">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2013</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>rochelroutes</h1>
+        </div>
+      </article>
+       <article class="project" id="rochel">
+        <div class="img prj">
+           <div class="placeholder"><img src="img/rochel-sm.jpg" srcset="img/rochel-sm.jpg 500w, img/rochel-xl.jpg 1500w"
+           url="https://research.geodan.nl/sites/milieudefensie/#" title="rochelroutes"></div>
+       
+        </div>
+        <div class="txt prj">
+           <h1>rochelroutes</h1>
       <p>For the dutch environmental organisation milieudefensie asked for a multimedia website where people could see the impact of various motorised vehicles during a cycletour through different cities. They equiped bicycles with a GPS tracker, a video camera and a device to measure ultra fine particulates in the air. By combining the map with the route, the graph of the particulates concentration and the video the visitor can see where the spikes in the concentration are and what the probable cause is.</p>
-    </div>
-    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/rochelroute.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row mapviewer extrahigh"  style="display:none" link="https://research.geodan.nl/sites/milieudefensie/#"></div>    
-
-
-<!------------2013---------------->
-<div class="row spacer"></div>    
- 
-  <div class="row content content_other" id="multiuser">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2013</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>multi user editing</h1>
+        </div>
+      </article>
+       <article class="project" id="multiuser">
+        <div class="img prj">
+            <div class="placeholder"><img src="img/multiuser-sm.jpg" srcset="img/multiuser-sm.jpg 500w, img/multiuser-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/DDA8jrPAPRA" title="multi user editing"></div>
+       
+        </div>
+        <div class="txt prj">
+           <h1>multi user editing</h1>
       <p><a href="https://github.com/tomvantilburg">Tom</a> and I developed <a href="https://github.com/geodan/cow">COW</a> as a tool for real time multi-user (geo) data sharing in an environment with intermittent network access (think mobile devices in the field). I created this video to show how COW would work with <a href="http://www.geodan.com/products/phoenix/">Phoenix</a> and more in general what you could do with COW. COW is a pure browser solution using websockets and indexeddb and is at the hart of the crisis management application <a href="http://www.geodan.nl/producten/eagle-water">Eagle Water</a>. </p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/multiuser.png');">
-  &nbsp;
-    </div>
-  </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/DDA8jrPAPRA" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-
-<!--------------2012-------------->
-<div class="row spacer"></div> 
-
-  <div class="row content dark content_map" id="iahn">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2012</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>interactive height viewer</h1>
+        </div>
+      </article>
+       <article class="project" id="ahn">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/ahn-sm.jpg" srcset="img/ahn-sm.jpg 500w, img/ahn-xl.jpg 1500w"
+           url="https://stvno.github.io/page/ahn/#10/53.0048/7.1837" title="interactive height viewer"></div>
+          </div>
+        
+        <div class="txt prj">
+           <h1>interactive height viewer</h1>
       <p>In 2011 I recieved the digital elevation model of the Netherlands, both version 1 and the first batches of version 2. I had already used Leaflets canvas implementation to build the <a href="http://bag.edugis.nl">iBAG viewer</a> and I figured that a similar approach could be used to build a highly dynamic height model viewer. The Netherlands might appear to be flat, but if you measure accurately enough even a 'pooltable' has hills. However, these centimeter-differences are difficult to visualise if you also have to take into account the 300m+ height difference overall. Allowing the user to set his own classification makes it possible to visualise the minute difference in an agricultural field that have impact on the crop-growth.<br/>This viewer is a slightly more modern version of the 2012 one: using webworkers and the 50cm <a href="htp://ahn.nl">AHN2</a> data that has since become open data.</p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/ahn.png');">&nbsp;</div>
-  </div>
-
-  <div class="row mapviewer" link="page/ahn/" style="display:none"></div> 
-  
-<!-------------2012---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="phoenix">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2012</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>phoenix touchtable application</h1>
+        </div>
+      </article>
+        <article class="project" id="phoenix">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/phoenix-sm.jpg" srcset="img/phoenix-sm.jpg 500w, img/phoenix-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/STx6vko62TE" title="phoenix touchtable application"></div>
+        </div>
+        <div class="txt prj">
+           <h1>phoenix touchtable application</h1>
       <p>Ever since I started at Geodan Research we've been working with 'touchtables' in their different inceptions. The various tables, experiments and applications resulted in <a href="http://www.geodan.com/products/phoenix/">Phoenix</a>, an application that allows for a multi-person, single display discussion on a map. Initially meant as a tool for spatial planning discussions with stakeholders, it has become a popular platform to show and discuss (the power of) geo information. I've designed the interaction model and the interface of the application and shot and edited this movie.</p>
+        </div>
+      </article>
+       <article class="project" id="dymaxion">
+        <div class="img prj">
+           <div class="placeholder"><img src="img/dymaxion-sm.jpg" srcset="img/dymaxion-sm.jpg 500w, img/dymaxion-xl.jpg 1500w"
+           url="page/dymaxion/map.png" title="dymaxion wall map"></div>
     </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/phoenix.png');">&nbsp;</div>
-  </div>
-
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/STx6vko62TE" frameborder="0" allowfullscreen></iframe>  
-  </div>  
-  
-<!-------------2012---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="dymaxion">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2012</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>dymaxion wall map</h1>
+        <div class="txt prj">
+           <h1>dymaxion wall map</h1>
       <p>I wanted a wall map of the world which would show the world in a new light. I came across the dymaxion projection and <a href="https://twitter.com/stvno/status/139117489425629186">Schuyler's</a> Geo::Dymaxion library. I transformed <a href="http://www.naturalearthdata.com/">Natural Earth Data</a> into geojson with QGIS and ran the geojson through a custom script to dymaxify it and load it back into QGIS, made a rough layout exported it to SVG and used Inkscape to create a full size wall map complete with seamonsters. </p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/dymaxion.png');">&nbsp;</div>
-  </div>
-
-  <div class="row " style="display:none"> 
-    <span id="dymaxion-switcher"><img src="page/dymaxion/map.png"/></span>
-  </div>  
-  
-<!-------------2011---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="wiekwiek">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2011</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>tangible scenario interface</h1>
+        </div>
+      </article>
+       <article class="project" id="tangible">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/tangible-sm.jpg" srcset="img/tangible-sm.jpg 500w, img/tangible-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/fpW6ekXIZ1Y" title="tangible scenario interface"></div>
+           </div>
+        <div class="txt prj">
+           <h1>tangible scenario interface</h1>
       <p>In 2005 Geodan co-developed a TangiTable; a table mounted projector and sensor array that allowed users to physically interact with a digital map on a table. Though not very portable it was a nice experimentation platform for touch based map-interfaces. In 2006 we received the <a href="https://en.wikipedia.org/wiki/DiamondTouch">MERL DiamondTouch</a> which was way more portable and easier to develop for. Then in 2008 we received the Microsoft Surface (the table, not the tablet). An all-in-one touchtable with object recognition. This was the platform where we started to develop SchetsGIS and later Phoenix. The video shows an interface to quickly compare scenarios of climate models using this object recognition. I both designed the interface and shot the video.  </p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/wiekwiek.png');">
-  &nbsp;
-    </div>
-  </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/fpW6ekXIZ1Y" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-
-<!--------------2010-------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="firefly">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2010</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>firefly exercise</h1>
+        </div>
+      </article>
+       <article class="project" id="firefly">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/firefly-sm.jpg" srcset="img/firefly-sm.jpg 500w, img/firefly-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/4-MT9xUaUJ0" title="firefly exercise"></div>
+          </div>
+        <div class="txt prj">
+           <h1>firefly exercise</h1>
       <p>With the rise of cheap, easy to control small helicopters the idea arose to use a drone to assist firefighters in the forest. We used a petrol powered helicopter by Delft Dynamics which provided a stable camera platform for up to an hour between refueling. The camera feed was streamed to the <a href="http://www.geodan.com/products/eagle-cms/">eagle crisismanagement system</a> and georectified to overlay on a map. This way the commander could locate its trucks and determine the way the fire was developing. This movie was shot during a fire-exercise in the Amsterdam harbour.   </p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/firefly.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/4-MT9xUaUJ0" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-
-<!------------2010---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_map" id="edugis">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><span title="click here to view the application as a full page" class="popout glyphicon glyphicon-resize-full"></span><p>2010</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>EduGIS: highschool webgis</h1>
+        </div>
+      </article>
+       <article class="project" id="edugis">
+        <div class="img prj">
+           <div class="placeholder"><img src="img/edugis-sm.jpg" srcset="img/edugis-sm.jpg 500w, img/edugis-xl.jpg 1500w"
+           url="redirect/edugis.html" title="EduGIS: highschool webgis"></div>
+        </div>
+        <div class="txt prj">
+          <h1>EduGIS: highschool webgis</h1>
       <p>In 2004 high quality geographic data of their surroundings were hard to come by for highschools in the Netherlands, though GIS became increasingly more important in their curriculum. The Dutch Cadastre together with the Free University in Amsterdam asked Geodan to develop a web application for highschools were they would donate  high quality geo-data that would be freely available for highschools. Very quickly it was discovered that traditional webgis platforms were not capapable of delevering the performance needed to satisfy classrooms full of impatient students. I worked together with various people form the OSGeo community to develop a tiling standard and software which could be used to create a high performance webGIS on a shoestring budget. In 2010 the original viewer was replaced with this one utilising the then modern software stacks.</p>
-    </div>
-    <div class="col-md-1  col-md-offset-2 hidden-sm hidden-xs img" style="background-image: url('img/edugis.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row mapviewer extrahigh"  style="display:none" link="https://kaart.edugis.nl"></div>  
-  
- <!-------------2010---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="drone">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2010</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>remote sensing by drone</h1>
+        </div>
+      </article>
+      <article class="project" id="drone">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/drone-sm.jpg" srcset="img/drone-sm.jpg 500w, img/drone-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/3eZx_aTkM7s" title="remote sensing by drone"></div>
+        </div>
+        <div class="txt prj">
+           <h1>remote sensing by drone</h1>
       <p>A quick movie to show how low-cost drones can be used for real-time remote sensing and aerial mapping. Being a small and cheap drone which could be operated indoor, this setup was used in exhibitions and conferences to show how the <a href="./#firefly">firefly</a> setup could work.</p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/drone.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/3eZx_aTkM7s" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-  
-<!-------------2009---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="void">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2009</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>gps tracks animation</h1>
+        </div>
+      </article>
+      <article class="project" id="gps">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/gps-sm.jpg" srcset="img/gps-sm.jpg 500w, img/gps-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/PeeV33q-5zU" title="gps tracks animation"></div>
+        </div>
+        <div class="txt prj">
+           <h1>gps tracks animation</h1>
       <p>An animation created with <a href="https://processing.org/">processing</a> using the GPS tracks of various colleagues. It shows their daily commute to work and through that the streets of Amsterdam and a few railways to various places in the Netherlands. The main purpose of this movie was to introduce the GPS tracker at the christmas meeting where it was handed out to everyone. </p>
-    </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/void.png');">&nbsp;</div>
-  </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/PeeV33q-5zU" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-    
-<!-------------2008---------------->
-<div class="row spacer"></div>
-
-  <div class="row content content_other" id="wiion">
-    <div class="col-md-2 space">
-        <a href="#nav" title="back to the menu"><span href="#nav" class="glyphicon glyphicon-arrow-up"></span></a><p>2008</p>
-    </div>
-    <div class=" col-md-7 ">
-      <h1>wiion the game</h1>
+        </div>
+      </article>
+       <article class="project" id="">
+        <div class="img prj">
+          <div class="placeholder"><img src="img/wiion-sm.jpg" srcset="img/wiion-sm.jpg 500w, img/wiion-xl.jpg 1500w"
+           url="https://www.youtube.com/embed/jw06NdCiqxE" title="wiion the game"></div>
+        </div>
+        <div class="txt prj">
+          <h1>wiion the game</h1>
       <p>The Wii and especially the wiimote allowed us to play with different human-computer interaction methods. It was fun, though tiresome, to use the wiimote to interact with geodata. When Geodan launched the <a href="http://www.geodan.nl/producten/wion-systeem/">WION system</a> we were asked to come up with a crowd-puller at an major exhibition. I designed the game, where the user had to search for leaks in the underground network of pipes using the wiimote, dig it up and fix the leak. </p>
+        </div>
+      </article>
     </div>
-     <div class="col-md-1 col-md-offset-2  hidden-sm hidden-xs img" style="background-image: url('img/wiion.png');">&nbsp;</div>
   </div>
-  
-  <div class="row video" style="display:none"> 
-    <iframe src="//www.youtube.com/embed/jw06NdCiqxE" frameborder="0" allowfullscreen></iframe>  
-  </div>    
-    
-<!---------------------------->
-<div class="row spacer"></div> 
-    </div>
-    <script src="dist/jquery.min.js" type="text/javascript"></script>  
-    <script src="index.js" type="text/javascript"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-58675628-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-  </body>
+</div>
+</body>
 </html>
+<script>
+var main = document.getElementById('content');
+var popup = document.getElementById('projectpage');
+var close = document.getElementById('close');
+var iframe =  document.getElementById('iframecontent');
+var frameh1 =  document.getElementById('frameh1');
+var placeholders = document.getElementsByClassName('placeholder');
 
+
+[].forEach.call(document.getElementsByClassName('placeholder'), function (input) {
+    input['onclick' in input ? 'onclick' : 'ontouchend'] = function (e) {
+      e.stopPropagation();
+      var url = e.target.getAttribute('url');      
+      frameh1.innerText=e.target.getAttribute('title');
+      frameh1.setAttribute('href',url);
+      iframe.setAttribute('src',url);
+
+      popup.style.display = 'flex';
+      popup.style.opacity = 1;
+    };
+});
+
+function closePopup(e) {
+  e.stopPropagation();
+  iframe.setAttribute('src','redirect/blank.html');
+  popup.style.opacity = 0;
+  setTimeout(function() {popup.style.display = 'none';  }, 1000);
+}
+
+main.onclick = closePopup;
+close.onclick = closePopup;
+</script>
+<!-- 
+       <article class="project" id="">
+        <div class="img prj">
+          <div class="placeholder"></div>
+        </div>
+        <div class="txt prj">
+          
+        </div>
+      </article>
+-->
