@@ -106,15 +106,17 @@ header  a {
   padding: 2rem;      
 }
 #projectpage {
-  width: 80vw;
-  height: 80vh;
+  width: 96vw;
+  height: 96vh;
   background: white;
   border: solid 1px black;
   box-shadow: 0px 0px 6px #081021 ;    
   z-index: 12;
   position: fixed;
-  top:10vh;
-  left:10vw;
+  top:2vh;
+  left:2vw;
+  bottom: 2vw;
+  right: 2vw;
   border-radius: 3px;
   display: none;
   flex-direction: column; 
@@ -174,6 +176,14 @@ header  a {
   }
   .prj {
     min-width: 350px;
+  }
+  #projectpage {
+    width: 80vw;
+    height: 80vh;
+    top:10vh;
+    left:10vw;
+    bottom: 10vw;
+    right: 10vw;
   }
 }
 
