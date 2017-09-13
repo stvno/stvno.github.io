@@ -90,12 +90,23 @@ header  a {
   background: #eeeeec;
   border: solid 1px grey;
   cursor: pointer;
+  box-shadow: 0px 0px 10px grey;
+  border-radius: 3px;
+  margin-bottom: 1px;
+  margin-right: 1px;
+}
+.placeholder:hover, .noframe:hover {
+  box-shadow: 0px 0px 5px grey;
+  margin-top: 1px;
+  margin-left: 1px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 .placeholder img, .noframe img {
   width: 100%;
   height: auto;
   display: block;
-  transition: filter 1s;
+  transition: filter 0.5s;
 }
 .placeholder img:hover, .noframe img:hover {
   filter: blur(3px);
