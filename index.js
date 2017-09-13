@@ -14,7 +14,7 @@ var frameh1 =  document.getElementById('frameh1');
     input['onclick' in input ? 'onclick' : 'ontouchend'] = function (e) {
       e.stopPropagation();
       var url = e.target.getAttribute('url');      
-      frameh1.innerHTML=e.target.getAttribute('title')+' <svg viewBox="0 0 6.8791633 6.8791633" height="6.8791633mm" width="6.8791633mm">\
+      frameh1.innerHTML=e.target.getAttribute('titel')+' <svg viewBox="0 0 6.8791633 6.8791633" height="6.8791633mm" width="6.8791633mm">\
   <path d="M 0.13229,5.4239564 V 6.7468731 H 1.4552066"/>\
   <path d="M 5.4239567,0.1322898 H 6.7468733 V 1.4552064"/>\
   <path d="M 1.4552066,4.1010398 V 5.4239564 H 2.7781234"/>\
