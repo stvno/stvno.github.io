@@ -18,7 +18,6 @@ h2 {
 body, html {
   margin: 0px;
   padding:0px;
-  background: url('../img/invtopography.png') fixed;
   color: #081021;
  font-family: 'Lora', serif;line-height: 1.5;
 }
@@ -86,8 +85,7 @@ header  a {
   color: white;
 }
 #projects {
-  display: inline-block;
-  background: url('../img/topography.png');    
+  display: inline-block;   
   box-shadow: 4px 0px 6px #081021 ;    
   border-right: solid 1px #728fce;  
 }
