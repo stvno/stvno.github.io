@@ -26,7 +26,16 @@
 
   <div id="content">
     <nav id="sidebar">
-      <div class="thumb"></div>
+      <div class="thumb">2017</div>
+      <div class="thumb">2016</div>
+      <div class="thumb">2015</div>
+      <div class="thumb">2014</div>
+      <div class="thumb">2013</div>
+      <div class="thumb">2012</div>
+      <div class="thumb">2011</div>
+      <div class="thumb">2010</div>
+      <div class="thumb">2009</div>
+      <div class="thumb">2008</div>
     </nav>
     <div id="projects">
     <article class="project" id="">
@@ -34,7 +43,7 @@
         <p> Welcome to my little corner of the internet. I work at <a href="http://www.geodan.nl/research">Geodan Research</a> as a UxDesigner/tinkerer and at the <a href="https://www.worldbank.org/">World Bank</a> on rural accessibility mapping. During the years I've done all kinds of fun stuff and this site is an attempt to collect the most interesting ones. All the projects listed here are either built or designed by me. You are free to use and extend them, though it would be nice if you let <a href="http://twitter.com/stvno">me</a> know if you do something nice with it. I tend to work on the edge of (browser-) technology, as such it is recommended to use Chrome or Firefox, though the videos should be fine for everyone. Click on the pictures for the goodies.</p>
       </div>
     </article>
-    <h2>-= 2017 =-</h2>
+    <h2 id="y2017">-= 2017 =-</h2>
      <article class="project" id="">
       <div class="img prj">
         <div class="placeholder"> <img title="click to view the application" src="img/bronnenflow-sm.jpg" srcset="img/bronnenflow-sm.jpg 500w, img/bronnenflow-xl.jpg 1500w"
@@ -57,7 +66,7 @@
         </p>
       </div>
     </article>
-    <h2>-= 2016 =-</h2>
+    <h2 id="y2016">-= 2016 =-</h2>
     <article class="project" id="">
         <div class="img prj">
           <div class="noframe"><a href="https://github.com/WorldBank-Transport/ram"><img title="click to view the application" src="img/rra-sm.jpg" srcset="img/rra-sm.jpg 500w, img/rra-xl.jpg 1500w"
@@ -83,7 +92,7 @@
           <p>Project page for a 21st century version of John Bartholomew's 1914 map with isochrones from London. Using open data like <a href="http://osm.org">OpenStreetMap</a> and <a href="http://openflights.org/data.html">OpenFlights</a> and open source tools like <a href="https://github.com/Project-OSRM/osrm-backend">OSRM</a> and <a href="http://qgis.org">QGIS</a> I calculated how long it would take a modern day person to travel from London to 7000 places around the globe. Based on that information I created a modern day isochrone map. The page explains the various steps I took to get to this map. </p>
         </div>
       </article>
-      <h2>-= 2015 =-</h2>
+      <h2 id="y2015">-= 2015 =-</h2>
       <article class="project" id="cbsexplorer">
         <div class="img prj">
           <div class="placeholder">
@@ -135,7 +144,7 @@
       <p>Part of the job description of working by Geodan Research is providing the rest of the company with cool demos. We have collected quite a few over the years but they were not easy to find, only if you knew the URL you could access them. To make things easier for everyone I created a simple <a href="https://www.polymer-project.org/0.5/">polymer</a> based website where everyone could add demo's by modifying the configuration. The whole thing is searchable using tags included in the configuration. </p>      
         </div>
       </article>
-      <h2>-= 2014 =-</h2>
+      <h2 id="y2014">-= 2014 =-</h2>
       <article class="project" id="dhs">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/dhs-sm.jpg" srcset="img/dhs-sm.jpg 500w, img/dhs-xl.jpg 1500w"
@@ -167,7 +176,7 @@
       <p>We had a discussion at work on the understandability of maps; if you want to compare different cities in Europe you want to view them all in a map, however the Benelux and neighboring Ruhrgebiet are very crowded with cities so you can't distuingish them properly. The classic solution is to zoom in on the map, but you will lose the overview. I proposed a 'localzoom' magnify glass which allows you to zoom in at a particular area without losing oversight.</p>
         </div>
       </article>
-      <h2>-= 2013 =-</h2>
+      <h2 id="y2013">-= 2013 =-</h2>
        <article class="project" id="classificatie">
         <div class="img prj">
         <div class="placeholder"><img title="click to view the application" src="img/classificatie-sm.jpg" srcset="img/classificatie-sm.jpg 500w, img/classificatie-xl.jpg 1500w"
@@ -200,7 +209,7 @@
       <p><a href="https://github.com/tomvantilburg">Tom</a> and I developed <a href="https://github.com/geodan/cow">COW</a> as a tool for real time multi-user (geo) data sharing in an environment with intermittent network access (think mobile devices in the field). I created this video to show how COW would work with <a href="http://www.geodan.com/products/phoenix/">Phoenix</a> and more in general what you could do with COW. COW is a pure browser solution using websockets and indexeddb and is at the hart of the crisis management application <a href="http://www.geodan.nl/producten/eagle-water">Eagle Water</a>. </p>
         </div>
       </article>
-      <h2>-= 2012 =-</h2>
+      <h2 id="y2012">-= 2012 =-</h2>
        <article class="project" id="ahn">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/ahn-sm.jpg" srcset="img/ahn-sm.jpg 500w, img/ahn-xl.jpg 1500w"
@@ -232,7 +241,7 @@
       <p>I wanted a wall map of the world which would show the world in a new light. I came across the dymaxion projection and <a href="https://twitter.com/stvno/status/139117489425629186">Schuyler's</a> Geo::Dymaxion library. I transformed <a href="http://www.naturalearthdata.com/">Natural Earth Data</a> into geojson with QGIS and ran the geojson through a custom script to dymaxify it and load it back into QGIS, made a rough layout exported it to SVG and used Inkscape to create a full size wall map complete with seamonsters. </p>
         </div>
       </article>
-      <h2>-= 2011 =-</h2>
+      <h2 id="y2011">-= 2011 =-</h2>
        <article class="project" id="tangible">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/tangible-sm.jpg" srcset="img/tangible-sm.jpg 500w, img/tangible-xl.jpg 1500w"
@@ -243,7 +252,7 @@
       <p>In 2005 Geodan co-developed a TangiTable; a table mounted projector and sensor array that allowed users to physically interact with a digital map on a table. Though not very portable it was a nice experimentation platform for touch based map-interfaces. In 2006 we received the <a href="https://en.wikipedia.org/wiki/DiamondTouch">MERL DiamondTouch</a> which was way more portable and easier to develop for. Then in 2008 we received the Microsoft Surface (the table, not the tablet). An all-in-one touchtable with object recognition. This was the platform where we started to develop SchetsGIS and later Phoenix. The video shows an interface to quickly compare scenarios of climate models using this object recognition. I both designed the interface and shot the video.  </p>
         </div>
       </article>
-      <h2>-= 2010 =-</h2>
+      <h2 id="y2010">-= 2010 =-</h2>
        <article class="project" id="firefly">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/firefly-sm.jpg" srcset="img/firefly-sm.jpg 500w, img/firefly-xl.jpg 1500w"
@@ -274,7 +283,7 @@
       <p>A quick movie to show how low-cost drones can be used for real-time remote sensing and aerial mapping. Being a small and cheap drone which could be operated indoor, this setup was used in exhibitions and conferences to show how the <a href="./#firefly">firefly</a> setup could work.</p>
         </div>
       </article>
-      <h2>-= 2009 =-</h2>
+      <h2 id="y2009">-= 2009 =-</h2>
       <article class="project" id="gps">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/gps-sm.jpg" srcset="img/gps-sm.jpg 500w, img/gps-xl.jpg 1500w"
@@ -285,7 +294,7 @@
       <p>An animation created with <a href="https://processing.org/">processing</a> using the GPS tracks of various colleagues. It shows their daily commute to work and through that the streets of Amsterdam and a few railways to various places in the Netherlands. The main purpose of this movie was to introduce the GPS tracker at the christmas meeting where it was handed out to everyone. </p>
         </div>
       </article>
-      <h2>-= 2008 =-</h2>
+      <h2 id="y2008">-= 2008 =-</h2>
        <article class="project" id="">
         <div class="img prj">
           <div class="placeholder"><img title="click to view the application" src="img/wiion-sm.jpg" srcset="img/wiion-sm.jpg 500w, img/wiion-xl.jpg 1500w"

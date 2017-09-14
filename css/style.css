@@ -44,10 +44,7 @@ header {
   background: url('../img/header2.jpg');
   box-shadow: 0px 1px 6px #74997A;
   z-index: 1;
-
-    background-size: cover;
-      
-
+  background-size: cover;
 }
 header h1 {
    color: #bbb;
@@ -70,6 +67,23 @@ header  a {
   flex: 0 0 120px;
   position: sticky;
   top: 0;
+  font-family: 'system-ui', sans-serif;
+  font-size: 1.2em;
+  flex-direction: column;
+}
+.thumb {
+  color: white;
+  height: 120px;
+  border:solid 1px #081021;
+  width: 100%;
+  text-align: center;
+  line-height: 110px;
+  cursor: pointer;
+}
+.thumb:hover {
+  border: solid 1px white;
+  background: rgba(255,255,255,0.2);
+  color: white;
 }
 #projects {
   display: inline-block;
@@ -179,7 +193,8 @@ p:hover a {
     font-size: 110%;  
   }
   #sidebar {
-    display: inline-block;
+    display: flex;
+    justify-content: flex-start;
   }
   .img {
     max-width: 1000px;        
