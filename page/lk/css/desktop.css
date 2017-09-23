@@ -1,0 +1,32 @@
+#wrapper {
+	width: 1460px;	
+}
+/* HEADER */
+
+
+
+
+section {
+	margin: 20px;
+}
+.section {
+	font-size: 120px;
+}
+#blog {	
+	width: 750px;	
+}
+#portfolio {
+	width: 614px;	
+}
+#info {
+	width: 553px;
+}
+#shop {
+	width: 812px;
+}
+.boven {
+	height: 559px;
+}
+.onder {
+	height: 275px;
+}

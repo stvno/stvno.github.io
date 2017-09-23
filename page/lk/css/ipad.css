@@ -1,0 +1,36 @@
+header a {
+	display: inline-block;
+}
+#wrapper {
+	width:98vw;
+}
+#menu {
+	background: url('img/menu-uit.png');
+}
+
+
+section {
+	margin: 1vw;
+}
+.section {
+	font-size: 90px;	    
+}
+#blog {	
+	width: 51vw;	
+}
+#portfolio {
+	width: 42vw;
+}
+#info {
+	width: 38vw;
+		order: 0;
+}
+#shop {
+	width: 55vw;
+}
+.boven {
+	height: 38vw;
+}
+.onder {
+	height: 19vw;
+}
