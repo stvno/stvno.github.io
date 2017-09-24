@@ -16,7 +16,7 @@ body {
 	
 }
 #header-mobile.active a {
-	height: 50px;
+	height: 80px;
 	visibility: visible;
 }
 #header-mobile a {
@@ -24,7 +24,7 @@ body {
 	visibility: hidden;
 	width: 100%;
 	border-bottom: solid 1px #A5C382;
-	font-size: 24px;
+	font-size: 48px;
 	text-align: center;
 	color:black;
 	height: 0px;
@@ -46,8 +46,8 @@ body {
 
 }
 #home-mobile a {
-	width:118px;
-	height:80px !important;
+	width:236px;
+	height:160px !important;
 	visibility: visible !important;
 	margin: 0;
     background: #A5C382;    
@@ -62,8 +62,9 @@ body {
 #menu-mobile {
 	position: absolute;
 	background: url('img/menu-in.png');
-	width: 22px;
-	height:23px;
+	background-size: contain;
+	width:44px;
+	height:45px;
 	top: 27px;
 	right:27px;
 	cursor: pointer;
@@ -79,8 +80,14 @@ background-blend-mode: lighten;
 }
 a {
 	text-decoration: none;
+	border: none;
+	outline:none;
 }
-
+img {
+text-decoration: none;
+	border: none;	
+	outline: none;
+}
 a.active {
 	color: #A5C382;
 }
