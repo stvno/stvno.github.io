@@ -9,7 +9,7 @@
 section {
 	margin: 20px;
 }
-.section {
+section .link {
 	font-size: 120px;
 }
 #blog {	
@@ -29,4 +29,22 @@ section {
 }
 .onder {
 	height: 275px;
+}
+
+/*portfolio deep */
+.p-img {
+	width: 970px;
+	height: 970px;
+	margin-right: 30px;
+}
+.p-deep-bar {
+	font-size: 30px;	
+	padding:23px;
+}
+/*info */
+
+.i-img {
+	width: 700px;
+	height: 330px;
+	font-size: 150px;	
 }

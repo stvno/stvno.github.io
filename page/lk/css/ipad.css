@@ -34,3 +34,28 @@ section {
 .onder {
 	height: 19vw;
 }
+.p-deep {
+
+}
+.p-img {
+	margin-left:0;
+	margin-right: 2vw;
+	width: 66vw;
+	height: 66vw;	
+	float: left;
+}
+.p-deep-bar {
+	padding:1.5vw;
+	font-size:2vw;	
+}
+
+/*info */
+.info {
+	column-count: 2;
+}
+
+.i-img {
+	width: 49vw;
+	height: 23vw;
+	font-size: 10vw;	
+}

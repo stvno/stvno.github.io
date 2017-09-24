@@ -14,15 +14,33 @@ body {
 a {
 	text-decoration: none;
 }
+
+a.active {
+	color: #A5C382;
+}
+a.active:hover {
+	color:#5c6d47;
+}
 /* HEADER */
 #home {
 	align-self: flex-start;
 	margin: 0;
 	flex: auto; 
 }
+#home  img {
+	visibility: hidden;
+}
+#home a {
+	margin: 0;
+    background: #A5C382;    
+    background-image: url(img/logo.png);
+}
+#home a:hover {	
+	background-blend-mode: lighten;	
+}
 header {	
 	width: 100%;
-	height: 205px;
+	height: 215px;
 	display:flex;
 	justify-content: flex-end;
 }
@@ -106,7 +124,7 @@ section {
 .boven,.onder {
 	height: 20vw;
 }
-
+/* PORTFOLIO*/
 .portfolio {
 	width: 448px;
 	height: 448px;	
@@ -155,4 +173,50 @@ section {
 }
 #p6 {		
 	background: url('img/p6.png');
+}
+
+/*portfolio-deep */
+.p-deep, .info {
+	margin-left:1vw;
+	margin-right:1vw;
+	font-size: 24px;
+}
+.p-img {
+	background:url('img/p-big.png');
+	background-size: cover;
+	margin-left: 1vw
+	margin-right: 1vw;
+	margin-bottom: 1vw;
+	width: 96vw;
+	height: 96vw;
+	display: flex;
+	align-items: flex-end;
+}
+.p-deep-bar {
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 4vw;
+	color:white;
+	font-weight: bold;
+	background: rgba(0,0,0,0.5);
+	padding:3vw;
+}
+
+/*info */
+.info {
+	column-count: 1;
+}
+
+.i-img {
+	background:url('img/info-beeld.jpg');
+	background-size: cover;
+	width: 96vw;
+	height: 45vw;
+	color:white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20vw;
+	font-weight: bold;
 }
