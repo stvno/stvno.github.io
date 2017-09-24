@@ -59,17 +59,22 @@ body {
 #home-mobile a:hover {	
 	background-blend-mode: lighten;	
 }
-#menu-mobile {
-	position: absolute;
+#hamburger {
 	background: url('img/menu-in.png');
 	background-size: contain;
 	width:44px;
 	height:45px;
+	float:right;
+}
+#menu-mobile {
+	width: 100px;
+	height: 100px;
+	position: absolute;
 	top: 27px;
 	right:27px;
 	cursor: pointer;
 }
-#menu-mobile:hover {
+#hamburger:hover {
 background-color: #A5C382;
 background-blend-mode: lighten;	
 }
@@ -113,10 +118,10 @@ section {
 	color: rgba(255,255,255,0);
 	transition: color 500ms ease;
 }
-.label:hover > .link {
+.label:hover > .link, .mobiel  .link {
 	background: rgba(0,0,0,0.5);
 }
-.label:hover > a {
+.label:hover > a, .mobiel  .label  a {
 	color: rgba(255,255,255,1);	
 }
 .link {
