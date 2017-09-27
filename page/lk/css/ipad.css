@@ -8,18 +8,14 @@
 	flex: auto; 
 
 }
-#home  img {
-	visibility: hidden;
-}
 #home a {
 	width:303px;
 	height:205px;
-	margin: 0;
-    background: #A5C382;    
+	margin: 0; 
     background-image: url(img/logo.png);
 }
 #home a:hover {	
-	background-blend-mode: lighten;	
+	opacity: 0.7;
 }
 #header {	
 	width: 100%;
