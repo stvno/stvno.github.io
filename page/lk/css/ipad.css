@@ -44,10 +44,17 @@ header a:hover {
 	margin-right:27px;
 }
 
+
 #wrapper {
 	width:98vw;
 }
-
+/*
+@media (min-aspect-ratio: 4/3) {
+	#wrapper {
+		width: 133vh;
+		background:red;
+	}
+}*/
 section {
 	margin: 1vw;
 }
