@@ -113,7 +113,7 @@ hills.drawTile = function(canvas, tilePoint, zoom) {
     demImg.crossOrigin = 'Anonymous';
     var y = Math.pow(2,zoom) - tilePoint.y -1;
     
-    demImg.src= 'https://research.geodan.nl/service/ahn2/nlgrid/'+zoom+'/'+tilePoint.x+'/'+y+'.png';
+    demImg.src= 'http://research.geodan.nl/service/ahn2/nlgrid/'+zoom+'/'+tilePoint.x+'/'+y+'.png';
     if ( demImg.complete || demImg.complete === undefined ) {
         demImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
         demImg.src = src;
