@@ -71,7 +71,7 @@ var contexts = {};
 
 
 hills.drawTile = function(canvas, tilePoint, zoom) {
-    var demImg = new Image,
+    var demImg = new Image(),
         ctx = canvas.getContext('2d'),
         demCtx, renderedRange,
         id = uniqueId();
