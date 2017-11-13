@@ -62,23 +62,23 @@ section {
 	font-size: 90px;	    
 }
 #blog {	
-	width: 51vw;	
+	width: 50vw;	
 }
 #portfolio {
 	width: 42vw;
 }
 #info {
-	width: 38vw;
-		order: 0;
+	width: 37vw;
+	order: 0;
 }
 #shop {
 	width: 55vw;
 }
 .boven {
-	height: 38vw;
+	height: 32vw;
 }
 .onder {
-	height: 19vw;
+	height: 14.2vw;
 }
 .p-deep {
 

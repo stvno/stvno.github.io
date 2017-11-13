@@ -7,28 +7,28 @@
 
 
 section {
-	margin: 20px;
+	margin: 15px;
 }
 section .link {
 	font-size: 120px;
 }
 #blog {	
-	width: 750px;	
+	width: 735px;	
 }
 #portfolio {
-	width: 614px;	
+	width: 620px;	
 }
 #info {
-	width: 553px;
+	width: 544px;
 }
 #shop {
-	width: 812px;
+	width: 810px;
 }
 .boven {
-	height: 559px;
+	height: 480px;
 }
 .onder {
-	height: 275px;
+	height: 220px;
 }
 
 /*portfolio deep */
