@@ -34,7 +34,7 @@ section .link {
 /*portfolio deep */
 .p-img {
 	width: 970px;
-	height: 970px;
+	height: 647px;
 	margin-right: 30px;
 }
 .p-deep-bar {
@@ -46,5 +46,5 @@ section .link {
 .i-img {
 	width: 700px;
 	height: 330px;
-	font-size: 150px;	
+	font-size: 112.5px;	
 }
