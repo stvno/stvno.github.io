@@ -17,5 +17,5 @@ window.mobilecheck = function() {
 if(window.mobilecheck()) {
 	window.setTimeout(function() {
 		wrapper.className = 'mobiel';
-	}, 1500);
+	}, 1000);
 }
