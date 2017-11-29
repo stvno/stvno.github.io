@@ -15,14 +15,26 @@ section .link {
 #blog {	
 	width: 735px;	
 }
+#blog .link {
+	font-size: 	102px;
+}
 #portfolio {
 	width: 620px;	
+}
+#portfolio .link {
+	font-size:  80px;
 }
 #info {
 	width: 544px;
 }
+#info .link {
+	font-size: 83px;
+}
 #shop {
 	width: 810px;
+}
+#shop .link {
+	font-size: 91px;
 }
 .boven {
 	height: 480px;
