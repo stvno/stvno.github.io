@@ -113,7 +113,7 @@ hills.drawTile = function(canvas, tilePoint, zoom) {
     demImg.crossOrigin = 'Anonymous';
     var y = Math.pow(2,zoom) - tilePoint.y -1;
     
-    demImg.src= 'http://research.geodan.nl/service/ahn2/nlgrid/'+zoom+'/'+tilePoint.x+'/'+y+'.png';
+    demImg.src= '//saturnus.geodan.nl/mapproxy/maaiveld/tms/1.0.0/ahn2/nlgrid/'+zoom+'/'+tilePoint.x+'/'+y+'.png';
 }
   
 
