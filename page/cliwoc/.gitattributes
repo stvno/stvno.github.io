@@ -1,2 +1,5 @@
 *.tsv filter=lfs diff=lfs merge=lfs -text
 *.gpkg filter=lfs diff=lfs merge=lfs -text
+CLIWOC21.ods filter=lfs diff=lfs merge=lfs -text
+CLIWOC21.tsv filter=lfs diff=lfs merge=lfs -text
+CLIWOC21.gpkg filter=lfs diff=lfs merge=lfs -text
