@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>stvno's space in time</title>
+    <link defer href="css/style.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lora" defer rel="stylesheet"> -->
+    <link rel="shortcut icon" href="favicon.ico" /><style type="text/css">body {background: #eeeeec}</style>
+
+  <style>
+    #canvas {
+      z-index: -10000;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+    }
+  </style>
+  </head>
+<body>
+  <div>
+
+
+Minima velit molestiae iusto nam voluptate occaecati perferendis. Iusto veritatis possimus odio vero laborum qui voluptatem. Velit et aut excepturi aliquam autem. Totam non non vel. Rerum magnam suscipit laborum.
+
+At autem aut debitis cupiditate dicta perferendis. Asperiores repellat distinctio exercitationem unde et incidunt et omnis. Mollitia quia reiciendis exercitationem. Dolor quis ullam cumque. Natus natus numquam qui eum et itaque vero est.
+
+Eius quidem et natus aut mollitia eum est et. Nemo sint aut eos modi commodi adipisci dolore. Recusandae vel sequi et provident et est quia debitis.
+
+Sit nihil aut quia quos eos laborum harum. Est repellat dolorum hic id sunt. Laudantium quaerat odit tempore doloribus eos similique accusantium delectus. Ducimus saepe quidem ducimus rerum nisi nemo dolorem et.
+
+Debitis minima dolor facere quam officiis et ab. Eum eos fuga omnis autem porro. Voluptatem optio molestiae vitae et nam neque. Et accusantium ad consequatur aut quo est iusto. Minima et eligendi vitae voluptas earum asperiores eveniet assumenda. Velit eveniet delectus ad libero qui ut sapiente.
+</div>
+    <canvas id="canvas" width="1280" height="720"></canvas>
+<script>
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+ctx.strokeWidth = 1;
+ctx.lineJoin = 'round';
+var myWorker = new Worker('conrec.js');
+ var s = () => {
+    var cl = Math.floor(Math.random() * 40 ) + 180
+    return 'rgba('+cl+','+cl+','+cl+',0.4)'
+  }
+  var d = v => {
+    var x = 20;
+    var y = 20;
+    ctx.beginPath();
+    ctx.strokeStyle = s();
+    ctx.moveTo(v[0].x*x,v[0].y*y)
+    v.map(p=>ctx.lineTo(p.x*x,p.y*y))
+    ctx.stroke()
+
+  }
+var l = 100;
+ var w = window.outerWidth;
+  var h = window.outerHeight;
+var renderBack = () => {
+  w = window.outerWidth;
+  h = window.outerHeight;
+  l = Math.floor(Math.max(w,h)/20)+1;
+  canvas.width = w;
+  canvas.height = h;
+  var r = [...Array(l).keys()]
+  var rr= r.map(a=>a+Math.floor(Math.random() * 2) - 1  )
+  data = rr.map(a=>rr.map(b=>Math.round(Math.random()*100)))
+  myWorker.postMessage({l:l,r:r,rr:rr,data:data})
+}
+myWorker.onmessage = function(e) {
+ e.data.forEach(a => d(a));
+}
+renderBack()
+var resizeTimer;
+var resizer = () => {
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+
+    renderBack()
+
+  }, 250);
+
+}
+window.onresize = resizer
+
+</script>
+</body>
