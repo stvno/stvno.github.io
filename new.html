@@ -38,20 +38,22 @@ Debitis minima dolor facere quam officiis et ab. Eum eos fuga omnis autem porro.
 <script>
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-ctx.strokeWidth = 1;
+ctx.lineWidth = 0.1;
 ctx.lineJoin = 'round';
 var myWorker = new Worker('conrec.js');
- var s = () => {
+ var s = (a) => {
     var cl = Math.floor(Math.random() * 40 ) + 180
-    return 'rgba('+cl+','+cl+','+cl+',0.2)'
+    return 'rgba('+(cl-10)+','+(cl-10)+','+cl+','+a+')'
   }
   var d = v => {
     var x = 20;
     var y = 20;
     ctx.beginPath();
-    ctx.strokeStyle = s();
+    ctx.strokeStyle = s(0.3);
+    ctx.fillStyle= s(0.02);
     ctx.moveTo(v[0].x*x,v[0].y*y)
     v.map(p=>ctx.lineTo(p.x*x,p.y*y))
+    ctx.fill();
     ctx.stroke()
 
   }
