@@ -38,18 +38,16 @@ d = v => {
   cx.stroke()
 }
 l = 100
-w = window.outerWidth
-h = window.outerHeight;
 b = () => {
-  w = window.outerWidth;
-  h = window.outerHeight;
+  w = window.outerWidth
+  h = window.outerHeight
   l = Math.floor(Math.max(w,h)/xf)+1;
   cs.width = w;
   cs.height = h;
   let r = [...Array(l).keys()]
   let rr= r.map(a=>a+Math.floor(Math.random() * 2) - 1  )
   let data = rr.map(a=>rr.map(b=>Math.round(Math.random()*1000)))
-  m.postMessage({l:l,r:r,rr:rr,data:data})
+  m.postMessage({l:l,r:r,data:data})
 }
 m.onmessage = function(e) {
   cx.clearRect(0, 0, cx.canvas.width, cx.canvas.height);
