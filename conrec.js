@@ -450,6 +450,6 @@
 var c = new Conrec;
 onmessage = function(f) {
   var e =f.data
-  c.contour(e.data,0,e.l-1,0,e.l-1,e.r,e.r,10,e.rr.map(a=>a*10))
-  postMessage(c.contourList());
+  c.contour(e.data,0,e.l-1,0,e.l-1,e.r,e.r,10,e.r.map(function(a){return a*100}))
+  postMessage(c.contourList())
 }
