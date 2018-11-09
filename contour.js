@@ -45,8 +45,8 @@ b = () => {
   cs.width = w;
   cs.height = h;
   let r = [...Array(l).keys()]
-  let rr= r.map(a=>a+Math.floor(Math.random() * 2) - 1  )
-  let data = rr.map(a=>rr.map(b=>Math.round(Math.random()*1000)))
+  let rr= r.map(a=>a+Math.floor(Math.random() * 20) - 10  )
+  let data = rr.map(()=>rr.map(()=>Math.round(Math.random()*1000)))
   m.postMessage({l:l,r:r,data:data})
 }
 m.onmessage = function(e) {
