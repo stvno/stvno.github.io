@@ -56,5 +56,5 @@ m.onmessage = function(e) {
   e.data.forEach(a => d(a));
 }
 b()
-rs=()=>{clearTimeout(rT);rT = setTimeout(()=>{b()},250)}
+rs=()=>{clearTimeout(rT);rT = setTimeout(()=>{b()},100)}
 window.onresize = rs
