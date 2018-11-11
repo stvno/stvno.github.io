@@ -3,7 +3,7 @@ rnd = (i,x) => { return Math.floor(Math.random()*x)+i}
 cs = document.getElementById('c')
 cx = cs.getContext('2d')
 
-m = new Worker('conrec.js')
+m = new Worker('conrec.min.js')
 s = (a) => {
   let cl = rnd(180,40)
   return `rgba(${(cl-15)},${(cl-15)},${cl},${a})`
@@ -96,4 +96,3 @@ window.onresize = rs
   }
   document.body.style.backgroundImage = `url(${c2.toDataURL()})`
 
- 
