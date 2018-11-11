@@ -447,9 +447,9 @@
       }
     }
   }
-var c = new Conrec;
+  let c = new Conrec;
 onmessage = function(f) {
-  var e =f.data
-  c.contour(e.data,0,e.l+1,0,e.l+1,e.r,e.r,6,[...Array(6).keys()].map(a=>a*1000/6))
+  let e =f.data, n = e.n
+  c.contour(e.data,0,e.x,0,e.y,e.rw,e.rh,n,[...Array(n).keys()].map(a=>a*1000/n))
   postMessage(c.contourList())
 }
