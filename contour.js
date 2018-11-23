@@ -75,3 +75,18 @@ for(let i = 0; i<50; i++) {
 }
 document.body.style.backgroundImage = `url(${c2.toDataURL()})`
 
+  let c3 = document.createElement('canvas');
+  c3.width = c3.height = 50
+  let ctx3 = c3.getContext('2d')
+  for(let i = 0; i<50; i++) {
+    for(let j = 0; j<50; j++) {
+      let no  = 150+ rnd(0,60)
+      let y = rnd(-1,2)+j
+      ctx3.fillStyle = `rgba(${no},${no},${no},0.5)`
+      ctx3.fillRect(i,y,1,1)
+    }
+  }
+  document.styleSheets[0].addRule('.border:after','border: 0.1em solid transparent;')
+  document.styleSheets[0].addRule('.border:after',`border-image: url(${c3.toDataURL()}) 2 5 2 5 stretch round;`);
+
+  //Array.from( document.getElementsByClassName('border')).forEach(a=>a.style.borderImage =  `url(${c3.toDataURL()})`)
